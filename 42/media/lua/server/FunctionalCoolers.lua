@@ -2,7 +2,7 @@ local FC = {}
 
 ------------------------------------------------------------
 -- FUNCTIONAL COOLERS
--- Calibration Prototype v0.2
+-- Prototype v0.3.0-dev
 --
 -- Testopstelling:
 --
@@ -60,6 +60,21 @@ local FREEZER_SCAN_RADIUS = 8
 local GROUND_SCAN_RADIUS = 10
 
 local LOG_INTERVAL = 10
+
+-- Time-based simulation.
+-- The current calibration world uses FoodRotSpeed = 3 (Normal).
+-- At that setting vanilla food age advances 1.0 age-day per game day.
+local BASE_AGE_DAYS_PER_GAME_DAY = 1.0
+
+-- Measured from the previous vanilla control:
+-- freezingTime falls by ~1.11111 points per game minute at ambient temperature.
+local BASE_THAW_RATE_PER_MINUTE = 1.111111
+
+-- Active simulation normally advances in 1-minute steps.
+-- Long catch-up periods use 5-minute steps to keep the cost bounded.
+local ACTIVE_STEP_MINUTES = 1.0
+local CATCHUP_STEP_MINUTES = 5.0
+local CATCHUP_THRESHOLD_MINUTES = 60.0
 
 local TEST_ACTIVE = false
 local tickCounter = 0
@@ -191,6 +206,45 @@ local function getCoolerContainer(cooler)
 end
 
 
+local function getWorldAgeHours()
+
+    return safeNumber(
+        function()
+            return getGameTime():getWorldAgeHours()
+        end,
+        nil
+    )
+end
+
+
+local function scaledRate(ratePerMinute, minutes)
+
+    if minutes <= 0 then
+        return 0
+    end
+
+    if ratePerMinute <= 0 then
+        return 0
+    end
+
+    if ratePerMinute >= 1 then
+        return 1
+    end
+
+    return 1.0 - math.pow(1.0 - ratePerMinute, minutes)
+end
+
+
+local function chooseStepMinutes(remainingMinutes)
+
+    if remainingMinutes > CATCHUP_THRESHOLD_MINUTES then
+        return math.min(CATCHUP_STEP_MINUTES, remainingMinutes)
+    end
+
+    return math.min(ACTIVE_STEP_MINUTES, remainingMinutes)
+end
+
+
 ------------------------------------------------------------
 -- Spoilage factor
 ------------------------------------------------------------
@@ -306,14 +360,14 @@ local function initializeFoodState(food, cooler)
         tostring(cooler:getID())
 
 
-    local continuous =
-        data.FC_coolerID == coolerID
-        and data.FC_lastSeenTick
-            == (tickCounter - 1)
-        and data.FC_temperature ~= nil
+    local needsInitialization =
+        data.FC_coolerID ~= coolerID
+        or data.FC_temperature == nil
+        or data.FC_managedAge == nil
+        or data.FC_managedFreezingTime == nil
 
 
-    if not continuous then
+    if needsInitialization then
 
         data.FC_coolerID =
             coolerID
@@ -326,212 +380,210 @@ local function initializeFoodState(food, cooler)
                 AMBIENT_TEMP
             )
 
-        data.FC_lastAge =
+        data.FC_managedAge =
             safeNumber(
                 function()
                     return food:getAge()
                 end,
-                nil
+                0.0
             )
 
-        data.FC_lastFreezingTime =
+        data.FC_managedFreezingTime =
             safeNumber(
                 function()
                     return food:getFreezingTime()
                 end,
-                nil
+                0.0
             )
     end
 
 
-    data.FC_lastSeenTick =
-        tickCounter
-
-
-    return data.FC_temperature
+    return data
 end
 
 
-local function setFoodThermalTemperature(food, temp)
-
-    temp =
-        clamp(temp, 0.0, 2.0)
-
-    local data =
-        food:getModData()
-
-    data.FC_temperature =
-        temp
-
-
-    pcall(function()
-
-        food:setHeat(temp)
-
-    end)
-end
-
-
-------------------------------------------------------------
--- Correct food age
-------------------------------------------------------------
-
-local function correctFoodAge(food, foodTemp)
+local function applyManagedFoodState(food)
 
     local data =
         food:getModData()
 
 
-    local currentAge =
-        safeNumber(
-            function()
-                return food:getAge()
-            end,
-            nil
-        )
+    if data.FC_temperature ~= nil then
 
+        pcall(function()
 
-    if currentAge == nil then
-        return
-    end
-
-
-    if data.FC_lastAge == nil then
-
-        data.FC_lastAge =
-            currentAge
-
-        return
-    end
-
-
-    local previousAge =
-        data.FC_lastAge
-
-
-    local vanillaDelta =
-        currentAge - previousAge
-
-
-    if vanillaDelta <= 0 then
-
-        data.FC_lastAge =
-            currentAge
-
-        return
-    end
-
-
-    if vanillaDelta > 1.0 then
-
-        data.FC_lastAge =
-            currentAge
-
-        return
-    end
-
-
-    local factor =
-        getSpoilageFactor(foodTemp)
-
-
-    local correctedAge =
-        previousAge
-        + (vanillaDelta * factor)
-
-
-    pcall(function()
-
-        food:setAge(correctedAge)
-
-    end)
-
-
-    data.FC_lastAge =
-        correctedAge
-end
-
-
-------------------------------------------------------------
--- Correct thawing
-------------------------------------------------------------
-
-local function correctFoodFreezing(food, foodTemp)
-
-    local data =
-        food:getModData()
-
-
-    local current =
-        safeNumber(
-            function()
-                return food:getFreezingTime()
-            end,
-            nil
-        )
-
-
-    if current == nil then
-        return
-    end
-
-
-    if data.FC_lastFreezingTime == nil then
-
-        data.FC_lastFreezingTime =
-            current
-
-        return
-    end
-
-
-    local previous =
-        data.FC_lastFreezingTime
-
-
-    if current < previous then
-
-        local vanillaThaw =
-            previous - current
-
-
-        local thawFactor =
-            getThawFactor(foodTemp)
-
-
-        local corrected =
-            previous
-            - (
-                vanillaThaw
-                * thawFactor
+            food:setHeat(
+                clamp(
+                    data.FC_temperature,
+                    0.0,
+                    2.0
+                )
             )
 
+        end)
+    end
 
-        corrected =
-            clamp(
-                corrected,
-                0.0,
-                100.0
+
+    if data.FC_managedAge ~= nil then
+
+        pcall(function()
+
+            food:setAge(
+                math.max(
+                    0.0,
+                    data.FC_managedAge
+                )
             )
 
+        end)
+    end
+
+
+    if data.FC_managedFreezingTime ~= nil then
 
         pcall(function()
 
             food:setFreezingTime(
-                corrected
+                clamp(
+                    data.FC_managedFreezingTime,
+                    0.0,
+                    100.0
+                )
             )
 
         end)
+    end
+end
 
 
-        data.FC_lastFreezingTime =
-            corrected
+------------------------------------------------------------
+-- Time-based food biology
+------------------------------------------------------------
+
+local function advanceManagedFoodBiology(
+    food,
+    foodTemp,
+    stepMinutes
+)
+
+    local data =
+        food:getModData()
+
+
+    local age =
+        safeNumber(
+            function()
+                return data.FC_managedAge
+            end,
+            0.0
+        )
+
+
+    local freezingTime =
+        safeNumber(
+            function()
+                return data.FC_managedFreezingTime
+            end,
+            0.0
+        )
+
+
+    local spoilFactor =
+        getSpoilageFactor(foodTemp)
+
+
+    --------------------------------------------------------
+    -- Frozen/thawing food
+    --
+    -- Our previous control showed that age stays effectively
+    -- stationary while freezingTime is still above zero.
+    -- For this calibration prototype we preserve that observed
+    -- behaviour. Frozen-age behaviour can be refined later.
+    --------------------------------------------------------
+
+    if freezingTime > 0.0 then
+
+        local thawFactor =
+            getThawFactor(foodTemp)
+
+        local thawRate =
+            BASE_THAW_RATE_PER_MINUTE
+            * thawFactor
+
+
+        if thawRate > 0.0 then
+
+            local possibleThaw =
+                thawRate
+                * stepMinutes
+
+
+            if possibleThaw >= freezingTime then
+
+                local minutesToFinishThaw =
+                    freezingTime
+                    / thawRate
+
+
+                freezingTime =
+                    0.0
+
+
+                local remainingMinutes =
+                    stepMinutes
+                    - minutesToFinishThaw
+
+
+                if remainingMinutes > 0.0 then
+
+                    age =
+                        age
+                        + (
+                            remainingMinutes
+                            / 1440.0
+                            * BASE_AGE_DAYS_PER_GAME_DAY
+                            * spoilFactor
+                        )
+                end
+
+            else
+
+                freezingTime =
+                    freezingTime
+                    - possibleThaw
+            end
+        end
 
     else
 
-        data.FC_lastFreezingTime =
-            current
+        ----------------------------------------------------
+        -- Fully thawed food
+        ----------------------------------------------------
+
+        age =
+            age
+            + (
+                stepMinutes
+                / 1440.0
+                * BASE_AGE_DAYS_PER_GAME_DAY
+                * spoilFactor
+            )
     end
+
+
+    data.FC_managedAge =
+        math.max(
+            0.0,
+            age
+        )
+
+
+    data.FC_managedFreezingTime =
+        clamp(
+            freezingTime,
+            0.0,
+            100.0
+        )
 end
 
 
@@ -986,6 +1038,10 @@ end
 
 local function prepareTestStart(groups)
 
+    local nowHours =
+        getWorldAgeHours()
+
+
     for _, name in ipairs(GROUP_ORDER) do
 
         local cooler =
@@ -1004,6 +1060,10 @@ local function prepareTestStart(groups)
 
             data.FC_testGroup =
                 name
+
+
+            data.FC_lastThermalUpdateHours =
+                nowHours
 
 
             local container =
@@ -1045,14 +1105,22 @@ local function prepareTestStart(groups)
                         foodData.FC_temperature =
                             nil
 
-                        foodData.FC_lastAge =
+                        foodData.FC_managedAge =
                             nil
 
-                        foodData.FC_lastFreezingTime =
+                        foodData.FC_managedFreezingTime =
                             nil
 
-                        foodData.FC_lastSeenTick =
-                            nil
+
+                        initializeFoodState(
+                            item,
+                            cooler
+                        )
+
+
+                        applyManagedFoodState(
+                            item
+                        )
                     end
                 end
             end
@@ -1073,6 +1141,10 @@ local function logFood(
     foodTemp,
     phase
 )
+
+    local data =
+        item:getModData()
+
 
     print(
         "[FC-FOOD]"
@@ -1096,11 +1168,38 @@ local function logFood(
                 -1
             )
         )
+        .. " | managedAge="
+        .. tostring(
+            safeNumber(
+                function()
+                    return data.FC_managedAge
+                end,
+                -1
+            )
+        )
         .. " | freeze="
         .. tostring(
             safeNumber(
                 function()
                     return item:getFreezingTime()
+                end,
+                -1
+            )
+        )
+        .. " | managedFreeze="
+        .. tostring(
+            safeNumber(
+                function()
+                    return data.FC_managedFreezingTime
+                end,
+                -1
+            )
+        )
+        .. " | lastAged="
+        .. tostring(
+            safeNumber(
+                function()
+                    return item:getLastAged()
                 end,
                 -1
             )
@@ -1137,6 +1236,10 @@ local function logControls(player, phase)
         player:getInventory():getItems()
 
 
+    local nowHours =
+        getWorldAgeHours()
+
+
     for i = 0, items:size() - 1 do
 
         local item =
@@ -1150,6 +1253,8 @@ local function logControls(player, phase)
             print(
                 "[FC-CONTROL]"
                 .. " phase=" .. phase
+                .. " | worldHours="
+                .. tostring(nowHours)
                 .. " | id="
                 .. tostring(item:getID())
                 .. " | age="
@@ -1175,6 +1280,15 @@ local function logControls(player, phase)
                     safeNumber(
                         function()
                             return item:getFreezingTime()
+                        end,
+                        -1
+                    )
+                )
+                .. " | lastAged="
+                .. tostring(
+                    safeNumber(
+                        function()
+                            return item:getLastAged()
                         end,
                         -1
                     )
@@ -1301,24 +1415,14 @@ end
 
 
 ------------------------------------------------------------
--- Update one Cooler
+-- Simulate one Cooler step
 ------------------------------------------------------------
 
-local function updateCooler(
+local function simulateCoolerStep(
     cooler,
-    group,
-    location,
-    doLog
+    container,
+    stepMinutes
 )
-
-    local container =
-        getCoolerContainer(cooler)
-
-
-    if not container then
-        return
-    end
-
 
     local coolerTemp =
         getCoolerTemperature(cooler)
@@ -1328,11 +1432,18 @@ local function updateCooler(
     -- Insulation leak
     --------------------------------------------------------
 
+    local leakRate =
+        scaledRate(
+            COOLER_LEAK_RATE,
+            stepMinutes
+        )
+
+
     coolerTemp =
         coolerTemp
         + (
             (AMBIENT_TEMP - coolerTemp)
-            * COOLER_LEAK_RATE
+            * leakRate
         )
 
 
@@ -1340,13 +1451,16 @@ local function updateCooler(
         container:getItems()
 
 
-    local packCount = 0
-    local foodCount = 0
-
-
     --------------------------------------------------------
     -- Coldpack heat exchange
     --------------------------------------------------------
+
+    local packExchangeRate =
+        scaledRate(
+            COLDPACK_EXCHANGE_RATE,
+            stepMinutes
+        )
+
 
     for i = 0, items:size() - 1 do
 
@@ -1358,17 +1472,13 @@ local function updateCooler(
             == "Base.Coldpack" then
 
 
-            packCount =
-                packCount + 1
-
-
             local packTemp =
                 getColdpackTemperature(item)
 
 
             local transfer =
                 (coolerTemp - packTemp)
-                * COLDPACK_EXCHANGE_RATE
+                * packExchangeRate
 
 
             coolerTemp =
@@ -1407,30 +1517,20 @@ local function updateCooler(
                 item,
                 packTemp
             )
-
-
-            if doLog then
-
-                print(
-                    "[FC-PACK]"
-                    .. " phase=RUN"
-                    .. " | group="
-                    .. group
-                    .. " | location="
-                    .. location
-                    .. " | id="
-                    .. tostring(item:getID())
-                    .. " | packTemp="
-                    .. tostring(packTemp)
-                )
-            end
         end
     end
 
 
     --------------------------------------------------------
-    -- Food heat exchange
+    -- Food heat exchange + time-based biology
     --------------------------------------------------------
+
+    local foodExchangeRate =
+        scaledRate(
+            FOOD_EXCHANGE_RATE,
+            stepMinutes
+        )
+
 
     for i = 0, items:size() - 1 do
 
@@ -1440,20 +1540,20 @@ local function updateCooler(
 
         if instanceof(item, "Food") then
 
-            foodCount =
-                foodCount + 1
-
-
-            local foodTemp =
+            local foodData =
                 initializeFoodState(
                     item,
                     cooler
                 )
 
 
+            local foodTemp =
+                foodData.FC_temperature
+
+
             local transfer =
                 (coolerTemp - foodTemp)
-                * FOOD_EXCHANGE_RATE
+                * foodExchangeRate
 
 
             coolerTemp =
@@ -1488,35 +1588,15 @@ local function updateCooler(
                 )
 
 
-            setFoodThermalTemperature(
-                item,
+            foodData.FC_temperature =
                 foodTemp
-            )
 
 
-            correctFoodAge(
+            advanceManagedFoodBiology(
                 item,
-                foodTemp
+                foodTemp,
+                stepMinutes
             )
-
-
-            correctFoodFreezing(
-                item,
-                foodTemp
-            )
-
-
-            if doLog then
-
-                logFood(
-                    item,
-                    group,
-                    location,
-                    coolerTemp,
-                    foodTemp,
-                    "RUN"
-                )
-            end
         end
     end
 
@@ -1525,6 +1605,162 @@ local function updateCooler(
         cooler,
         coolerTemp
     )
+end
+
+
+------------------------------------------------------------
+-- Update one Cooler from elapsed world time
+------------------------------------------------------------
+
+local function updateCooler(
+    cooler,
+    group,
+    location,
+    doLog
+)
+
+    local container =
+        getCoolerContainer(cooler)
+
+
+    if not container then
+        return
+    end
+
+
+    local nowHours =
+        getWorldAgeHours()
+
+
+    if nowHours == nil then
+
+        if doLog then
+
+            print(
+                "[FC-TIME]"
+                .. " group=" .. group
+                .. " | status=NO_WORLD_TIME"
+            )
+        end
+
+        return
+    end
+
+
+    local coolerData =
+        cooler:getModData()
+
+
+    if coolerData.FC_lastThermalUpdateHours == nil then
+
+        coolerData.FC_lastThermalUpdateHours =
+            nowHours
+    end
+
+
+    local elapsedMinutes =
+        (
+            nowHours
+            - coolerData.FC_lastThermalUpdateHours
+        )
+        * 60.0
+
+
+    if elapsedMinutes < 0.0 then
+
+        -- World time moved backwards, for example after a debug reset.
+        -- Re-anchor without applying negative simulation.
+        coolerData.FC_lastThermalUpdateHours =
+            nowHours
+
+        elapsedMinutes =
+            0.0
+    end
+
+
+    local simulatedMinutes =
+        0.0
+
+    local remainingMinutes =
+        elapsedMinutes
+
+
+    while remainingMinutes > 0.0001 do
+
+        local stepMinutes =
+            chooseStepMinutes(
+                remainingMinutes
+            )
+
+
+        simulateCoolerStep(
+            cooler,
+            container,
+            stepMinutes
+        )
+
+
+        simulatedMinutes =
+            simulatedMinutes
+            + stepMinutes
+
+
+        remainingMinutes =
+            remainingMinutes
+            - stepMinutes
+    end
+
+
+    coolerData.FC_lastThermalUpdateHours =
+        nowHours
+
+
+    --------------------------------------------------------
+    -- Push authoritative managed state back into vanilla items
+    --------------------------------------------------------
+
+    local items =
+        container:getItems()
+
+
+    local packCount = 0
+    local foodCount = 0
+
+
+    for i = 0, items:size() - 1 do
+
+        local item =
+            items:get(i)
+
+
+        if getFullType(item)
+            == "Base.Coldpack" then
+
+            packCount =
+                packCount + 1
+
+
+        elseif instanceof(item, "Food") then
+
+            foodCount =
+                foodCount + 1
+
+
+            initializeFoodState(
+                item,
+                cooler
+            )
+
+
+            applyManagedFoodState(
+                item
+            )
+        end
+    end
+
+
+    local coolerTemp =
+        getCoolerTemperature(cooler)
 
 
     pcall(function()
@@ -1536,7 +1772,65 @@ local function updateCooler(
     end)
 
 
+    if simulatedMinutes > 1.5 then
+
+        print(
+            "[FC-CATCHUP]"
+            .. " group=" .. group
+            .. " | location=" .. location
+            .. " | minutes="
+            .. tostring(simulatedMinutes)
+            .. " | worldHours="
+            .. tostring(nowHours)
+        )
+    end
+
+
     if doLog then
+
+        for i = 0, items:size() - 1 do
+
+            local item =
+                items:get(i)
+
+
+            if getFullType(item)
+                == "Base.Coldpack" then
+
+
+                print(
+                    "[FC-PACK]"
+                    .. " phase=RUN"
+                    .. " | group="
+                    .. group
+                    .. " | location="
+                    .. location
+                    .. " | id="
+                    .. tostring(item:getID())
+                    .. " | packTemp="
+                    .. tostring(
+                        getColdpackTemperature(item)
+                    )
+                )
+
+
+            elseif instanceof(item, "Food") then
+
+                local foodData =
+                    item:getModData()
+
+
+                logFood(
+                    item,
+                    group,
+                    location,
+                    coolerTemp,
+                    foodData.FC_temperature,
+                    "RUN"
+                )
+            end
+        end
+
 
         print(
             "[FC-COOLER]"
@@ -1547,6 +1841,8 @@ local function updateCooler(
             .. tostring(cooler:getID())
             .. " | temp="
             .. tostring(coolerTemp)
+            .. " | elapsedMinutes="
+            .. tostring(elapsedMinutes)
             .. " | food="
             .. tostring(foodCount)
             .. " | packs="
@@ -1739,6 +2035,25 @@ local function startTest(
     )
 
     print(
+        "[FC-TIME]"
+        .. " worldHours="
+        .. tostring(getWorldAgeHours())
+        .. " | baseAgeDaysPerGameDay="
+        .. tostring(BASE_AGE_DAYS_PER_GAME_DAY)
+        .. " | baseThawPerMinute="
+        .. tostring(BASE_THAW_RATE_PER_MINUTE)
+        .. " | FoodRotSpeed="
+        .. tostring(
+            safeValue(
+                function()
+                    return SandboxVars.FoodRotSpeed
+                end,
+                "UNKNOWN"
+            )
+        )
+    )
+
+    print(
         "=================================================="
     )
 
@@ -1884,5 +2199,5 @@ Events.EveryOneMinute.Add(
 
 
 print(
-    "[FC] Functional Coolers Calibration Prototype v0.2 loaded."
+    "[FC] Functional Coolers Prototype v0.3.0-dev loaded."
 )
