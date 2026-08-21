@@ -176,6 +176,15 @@ Test infrastructure exception for FC-003:
 - No behavioral changes to the harness are authorized.
 - Nothing under `42/` production source may be changed.
 
+Project documentation exception for FC-003:
+
+- `docs/PROJECT_CHARTER.md`, `docs/STATUS.md`, and `docs/TODO.md` may be created and reviewed.
+- FC-003 remains the active operational task.
+- This exception does not authorize production changes or harness behavioral changes.
+- These documents may record accepted product scope, current project state, and backlog.
+- They must not invent architecture or runtime conclusions.
+- `CURRENT_TASK.md` remains authoritative for what is operationally authorized now.
+
 This task is runtime validation and evidence collection.
 
 If a defect is discovered that appears to require a source change:
