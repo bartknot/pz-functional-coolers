@@ -1,0 +1,12 @@
+# Operating-system metadata
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Temporary editor swap and backup files
+*.swp
+*.swo
+*~
+
+# Raw local runtime output retained for analysis
+artifacts/runtime/
