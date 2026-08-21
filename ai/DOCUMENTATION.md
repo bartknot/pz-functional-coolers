@@ -26,8 +26,13 @@ If canonical sources disagree, stop and report the discrepancy.
 ## Canonical Inputs
 
 - `AI_WORKFLOW.md` and `CURRENT_TASK.md` when relevant.
+- `docs/PROJECT_CHARTER.md`.
+- `docs/STATUS.md`.
+- Relevant documentation or release items from `docs/TODO.md`.
 - Accepted architecture, verified runtime findings, and source code.
 - Accepted release information.
+
+`docs/PROJECT_CHARTER.md` supplies accepted product scope and principles; `docs/STATUS.md` supplies current project state. `docs/TODO.md` may identify documentation still needed but does not establish technical truth. `CURRENT_TASK.md` determines whether documentation work is authorized now.
 
 ## Outputs
 

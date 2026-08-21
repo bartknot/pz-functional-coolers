@@ -27,8 +27,13 @@ Use `BLOCKER`, `HIGH`, `MEDIUM`, `LOW`, `OBSERVATION`, or `QUESTION`. Each subst
 ## Canonical Inputs
 
 - `AI_WORKFLOW.md` and `CURRENT_TASK.md`.
+- `docs/PROJECT_CHARTER.md`.
+- `docs/STATUS.md`.
+- `docs/TODO.md` only when backlog or previously recorded follow-up is directly relevant.
 - Submitted implementation or diff.
 - Accepted architecture and relevant verified runtime evidence.
+
+TODO items are not acceptance criteria unless `CURRENT_TASK.md` or another accepted task definition makes them part of the reviewed task. Do not reject an implementation merely because unrelated TODO work remains.
 
 ## Outputs
 

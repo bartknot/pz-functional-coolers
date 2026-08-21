@@ -28,7 +28,12 @@ The Test Analyst asks what happened in this experiment; the Researcher asks what
 ## Canonical Inputs
 
 - `AI_WORKFLOW.md` and `CURRENT_TASK.md`.
+- `docs/PROJECT_CHARTER.md`.
+- `docs/STATUS.md`.
+- Relevant testing items from `docs/TODO.md` when useful.
 - Harness state, runtime logs, and the Researcher question being tested.
+
+`CURRENT_TASK.md` remains authoritative for an active experiment protocol; `docs/TODO.md` does not alter it. `docs/STATUS.md` provides project context and recorded findings but does not replace run-specific evidence. `docs/PROJECT_CHARTER.md` provides product context but does not predetermine experimental conclusions.
 
 ## Outputs
 

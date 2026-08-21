@@ -29,8 +29,13 @@ Classify evidence where relevant as verified observation, inference, hypothesis,
 ## Canonical Inputs
 
 - `AI_WORKFLOW.md` and `CURRENT_TASK.md`.
+- `docs/PROJECT_CHARTER.md`.
+- `docs/STATUS.md`.
+- Relevant research or testing items from `docs/TODO.md` when useful.
 - Runtime logs, test evidence, and source relevant to interpretation.
 - Test Analyst experiment-level reports.
+
+`docs/STATUS.md` may contain recorded historical findings whose raw evidence is not tracked; do not misrepresent them as independently re-verified runtime evidence. `docs/TODO.md` may identify questions for investigation but does not predetermine their answers.
 
 ## Outputs
 

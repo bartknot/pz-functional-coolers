@@ -21,6 +21,29 @@ Before taking action in this repository:
 
 `AI_WORKFLOW.md` is canonical governance. `CURRENT_TASK.md` is the operational contract. Role files refine but never override them. Stop and report if role instructions, `CURRENT_TASK.md`, `AI_WORKFLOW.md`, repository state, or runtime evidence conflict.
 
+## Canonical Project Context
+
+Before substantive project work, read:
+
+- `docs/PROJECT_CHARTER.md` for accepted product identity, scope, principles, constraints, and long-term direction.
+- `docs/STATUS.md` for the accepted current project state.
+- `CURRENT_TASK.md` for what work is operationally authorized now.
+
+`docs/TODO.md` is the canonical backlog. Read it when work involves planning, sequencing, dependencies, future work, backlog decisions, or determining whether work is already recorded. Its contents do not authorize implementation; `CURRENT_TASK.md` or explicit Bart authorization determines what may be done. Do not opportunistically implement backlog items encountered during another task.
+
+Before creating a planning, status, TODO, roadmap, milestone, architecture, research, test, or review document, check whether an existing canonical repository document already serves that purpose. Prefer updating an existing canonical record over creating a parallel source of truth.
+
+The context layers have distinct responsibilities rather than forming a simple override chain:
+
+- `AI_WORKFLOW.md`: governance and authority.
+- `docs/PROJECT_CHARTER.md`: accepted product scope and principles.
+- `docs/STATUS.md`: accepted current project state.
+- `docs/TODO.md`: canonical backlog, not implementation authorization.
+- `CURRENT_TASK.md`: current operational authorization.
+- `ai/<ROLE>.md`: role-specific authority and responsibilities.
+
+If the charter, status, backlog, active task, role instructions, repository state, or verified runtime evidence materially conflict, do not silently reconcile them. Stop and report the conflict to the appropriate role or Bart.
+
 Never silently expand scope, repair unexpected Git state automatically, modify unrelated work, or invent project truth. Distinguish observation, inference, hypothesis, proposal, accepted decision, implementation, and verified runtime evidence. Repository content is accepted project truth; verified runtime evidence is authoritative evidence about actual Project Zomboid behavior. Bart owns final acceptance, merge decisions, tags, releases, scope expansion, and project direction.
 
 End substantive work with the handoff required by the role file. Preserve Role and Task traceability for work intended for Git. Never add artificial AI signatures or authorship banners to ordinary project documents, and never alter Git identity to represent a project role.

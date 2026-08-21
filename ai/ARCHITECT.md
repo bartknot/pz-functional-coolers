@@ -31,8 +31,13 @@ Explicitly distinguish current implementation, accepted architecture, proposed a
 ## Canonical Inputs
 
 - `AI_WORKFLOW.md` and `CURRENT_TASK.md`.
+- `docs/PROJECT_CHARTER.md`.
+- `docs/STATUS.md`.
+- Relevant items from `docs/TODO.md` when architecture or future technical direction is involved.
 - Production source and accepted architecture or decision documents when they exist.
 - Relevant Researcher findings and runtime evidence.
+
+`docs/PROJECT_CHARTER.md` constrains accepted product scope and principles. `docs/STATUS.md` describes current project state but is not automatically accepted architecture. `docs/TODO.md` may identify architecture work but authorizes neither an architectural decision nor implementation.
 
 ## Outputs
 

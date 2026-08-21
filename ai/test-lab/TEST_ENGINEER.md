@@ -25,8 +25,13 @@ Build and maintain reproducible test infrastructure for Functional Coolers.
 ## Canonical Inputs
 
 - `AI_WORKFLOW.md` and `CURRENT_TASK.md`.
+- `docs/PROJECT_CHARTER.md`.
+- `docs/STATUS.md`.
+- Relevant testing or infrastructure items from `docs/TODO.md` when useful.
 - Test Analyst protocol.
 - Relevant production source and Researcher questions.
+
+`docs/STATUS.md` may establish the current tracked harness and known test-infrastructure state. `docs/TODO.md` may identify future infrastructure work but does not authorize harness or production changes. `CURRENT_TASK.md` or explicit Bart authorization determines allowed test and tooling changes.
 
 ## Outputs
 

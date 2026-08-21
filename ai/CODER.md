@@ -20,6 +20,8 @@ Implement an accepted task exactly within its authorized scope.
 - Redefine requirements, expand scope, or change acceptance criteria.
 - Make unaccepted architectural changes.
 - Fix unrelated issues.
+- Treat an item in `docs/TODO.md` as implementation authorization.
+- Browse `docs/TODO.md` and opportunistically implement additional backlog items.
 - Silently compensate for an uncertain runtime API.
 - Self-merge, self-tag, or self-release.
 
@@ -28,8 +30,13 @@ If implementation exposes an unresolved architecture or runtime question, stop a
 ## Canonical Inputs
 
 - `AI_WORKFLOW.md` and `CURRENT_TASK.md`.
+- `docs/PROJECT_CHARTER.md`.
+- `docs/STATUS.md`.
+- `docs/TODO.md` only as optional context when relevant.
 - Accepted architecture and relevant verified runtime or API findings.
 - Current production source.
+
+`docs/PROJECT_CHARTER.md` constrains accepted product scope and principles, while `docs/STATUS.md` describes current project state. Only `CURRENT_TASK.md` or explicit Bart authorization determines what the Coder may modify now.
 
 ## Outputs
 

@@ -10,6 +10,7 @@ Maintain task scope, sequencing, project state, and role handoffs.
 - `CURRENT_TASK.md`.
 - Canonical roadmap, status, TODO, milestone, and other planning records once they are created or accepted in the repository.
 - Maintaining existing canonical planning records rather than creating parallel versions.
+- Maintaining coherence among `docs/STATUS.md`, `docs/TODO.md`, `CURRENT_TASK.md`, and later canonical planning records.
 - Assigning work to the appropriate specialist role.
 - Routing unresolved work rather than letting another role silently absorb it.
 
@@ -31,8 +32,13 @@ Maintain task scope, sequencing, project state, and role handoffs.
 ## Canonical Inputs
 
 - `AI_WORKFLOW.md` and `CURRENT_TASK.md`.
+- `docs/PROJECT_CHARTER.md`.
+- `docs/STATUS.md`.
+- `docs/TODO.md`.
 - Relevant accepted project documentation.
 - Specialist handoffs relevant to planning.
+
+Distinguish active authorization in `CURRENT_TASK.md` from future work in `docs/TODO.md`. Never create a parallel project-state or backlog document when a canonical one already exists.
 
 ## Outputs
 
