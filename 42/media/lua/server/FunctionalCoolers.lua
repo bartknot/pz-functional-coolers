@@ -11,6 +11,11 @@ local FC = {}
 --   1 frozen steak
 --   direct in player inventory
 --
+-- FRIDGE:
+--   1 verse steak
+--   1 frozen steak
+--   powered vanilla refrigerator
+--
 -- P0:
 --   1 verse steak
 --   1 frozen steak
@@ -57,9 +62,14 @@ local COLDPACK_EXCHANGE_RATE = 0.12
 local FREEZER_RECHARGE_RATE = 0.25
 
 local FREEZER_SCAN_RADIUS = 8
+local FRIDGE_SCAN_RADIUS = 8
 local GROUND_SCAN_RADIUS = 10
 
 local LOG_INTERVAL = 10
+
+-- Lightweight vanilla/context diagnostics run every game minute so
+-- short container-selection/opening events are less likely to be missed.
+local DIAGNOSTIC_LOG_INTERVAL = 1
 
 -- Time-based simulation.
 -- The current calibration world uses FoodRotSpeed = 3 (Normal).
@@ -77,6 +87,7 @@ local CATCHUP_STEP_MINUTES = 5.0
 local CATCHUP_THRESHOLD_MINUTES = 60.0
 
 local TEST_ACTIVE = false
+local TEST_FRIDGE = nil
 local tickCounter = 0
 
 
@@ -213,6 +224,83 @@ local function getWorldAgeHours()
             return getGameTime():getWorldAgeHours()
         end,
         nil
+    )
+end
+
+
+local function getContainerType(container)
+
+    if not container then
+        return "NONE"
+    end
+
+    return tostring(
+        safeValue(
+            function()
+                return container:getType()
+            end,
+            "UNAVAILABLE"
+        )
+    )
+end
+
+
+local function getContainerActive(container)
+
+    if not container then
+        return "NONE"
+    end
+
+    return safeValue(
+        function()
+            return container:isActive()
+        end,
+        "UNAVAILABLE"
+    )
+end
+
+
+local function getItemContext(item)
+
+    local outer =
+        safeValue(
+            function()
+                return item:getOutermostContainer()
+            end,
+            nil
+        )
+
+    return {
+        inPlayerInventory =
+            safeValue(
+                function()
+                    return item:isInPlayerInventory()
+                end,
+                "UNAVAILABLE"
+            ),
+
+        outerType =
+            getContainerType(outer),
+
+        outerActive =
+            getContainerActive(outer)
+    }
+end
+
+
+local function getOptionalItemID(item)
+
+    if not item then
+        return "NONE"
+    end
+
+    return tostring(
+        safeValue(
+            function()
+                return item:getID()
+            end,
+            "UNAVAILABLE"
+        )
     )
 end
 
@@ -663,6 +751,53 @@ local function inspectContents(cooler)
 end
 
 
+local function inspectSteakContainer(container)
+
+    local result = {
+        steaks = 0,
+        frozenSteaks = 0,
+        freshSteaks = 0
+    }
+
+    if not container then
+        return result
+    end
+
+    local items =
+        container:getItems()
+
+    for i = 0, items:size() - 1 do
+
+        local item =
+            items:get(i)
+
+        if getFullType(item) == "Base.Steak" then
+
+            result.steaks =
+                result.steaks + 1
+
+            local freeze =
+                safeNumber(
+                    function()
+                        return item:getFreezingTime()
+                    end,
+                    0
+                )
+
+            if freeze > 50 then
+                result.frozenSteaks =
+                    result.frozenSteaks + 1
+            else
+                result.freshSteaks =
+                    result.freshSteaks + 1
+            end
+        end
+    end
+
+    return result
+end
+
+
 ------------------------------------------------------------
 -- Find named carried coolers
 ------------------------------------------------------------
@@ -849,6 +984,112 @@ end
 
 
 ------------------------------------------------------------
+-- Find nearest powered refrigerator
+------------------------------------------------------------
+
+local function findNearbyPoweredFridge(player)
+
+    local playerSquare =
+        player:getSquare()
+
+    if not playerSquare then
+        return nil
+    end
+
+    local cell =
+        getCell()
+
+    local px =
+        playerSquare:getX()
+
+    local py =
+        playerSquare:getY()
+
+    local pz =
+        playerSquare:getZ()
+
+    local best = nil
+    local bestDistanceSquared = nil
+
+    for x = px - FRIDGE_SCAN_RADIUS,
+            px + FRIDGE_SCAN_RADIUS do
+
+        for y = py - FRIDGE_SCAN_RADIUS,
+                py + FRIDGE_SCAN_RADIUS do
+
+            local square =
+                cell:getGridSquare(
+                    x,
+                    y,
+                    pz
+                )
+
+            if square then
+
+                local objects =
+                    square:getObjects()
+
+                for objectIndex = 0,
+                    objects:size() - 1 do
+
+                    local object =
+                        objects:get(objectIndex)
+
+                    local count =
+                        object:getContainerCount()
+
+                    for containerIndex = 0,
+                        count - 1 do
+
+                        local container =
+                            object:getContainerByIndex(
+                                containerIndex
+                            )
+
+                        if container
+                        and getContainerType(container) == "fridge" then
+
+                            local powered =
+                                safeValue(
+                                    function()
+                                        return container:isPowered()
+                                    end,
+                                    false
+                                )
+
+                            if powered then
+
+                                local dx = x - px
+                                local dy = y - py
+                                local distanceSquared =
+                                    dx * dx + dy * dy
+
+                                if bestDistanceSquared == nil
+                                or distanceSquared < bestDistanceSquared then
+
+                                    bestDistanceSquared =
+                                        distanceSquared
+
+                                    best = {
+                                        container = container,
+                                        x = x,
+                                        y = y,
+                                        z = pz
+                                    }
+                                end
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end
+
+    return best
+end
+
+
+------------------------------------------------------------
 -- Direct player inventory controls
 ------------------------------------------------------------
 
@@ -1028,7 +1269,71 @@ local function checkReadiness(player, groups, printStatus)
     end
 
 
-    return ready
+    --------------------------------------------------------
+    -- Powered refrigerator control
+    --------------------------------------------------------
+
+    local fridge =
+        findNearbyPoweredFridge(player)
+
+    local fridgeReady = false
+
+    if fridge then
+
+        local contents =
+            inspectSteakContainer(
+                fridge.container
+            )
+
+        fridgeReady =
+            contents.steaks == 2
+            and contents.freshSteaks == 1
+            and contents.frozenSteaks == 1
+
+        if printStatus then
+
+            print(
+                "[FC-READY]"
+                .. " group=FRIDGE"
+                .. " | status="
+                .. (
+                    fridgeReady
+                    and "READY"
+                    or "WAITING"
+                )
+                .. " | location="
+                .. tostring(fridge.x)
+                .. ","
+                .. tostring(fridge.y)
+                .. ","
+                .. tostring(fridge.z)
+                .. " | steaks="
+                .. tostring(contents.steaks)
+                .. " | fresh="
+                .. tostring(contents.freshSteaks)
+                .. " | frozen="
+                .. tostring(contents.frozenSteaks)
+            )
+        end
+
+    elseif printStatus then
+
+        print(
+            "[FC-READY]"
+            .. " group=FRIDGE"
+            .. " | status=MISSING"
+            .. " | expected=powered fridge within "
+            .. tostring(FRIDGE_SCAN_RADIUS)
+            .. " tiles"
+        )
+    end
+
+    if not fridgeReady then
+        ready = false
+    end
+
+
+    return ready, fridge
 end
 
 
@@ -1314,6 +1619,387 @@ local function logControls(player, phase)
             )
         end
     end
+end
+
+
+------------------------------------------------------------
+-- Vanilla/context diagnostics
+------------------------------------------------------------
+
+local function logVanillaFoodContext(
+    item,
+    group,
+    location,
+    phase
+)
+
+    local nowHours =
+        getWorldAgeHours()
+
+    local lastAged =
+        safeNumber(
+            function()
+                return item:getLastAged()
+            end,
+            nil
+        )
+
+    local lastAgedLagHours =
+        "UNAVAILABLE"
+
+    if nowHours ~= nil
+    and lastAged ~= nil then
+
+        lastAgedLagHours =
+            nowHours - lastAged
+    end
+
+    local context =
+        getItemContext(item)
+
+    print(
+        "[FC-VANILLA]"
+        .. " phase=" .. phase
+        .. " | group=" .. group
+        .. " | location=" .. location
+        .. " | worldHours="
+        .. tostring(nowHours)
+        .. " | id="
+        .. tostring(item:getID())
+        .. " | age="
+        .. tostring(
+            safeNumber(
+                function()
+                    return item:getAge()
+                end,
+                -1
+            )
+        )
+        .. " | heat="
+        .. tostring(
+            safeNumber(
+                function()
+                    return item:getHeat()
+                end,
+                -1
+            )
+        )
+        .. " | freeze="
+        .. tostring(
+            safeNumber(
+                function()
+                    return item:getFreezingTime()
+                end,
+                -1
+            )
+        )
+        .. " | lastAged="
+        .. tostring(lastAged)
+        .. " | lastAgedLagHours="
+        .. tostring(lastAgedLagHours)
+        .. " | inPlayerInventory="
+        .. tostring(context.inPlayerInventory)
+        .. " | outerType="
+        .. tostring(context.outerType)
+        .. " | outerActive="
+        .. tostring(context.outerActive)
+        .. " | frozen="
+        .. tostring(
+            safeValue(
+                function()
+                    return item:isFrozen()
+                end,
+                "UNAVAILABLE"
+            )
+        )
+        .. " | thawing="
+        .. tostring(
+            safeValue(
+                function()
+                    return item:isThawing()
+                end,
+                "UNAVAILABLE"
+            )
+        )
+    )
+end
+
+
+local function logPlayerContext(player, phase)
+
+    local inventory =
+        player:getInventory()
+
+    local primary =
+        safeValue(
+            function()
+                return player:getPrimaryHandItem()
+            end,
+            nil
+        )
+
+    local secondary =
+        safeValue(
+            function()
+                return player:getSecondaryHandItem()
+            end,
+            nil
+        )
+
+    print(
+        "[FC-PLAYER-CONTEXT]"
+        .. " phase=" .. phase
+        .. " | worldHours="
+        .. tostring(getWorldAgeHours())
+        .. " | inventoryActive="
+        .. tostring(
+            getContainerActive(inventory)
+        )
+        .. " | primaryID="
+        .. getOptionalItemID(primary)
+        .. " | primaryType="
+        .. (
+            primary
+            and getFullType(primary)
+            or "NONE"
+        )
+        .. " | secondaryID="
+        .. getOptionalItemID(secondary)
+        .. " | secondaryType="
+        .. (
+            secondary
+            and getFullType(secondary)
+            or "NONE"
+        )
+    )
+end
+
+
+local function logCoolerContext(
+    player,
+    cooler,
+    group,
+    location,
+    phase
+)
+
+    local container =
+        getCoolerContainer(cooler)
+
+    local context =
+        getItemContext(cooler)
+
+    local primary =
+        safeValue(
+            function()
+                return player:getPrimaryHandItem()
+            end,
+            nil
+        )
+
+    local secondary =
+        safeValue(
+            function()
+                return player:getSecondaryHandItem()
+            end,
+            nil
+        )
+
+    print(
+        "[FC-CONTEXT]"
+        .. " phase=" .. phase
+        .. " | group=" .. group
+        .. " | location=" .. location
+        .. " | worldHours="
+        .. tostring(getWorldAgeHours())
+        .. " | id="
+        .. tostring(cooler:getID())
+        .. " | inPlayerInventory="
+        .. tostring(context.inPlayerInventory)
+        .. " | outerType="
+        .. tostring(context.outerType)
+        .. " | outerActive="
+        .. tostring(context.outerActive)
+        .. " | containerActive="
+        .. tostring(
+            getContainerActive(container)
+        )
+        .. " | primaryHand="
+        .. tostring(primary == cooler)
+        .. " | secondaryHand="
+        .. tostring(secondary == cooler)
+    )
+end
+
+
+local function logFridgeSnapshot(fridge, phase)
+
+    if not fridge
+    or not fridge.container then
+
+        print(
+            "[FC-FRIDGE]"
+            .. " phase=" .. phase
+            .. " | status=MISSING"
+        )
+
+        return
+    end
+
+    local container =
+        fridge.container
+
+    local contents =
+        inspectSteakContainer(container)
+
+    print(
+        "[FC-FRIDGE]"
+        .. " phase=" .. phase
+        .. " | worldHours="
+        .. tostring(getWorldAgeHours())
+        .. " | location="
+        .. tostring(fridge.x)
+        .. ","
+        .. tostring(fridge.y)
+        .. ","
+        .. tostring(fridge.z)
+        .. " | powered="
+        .. tostring(
+            safeValue(
+                function()
+                    return container:isPowered()
+                end,
+                "UNAVAILABLE"
+            )
+        )
+        .. " | containerActive="
+        .. tostring(
+            getContainerActive(container)
+        )
+        .. " | temperature="
+        .. tostring(
+            safeNumber(
+                function()
+                    return container:getTemprature()
+                end,
+                -1
+            )
+        )
+        .. " | customTemperature="
+        .. tostring(
+            safeNumber(
+                function()
+                    return container:getCustomTemperature()
+                end,
+                -1
+            )
+        )
+        .. " | steaks="
+        .. tostring(contents.steaks)
+        .. " | fresh="
+        .. tostring(contents.freshSteaks)
+        .. " | frozen="
+        .. tostring(contents.frozenSteaks)
+    )
+
+    local items =
+        container:getItems()
+
+    for i = 0, items:size() - 1 do
+
+        local item =
+            items:get(i)
+
+        if getFullType(item) == "Base.Steak" then
+
+            logVanillaFoodContext(
+                item,
+                "FRIDGE",
+                "FRIDGE",
+                phase
+            )
+        end
+    end
+end
+
+
+local function logDiagnosticSnapshot(
+    player,
+    groups,
+    fridge,
+    phase
+)
+
+    logPlayerContext(
+        player,
+        phase
+    )
+
+    for _, name in ipairs(GROUP_ORDER) do
+
+        local cooler =
+            groups[name]
+
+        if cooler then
+
+            logCoolerContext(
+                player,
+                cooler,
+                name,
+                GROUPS[name].location,
+                phase
+            )
+
+            local container =
+                getCoolerContainer(cooler)
+
+            if container then
+
+                local items =
+                    container:getItems()
+
+                for i = 0, items:size() - 1 do
+
+                    local item =
+                        items:get(i)
+
+                    if getFullType(item) == "Base.Steak" then
+
+                        logVanillaFoodContext(
+                            item,
+                            name,
+                            GROUPS[name].location,
+                            phase
+                        )
+                    end
+                end
+            end
+        end
+    end
+
+    local controlItems =
+        player:getInventory():getItems()
+
+    for i = 0, controlItems:size() - 1 do
+
+        local item =
+            controlItems:get(i)
+
+        if getFullType(item) == "Base.Steak" then
+
+            logVanillaFoodContext(
+                item,
+                "CONTROL",
+                "PLAYER_INVENTORY",
+                phase
+            )
+        end
+    end
+
+    logFridgeSnapshot(
+        fridge,
+        phase
+    )
 end
 
 
@@ -2016,10 +2702,15 @@ end
 
 local function startTest(
     player,
-    groups
+    groups,
+    fridge
 )
 
     prepareTestStart(groups)
+
+
+    TEST_FRIDGE =
+        fridge
 
 
     TEST_ACTIVE =
@@ -2080,6 +2771,14 @@ local function startTest(
         player,
         "START"
     )
+
+
+    logDiagnosticSnapshot(
+        player,
+        groups,
+        TEST_FRIDGE,
+        "START"
+    )
 end
 
 
@@ -2132,7 +2831,7 @@ function FC.tick()
 
     if not TEST_ACTIVE then
 
-        local ready =
+        local ready, fridge =
             checkReadiness(
                 player,
                 groups,
@@ -2144,7 +2843,8 @@ function FC.tick()
 
             startTest(
                 player,
-                groups
+                groups,
+                fridge
             )
         end
 
@@ -2190,6 +2890,25 @@ function FC.tick()
             "RUN"
         )
     end
+
+
+    local doDiagnosticLog =
+        (
+            tickCounter
+            % DIAGNOSTIC_LOG_INTERVAL
+            == 0
+        )
+
+
+    if doDiagnosticLog then
+
+        logDiagnosticSnapshot(
+            player,
+            groups,
+            TEST_FRIDGE,
+            "RUN"
+        )
+    end
 end
 
 
@@ -2199,5 +2918,6 @@ Events.EveryOneMinute.Add(
 
 
 print(
-    "[FC] Functional Coolers Prototype v0.3.0-dev loaded."
+    "[FC] Functional Coolers Prototype v0.3.0-dev loaded"
+    .. " | diagnostics=FRIDGE_CONTEXT"
 )
