@@ -168,6 +168,14 @@ Do not assume beforehand that opening, selecting, or inspecting a container caus
 
 None to production source for this task.
 
+Test infrastructure exception for FC-003:
+
+- The already working Functional Coolers Test Harness may be imported unchanged into:
+  `tools/test-harness/FunctionalCoolersTestHarness/`
+- A minimal README may document its purpose, runtime deployment target, and known harness version/state.
+- No behavioral changes to the harness are authorized.
+- Nothing under `42/` production source may be changed.
+
 This task is runtime validation and evidence collection.
 
 If a defect is discovered that appears to require a source change:
