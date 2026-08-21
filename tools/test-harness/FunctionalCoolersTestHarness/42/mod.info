@@ -1,0 +1,4 @@
+name=Functional Coolers Test Harness
+id=FunctionalCoolersTestHarness
+description=Creates a reproducible single-player calibration setup for Functional Coolers.
+modversion=0.3.7
