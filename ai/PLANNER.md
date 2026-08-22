@@ -8,6 +8,7 @@ Maintain task scope, sequencing, project state, and role handoffs.
 
 - Task sequencing and scope.
 - `CURRENT_TASK.md`.
+- Canonical superseded task definitions under `docs/tasks/<TASK-ID>.md`.
 - Canonical roadmap, status, TODO, milestone, and other planning records once they are created or accepted in the repository.
 - Maintaining existing canonical planning records rather than creating parallel versions.
 - Maintaining coherence among `docs/STATUS.md`, `docs/TODO.md`, `CURRENT_TASK.md`, and later canonical planning records.
@@ -42,6 +43,8 @@ Maintain task scope, sequencing, project state, and role handoffs.
 - Specialist handoffs relevant to planning.
 
 Distinguish active authorization in `CURRENT_TASK.md` from future work in `docs/TODO.md`. Never create a parallel project-state or backlog document when a canonical one already exists.
+
+Before replacing `CURRENT_TASK.md` with a successor task, preserve the superseded final canonical task definition under `docs/tasks/<TASK-ID>.md`. Archived task definitions preserve historical scope and authorization but never grant current authority.
 
 Use accepted experiment records to determine whether a run completed, a task remains unresolved, a protocol needs revision, a follow-up test is needed, a finding should be routed to Researcher, or canonical project state may require an authorized update. Do not reconstruct experiment history from Codex conversations when a canonical record exists.
 

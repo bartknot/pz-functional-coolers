@@ -4,9 +4,9 @@
 
 - Repository: `pz-functional-coolers`
 - Branch at this snapshot: `main`
-- Inspected HEAD: `5988ff89430fc6f7749630d2912e755eda8cae66`
+- Canonical evidence and workflow inspected through HEAD: `9ecb059c9f2147c9baf0dfcaee670b5ab75b679d`
 - Runtime baseline recorded by the active task: Project Zomboid Build 42.20.3
-- Active task: FC-003, status `TESTING`
+- Active task: FC-004, status `PROTOCOL DESIGN`
 - Production source identifies itself as `Prototype v0.3.0-dev`.
 - The elapsed-time simulation and FRIDGE/context diagnostics are committed.
 - The Functional Coolers Test Harness is tracked in the same repository.
@@ -48,6 +48,23 @@ The following are recorded project findings from the historical reports accepted
 
 These findings constrain further work but do not establish undocumented causes for vanilla refresh behavior.
 
+## Canonical FC-003 Evidence Findings
+
+FC-003 is complete as an evidence task. Its canonical evidence chain consists of:
+
+- `docs/tests/runs/FC-003-2026-08-21.md` — INVALID run.
+- `docs/tests/runs/FC-003-2026-08-22.md` — VALID run.
+- `docs/research/FC-003-2026-08-22.md` — accepted Researcher synthesis.
+- The raw runtime artifacts referenced by both run records.
+
+Its superseded final task definition and protocol scope are preserved separately in `docs/tasks/FC-003.md`.
+
+The accepted synthesis establishes, within the tested valid run, that brief equip/inspection was not necessary for the observed carried-Cooler and CONTROL `lastAged` catch-ups: those catch-ups occurred before the recorded intervention in both observation windows.
+
+P1G and powered FRIDGE refreshed later than carried/CONTROL in the first valid observation window and before their own inspection. The context timing difference is established for that run, while its mechanism and generality require replication.
+
+The approximately two-game-hour carried/CONTROL recurrence is meaningful candidate evidence for a periodic or threshold-based vanilla mechanism, but one valid run and two intervals do not establish a general period or distinguish a timer from a threshold processed at an update opportunity.
+
 ## Test Infrastructure
 
 The tracked Functional Coolers Test Harness is located at `tools/test-harness/FunctionalCoolersTestHarness/`.
@@ -61,13 +78,16 @@ Its source prepares the fixed single-player calibration setup, named Cooler grou
 
 ## Current Active Investigation
 
-FC-003 investigates whether vanilla Food timing/context state changes around container access or inactivity. It uses a controlled A/B/C/D sequence with Cooler groups, CONTROL, and a powered FRIDGE reference.
+FC-004 is the active protocol-design task. It will define a matched comparison between a Cooler held selected/active throughout an extended waiting period and an otherwise equivalent Cooler left unselected in the same physical context.
 
-The current diagnostics passed the smoke test recorded in `CURRENT_TASK.md`. The first full attempt was invalid because P0, P1, P2, and P4 were not moved into player inventory and not all required groups were READY. No experimental conclusion may be drawn from that attempt. A valid complete A/B/C/D run remains pending.
+The Test Analyst owns protocol design and validity criteria. Runtime execution is not yet authorized. Any required harness or diagnostic improvement must be identified separately and routed to Test Engineer rather than confused with the empirical question.
 
 ## Known Limitations and Unresolved Questions
 
-- The trigger and significance of lazy vanilla Food refresh remain unresolved.
+- The vanilla processing path responsible for pre-inspection carried/CONTROL catch-up remains unresolved.
+- Sustained selected/active state versus unselected state has not been tested.
+- The approximately two-game-hour recurrence requires replication and varied-duration testing.
+- Complete repeated timing for P1G and FRIDGE remains unresolved.
 - Long unattended, chunk-unloaded, save/load, and 24/72-hour catch-up are unvalidated.
 - Freeze/thaw semantics and rates require further characterization and calibration.
 - Real local ambient, indoor/outdoor, and vehicle boundary conditions are not integrated.
@@ -87,4 +107,4 @@ These inconsistencies are recorded here, not fixed by this status task.
 
 ## Current Development Position
 
-The project has moved beyond the superseded vanilla-delta approach to an elapsed-time managed prototype. The immediate priority is evidence: execute a valid FC-003 run, preserve its output, classify the run, and determine what it supports before changing production behavior. Environment guards, deeper persistence work, calibration, additional contexts, multiplayer, UX, and release preparation follow through separately accepted tasks.
+The project has moved beyond the superseded vanilla-delta approach to an elapsed-time managed prototype and completed the FC-003 evidence chain. The immediate priority is to design, review, and then separately authorize FC-004 so sustained selected/active state can be compared with an unselected matched control. No architecture or production change follows automatically from FC-003. Environment guards, deeper persistence work, calibration, additional contexts, multiplayer, UX, and release preparation remain separately sequenced work.

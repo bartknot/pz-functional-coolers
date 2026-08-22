@@ -184,4 +184,6 @@ An AI must stop and report rather than continue when:
 
 A role definition grants general responsibility, but `CURRENT_TASK.md` defines what is authorized now.
 
+When an active task is superseded, preserve its final canonical task definition under `docs/tasks/<TASK-ID>.md`. `CURRENT_TASK.md` remains reserved for the single active task; archived task definitions provide historical scope and authorization context but do not authorize current work.
+
 If the two conflict, stop and report rather than choosing an interpretation silently.

@@ -2,237 +2,116 @@
 
 ## ID
 
-FC-003
+FC-004
 
 ## Status
 
-TESTING
+PROTOCOL DESIGN
 
 ## Objective
 
-Validate the newly added FRIDGE and context diagnostics and execute the controlled A/B/C/D runtime experiment intended to characterize vanilla food refresh/catch-up behavior across cooler contexts and a powered refrigerator control.
+Design a controlled matched experiment that tests whether keeping a Cooler selected/active throughout an extended waiting period changes vanilla Food `lastAged` catch-up timing relative to an otherwise equivalent Cooler left unselected.
+
+This task defines and reviews the protocol only. Runtime execution begins only after Bart accepts the completed protocol.
 
 ## Why
 
-The elapsed-time simulation fixed the previously observed carried-versus-ground discrepancy, but vanilla Food timing fields such as `lastAged` appear to refresh lazily or irregularly.
+The canonical FC-003 evidence established that brief equip/inspection was not necessary for the observed carried-Cooler and CONTROL catch-ups in the valid 2026-08-22 run. It did not determine whether sustained selected/active state has an additional effect.
 
-The current diagnostics were added to observe vanilla timing and player/container context without yet changing the thermal model.
+The FC-003 Researcher synthesis identifies a matched sustained selected/active-versus-unselected comparison as more informative than simply repeating the same brief-inspection A/B/C/D sequence.
 
-## Current State
+## Canonical Evidence
 
-- Project Zomboid runtime baseline is Build 42.20.3.
-- Elapsed-time simulation is committed.
-- FRIDGE/context diagnostics are committed.
-- Diagnostics passed an initial runtime smoke test.
-- The load marker `diagnostics=FRIDGE_CONTEXT` was observed.
-- FRIDGE detection and readiness reporting were observed working.
-- The first full experiment attempt was invalid.
-- P0, P1, P2, and P4 had not been moved into player inventory.
-- Therefore, not all required groups were READY.
-- No experimental conclusions may be drawn from that run.
+- `docs/tasks/FC-003.md` — preserved final canonical FC-003 task definition and protocol scope.
+- `docs/tests/runs/FC-003-2026-08-21.md` — INVALID run, usable only for the narrower diagnostic observations preserved by its Test Analyst record.
+- `docs/tests/runs/FC-003-2026-08-22.md` — VALID run.
+- `docs/research/FC-003-2026-08-22.md` — accepted cross-run Researcher synthesis.
+- Raw runtime artifacts referenced by the two canonical run records.
 
-## Calibration Preconditions
+## Research Question
 
-The controlled calibration sandbox must use:
+Does a Cooler held selected/active throughout an extended waiting period show different vanilla Food `lastAged` catch-up timing from an otherwise matched Cooler left unselected in the same physical context?
 
-- `DayLength = 4`
-- `FoodRotSpeed = 3`
-- `FridgeFactor = 3`
+This question must remain distinct from:
 
-If these values differ, do not treat the run as a valid calibration experiment.
+- whether brief equip or inspection is necessary;
+- which vanilla mechanism implements catch-up;
+- whether the approximately two-game-hour recurrence is a fixed period, a threshold, or a threshold processed at an update opportunity.
 
-The Functional Coolers Test Harness must reach:
+The protocol may collect evidence relevant to those questions but must not claim to answer them in advance.
 
-```text
-[FCTH] status=READY_TO_DISTRIBUTE
-```
+## Assigned Role and Sequence
 
-before manual distribution begins.
+1. Test Analyst designs the controlled protocol and validity criteria.
+2. Test Analyst identifies any observability or reproducibility requirement that belongs to Test Engineer.
+3. Planner checks scope and sequencing without replacing Test Analyst experimental judgment.
+4. Bart reviews and accepts the protocol and any separately proposed infrastructure task.
+5. Runtime execution, evidence persistence, run classification, and Researcher synthesis occur only through subsequently authorized steps.
 
-## Required Test Groups
+## Protocol Design Requirements
 
-### P0
+The proposed protocol must:
 
-- `Base.Cooler`
-- 0 cold packs
-- 1 fresh steak
-- 1 frozen steak
-- Carried in player inventory during measurement
+- Use otherwise matched Cooler groups with equivalent contents and starting state.
+- Hold both groups in the same physical context unless the protocol explicitly identifies context as a separate controlled factor.
+- Keep one group selected/active for the defined measurement interval and the matched group unselected.
+- Avoid inspection, transfer, item movement, or other unequal intervention during the measurement interval.
+- Define how selected/active state is established and verified without assuming that UI appearance proves runtime state.
+- Define an authoritative readiness snapshot for group identity, location, contents, fresh/frozen state, and any required cold-pack state.
+- Record exact `worldHours` boundaries for baseline, intervention, and observation windows.
+- Sample long enough before and after the candidate two-game-hour threshold to capture delayed P1G/FRIDGE-like behavior where relevant.
+- Define whether varied waiting durations are required to help distinguish fixed-period behavior from threshold/update-opportunity behavior.
+- Define controls, validity criteria, invalidating deviations, evidence limitations, and required Bart-supplied execution metadata.
+- Preserve raw runtime evidence and produce a canonical Test Analyst run record after any authorized execution.
 
-### P1
+The Test Analyst should prefer the smallest design that isolates sustained selected/active state as the primary uncertainty.
 
-- `Base.Cooler`
-- 1 cold pack
-- 1 fresh steak
-- 1 frozen steak
-- Carried in player inventory during measurement
+## Test Infrastructure Boundary
 
-### P2
+Possible infrastructure improvements include:
 
-- `Base.Cooler`
-- 2 cold packs
-- 1 fresh steak
-- 1 frozen steak
-- Carried in player inventory during measurement
+- automatic Cooler filling or distribution;
+- explicit phase markers;
+- stronger final-readiness logging;
+- reliable selected/active-state markers;
+- extended post-intervention sampling.
 
-### P4
-
-- `Base.Cooler`
-- 4 cold packs
-- 1 fresh steak
-- 1 frozen steak
-- Carried in player inventory during measurement
-
-### P1G
-
-- `Base.Cooler`
-- 1 cold pack
-- 1 fresh steak
-- 1 frozen steak
-- Remains on the ground during measurement
-
-### CONTROL
-
-- 1 fresh steak
-- 1 frozen steak
-- Directly in player inventory
-
-### FRIDGE
-
-- Powered vanilla refrigerator
-- 1 fresh steak
-- 1 frozen steak
-
-### NEUTRAL
-
-- Neutral inventory container used as the selected context when no test group is being intentionally inspected
-
-## Readiness Gate
-
-Measurement must not begin until the final readiness evidence confirms all of the following groups:
-
-- P0
-- P1
-- P2
-- P4
-- P1G
-- CONTROL
-- FRIDGE
-
-The readiness gate passes when either:
-
-- all groups explicitly report `READY`; or
-- the authoritative `phase=START` diagnostic snapshot immediately before Phase A shows every group in its expected location with the required steak and cold-pack counts, including one fresh and one nominally frozen steak per group.
-
-`MISSING` or `WAITING` lines recorded before manual distribution and final placement describe an earlier setup state and do not invalidate a run when the later final readiness evidence passes. A run is not ready if the final readiness evidence shows a missing group, wrong location, wrong contents, or loss of the nominally frozen steak before Phase A.
-
-## A/B/C/D Test Procedure
-
-After the readiness gate passes:
-
-Record the current `worldHours` value from diagnostics at the start and end of each phase where practical.
-
-### Phase A
-
-- Select NEUTRAL.
-- Leave all test groups untouched for approximately 2 game hours.
-- Do not move food, cold packs, or coolers.
-
-### Phase B
-
-Use this standardized intervention:
-
-1. Equip P4 and P2, one in each hand.
-2. Inspect P4.
-3. Inspect P2.
-4. Equip P1 and P0, one in each hand, automatically returning P4 and P2 to player inventory.
-5. Inspect P1.
-6. Inspect P0.
-7. Return P1 and P0 to player inventory.
-8. Inspect P1G on the ground.
-9. Inspect FRIDGE.
-10. Select NEUTRAL.
-
-Do not move, transfer, consume, or otherwise manipulate steaks or cold packs. Do not move a Cooler except for the equip and return-to-inventory actions explicitly required by this intervention.
-
-The P4/P2 and P1/P0 pairings and the inspection sequence are validity requirements. Which Cooler occupies the primary or secondary hand is execution metadata, not a validity criterion; record the observed hand assignment where diagnostics make it available.
-
-### Phase C
-
-- Leave all groups untouched for approximately another 2 game hours.
-- Keep NEUTRAL selected.
-- Do not alter the setup.
-
-### Phase D
-
-- Repeat the complete standardized Phase B intervention using the same pairings and inspection sequence. Primary and secondary hand assignment may differ from Phase B without invalidating the run.
-- Do not move, transfer, consume, or otherwise manipulate steaks or cold packs. Do not move a Cooler except for the equip and return-to-inventory actions explicitly required by the standardized intervention.
-
-The purpose is to observe whether vanilla timing/context state changes around access or inactivity.
-
-Do not assume beforehand that opening, selecting, or inspecting a container causes a refresh. The experiment is intended to determine that empirically.
+These are infrastructure candidates, not empirical conclusions and not automatically authorized work. If the protocol requires a harness or diagnostic change, the Test Analyst must identify the minimum requirement and hand it to Test Engineer through a separate Bart-authorized task.
 
 ## Allowed Changes
 
-None to production source for this task.
-
-Test infrastructure exception for FC-003:
-
-- The already working Functional Coolers Test Harness may be imported unchanged into:
-  `tools/test-harness/FunctionalCoolersTestHarness/`
-- A minimal README may document its purpose, runtime deployment target, and known harness version/state.
-- No behavioral changes to the harness are authorized.
-- Nothing under `42/` production source may be changed.
-
-Project documentation exception for FC-003:
-
-- `docs/PROJECT_CHARTER.md`, `docs/STATUS.md`, and `docs/TODO.md` may be created and reviewed.
-- FC-003 remains the active operational task.
-- This exception does not authorize production changes or harness behavioral changes.
-- These documents may record accepted product scope, current project state, and backlog.
-- They must not invent architecture or runtime conclusions.
-- `CURRENT_TASK.md` remains authoritative for what is operationally authorized now.
-
-This task is runtime validation and evidence collection.
-
-If a defect is discovered that appears to require a source change:
-
-- Stop.
-- Record the evidence.
-- Create or request a separate implementation task.
-
-Do not fix production code as part of FC-003.
+- No production source changes are authorized.
+- No harness or test-tooling changes are authorized.
+- No runtime artifact import is authorized because execution has not begun.
+- Planner may update `CURRENT_TASK.md`, `docs/STATUS.md`, and `docs/TODO.md` within this authorized project-state transition.
+- Further repository writes require explicit authorization from Bart or a later accepted `CURRENT_TASK.md` revision.
 
 ## Acceptance Criteria
 
-- Functional Coolers loads with `diagnostics=FRIDGE_CONTEXT`.
-- No new Functional Coolers Lua errors occur.
-- Calibration sandbox values match the required environment.
-- The final readiness evidence confirms P0, P1, P2, P4, P1G, CONTROL, and FRIDGE in their expected locations with the required contents immediately before Phase A.
-- The complete A/B/C/D protocol is executed with the required pairings and inspection sequence and without other alterations to the test setup; primary/secondary hand assignment is not a validity criterion.
-- The resulting console log is preserved for analysis.
-- Validity or invalidity of the experiment is explicitly recorded.
-- No conclusions are drawn beyond what the log supports.
+- The Test Analyst proposes a complete, controlled, practically executable protocol.
+- Sustained selected/active state is the primary experimental variable.
+- Matched controls and authoritative readiness evidence are defined.
+- Timing, sampling duration, and post-threshold observation are explicit.
+- Validity and invalidating deviations are explicit.
+- Empirical questions are separated from infrastructure improvements.
+- Any required Test Engineer work is bounded and routed separately.
+- Bart accepts the protocol before runtime execution begins.
 
 ## Out of Scope
 
-- Environment guard implementation
+- Executing FC-004 before protocol acceptance
+- Production implementation or fixes
+- Architecture changes
 - Thermal recalibration
-- Freeze/thaw redesign
-- Save/load redesign
-- Multiplayer
-- Vehicles
-- Electrical cooler
-- UX
-- Release packaging
-- Production fixes discovered during this experiment
+- Save/load, long unattended, vehicles, or multiplayer validation
+- Treating the two-game-hour pattern as an established vanilla period
+- Repeating FC-003 without a defined research purpose
 
 ## Known Risks
 
-- Vanilla `lastAged` behavior is not yet understood.
-- `isFrozen()` and `freezingTime` do not map one-to-one.
-- Interacting with containers may itself affect the observed vanilla state.
-- Incomplete manual distribution invalidates the experiment.
-- A group may fail the final readiness gate if its nominally frozen steak thaws before measurement.
-- Pre-distribution or pre-placement `MISSING` and `WAITING` lines must not be mistaken for the final setup state.
-- Diagnostic observations must not be mistaken for established causal behavior.
+- Current diagnostics may not reliably prove sustained selected/active state.
+- Establishing selection may require equip or UI context that introduces another variable.
+- The selected and unselected groups may receive unequal vanilla processing for reasons other than selection.
+- A single wait duration cannot distinguish a fixed period from a threshold processed at an update opportunity.
+- Insufficient post-threshold sampling may repeat the incomplete P1G/FRIDGE outcome from FC-003.
+- Adding infrastructure and changing the empirical intervention in one step could introduce multiple separable uncertainties.

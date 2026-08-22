@@ -4,11 +4,12 @@
 
 ## Active Follow-Up
 
-- [ ] Execute a valid FC-003 A/B/C/D experiment with every required group READY immediately before Phase A.
-- [ ] Preserve the resulting console/runtime evidence.
-- [ ] Have the Test Analyst classify the run as valid, invalid, or inconclusive.
-- [ ] Have the Researcher evaluate what the evidence establishes without generalizing beyond it.
-- [ ] Have the Planner update canonical project state after conclusions are accepted.
+- [ ] Have the Test Analyst design the FC-004 matched sustained selected/active-versus-unselected protocol.
+- [ ] Define authoritative active-state verification, readiness, exact timing, and sufficient post-threshold sampling.
+- [ ] Identify any minimum Test Engineer infrastructure requirement without implementing it in the protocol-design task.
+- [ ] Obtain Bart's acceptance of the protocol and any separately bounded infrastructure task before execution.
+- [ ] After authorization, execute FC-004, preserve raw evidence, classify the run, and persist its canonical record.
+- [ ] Route assessed FC-004 evidence to Researcher before updating broader project conclusions.
 
 ## Near Term
 
@@ -24,6 +25,8 @@
 
 ## Validation and Calibration
 
+- [ ] Replicate the approximately two-game-hour carried/CONTROL catch-up pattern with varied waiting durations.
+- [ ] Obtain complete repeated timing for P1G and powered FRIDGE with sufficient post-threshold sampling.
 - [ ] Run long unattended catch-up tests.
 - [ ] Test save/load persistence and guard against duplicate or negative elapsed simulation.
 - [ ] Run 24-hour and 72-hour unattended tests.
