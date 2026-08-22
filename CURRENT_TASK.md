@@ -137,16 +137,20 @@ Record the current `worldHours` value from diagnostics at the start and end of e
 
 ### Phase B
 
-- Inspect/select the groups in this order:
-  1. P4
-  2. P2
-  3. P1
-  4. P1G
-  5. P0
-  6. FRIDGE
-- Do not move items.
-- For each group, perform only the minimum UI interaction required to open/select that container or context. Do not move, equip, transfer, consume, or otherwise manipulate any test item.
-- Return to NEUTRAL after inspection.
+Use this standardized intervention:
+
+1. Equip P4 primary and P2 secondary.
+2. Inspect P4.
+3. Inspect P2.
+4. Equip P1 primary and P0 secondary, automatically returning P4 and P2 to player inventory.
+5. Inspect P1.
+6. Inspect P0.
+7. Return P1 and P0 to player inventory.
+8. Inspect P1G on the ground.
+9. Inspect FRIDGE.
+10. Select NEUTRAL.
+
+Do not move, transfer, consume, or otherwise manipulate steaks or cold packs. Do not move a Cooler except for the equip and return-to-inventory actions explicitly required by this intervention.
 
 ### Phase C
 
@@ -156,9 +160,8 @@ Record the current `worldHours` value from diagnostics at the start and end of e
 
 ### Phase D
 
-- Repeat the Phase B inspection sequence.
-- Do not move items.
-- For each group, perform only the minimum UI interaction required to open/select that container or context. Do not move, equip, transfer, consume, or otherwise manipulate any test item.
+- Repeat the complete standardized Phase B intervention using the same pairing, hand assignment, and sequence.
+- Do not move, transfer, consume, or otherwise manipulate steaks or cold packs. Do not move a Cooler except for the equip and return-to-inventory actions explicitly required by the standardized intervention.
 
 The purpose is to observe whether vanilla timing/context state changes around access or inactivity.
 
@@ -201,7 +204,7 @@ Do not fix production code as part of FC-003.
 - No new Functional Coolers Lua errors occur.
 - Calibration sandbox values match the required environment.
 - P0, P1, P2, P4, P1G, CONTROL, and FRIDGE all report READY before measurement begins.
-- The complete A/B/C/D protocol is executed without altering the test setup.
+- The complete A/B/C/D protocol is executed without deviations from the standardized intervention or other alterations to the test setup.
 - The resulting console log is preserved for analysis.
 - Validity or invalidity of the experiment is explicitly recorded.
 - No conclusions are drawn beyond what the log supports.
