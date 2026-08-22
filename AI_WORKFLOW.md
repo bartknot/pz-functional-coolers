@@ -145,6 +145,7 @@ Production source under `42/` may only be changed by the Test Lab when `CURRENT_
 - Unexpected repository state must never be repaired automatically by reset, checkout, clean, rebase, force-push, or deletion of unrelated work.
 - Git inspection is allowed when required for the task.
 - Creating branches, worktrees, commits, or pushes requires explicit authorization from `CURRENT_TASK.md` or Bart.
+- When a Git commit is authorized, the executing role must formulate an appropriate English Conventional Commit message, including `Role` and `Task` traceability where applicable.
 - History-rewriting operations such as force-push, reset of accepted work, or rebase of shared history require explicit authorization from Bart.
 
 ## Stop-and-Report Conditions
