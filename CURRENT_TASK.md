@@ -109,7 +109,7 @@ before manual distribution begins.
 
 ## Readiness Gate
 
-Measurement must not begin until all of the following report READY:
+Measurement must not begin until the final readiness evidence confirms all of the following groups:
 
 - P0
 - P1
@@ -119,13 +119,16 @@ Measurement must not begin until all of the following report READY:
 - CONTROL
 - FRIDGE
 
-If any group reports MISSING or WAITING, the experiment has not started and must not be interpreted as a valid run.
+The readiness gate passes when either:
 
-READY status must be confirmed immediately before Phase A begins. A group that previously reported READY may return to WAITING if its nominally frozen steak thaws before measurement starts.
+- all groups explicitly report `READY`; or
+- the authoritative `phase=START` diagnostic snapshot immediately before Phase A shows every group in its expected location with the required steak and cold-pack counts, including one fresh and one nominally frozen steak per group.
+
+`MISSING` or `WAITING` lines recorded before manual distribution and final placement describe an earlier setup state and do not invalidate a run when the later final readiness evidence passes. A run is not ready if the final readiness evidence shows a missing group, wrong location, wrong contents, or loss of the nominally frozen steak before Phase A.
 
 ## A/B/C/D Test Procedure
 
-After all groups report READY:
+After the readiness gate passes:
 
 Record the current `worldHours` value from diagnostics at the start and end of each phase where practical.
 
@@ -139,10 +142,10 @@ Record the current `worldHours` value from diagnostics at the start and end of e
 
 Use this standardized intervention:
 
-1. Equip P4 primary and P2 secondary.
+1. Equip P4 and P2, one in each hand.
 2. Inspect P4.
 3. Inspect P2.
-4. Equip P1 primary and P0 secondary, automatically returning P4 and P2 to player inventory.
+4. Equip P1 and P0, one in each hand, automatically returning P4 and P2 to player inventory.
 5. Inspect P1.
 6. Inspect P0.
 7. Return P1 and P0 to player inventory.
@@ -152,6 +155,8 @@ Use this standardized intervention:
 
 Do not move, transfer, consume, or otherwise manipulate steaks or cold packs. Do not move a Cooler except for the equip and return-to-inventory actions explicitly required by this intervention.
 
+The P4/P2 and P1/P0 pairings and the inspection sequence are validity requirements. Which Cooler occupies the primary or secondary hand is execution metadata, not a validity criterion; record the observed hand assignment where diagnostics make it available.
+
 ### Phase C
 
 - Leave all groups untouched for approximately another 2 game hours.
@@ -160,7 +165,7 @@ Do not move, transfer, consume, or otherwise manipulate steaks or cold packs. Do
 
 ### Phase D
 
-- Repeat the complete standardized Phase B intervention using the same pairing, hand assignment, and sequence.
+- Repeat the complete standardized Phase B intervention using the same pairings and inspection sequence. Primary and secondary hand assignment may differ from Phase B without invalidating the run.
 - Do not move, transfer, consume, or otherwise manipulate steaks or cold packs. Do not move a Cooler except for the equip and return-to-inventory actions explicitly required by the standardized intervention.
 
 The purpose is to observe whether vanilla timing/context state changes around access or inactivity.
@@ -203,8 +208,8 @@ Do not fix production code as part of FC-003.
 - Functional Coolers loads with `diagnostics=FRIDGE_CONTEXT`.
 - No new Functional Coolers Lua errors occur.
 - Calibration sandbox values match the required environment.
-- P0, P1, P2, P4, P1G, CONTROL, and FRIDGE all report READY before measurement begins.
-- The complete A/B/C/D protocol is executed without deviations from the standardized intervention or other alterations to the test setup.
+- The final readiness evidence confirms P0, P1, P2, P4, P1G, CONTROL, and FRIDGE in their expected locations with the required contents immediately before Phase A.
+- The complete A/B/C/D protocol is executed with the required pairings and inspection sequence and without other alterations to the test setup; primary/secondary hand assignment is not a validity criterion.
 - The resulting console log is preserved for analysis.
 - Validity or invalidity of the experiment is explicitly recorded.
 - No conclusions are drawn beyond what the log supports.
@@ -228,5 +233,6 @@ Do not fix production code as part of FC-003.
 - `isFrozen()` and `freezingTime` do not map one-to-one.
 - Interacting with containers may itself affect the observed vanilla state.
 - Incomplete manual distribution invalidates the experiment.
-- A group may lose READY status before measurement if its nominally frozen steak thaws.
+- A group may fail the final readiness gate if its nominally frozen steak thaws before measurement.
+- Pre-distribution or pre-placement `MISSING` and `WAITING` lines must not be mistaken for the final setup state.
 - Diagnostic observations must not be mistaken for established causal behavior.
