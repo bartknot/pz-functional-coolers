@@ -55,7 +55,25 @@ Inspect referenced raw artifacts when necessary to recover missing detail, compa
 
 Use calibrated conclusion language appropriate to the evidence, such as supported across multiple valid runs, supported by one valid run with replication pending, consistent with available evidence, contradicted, unresolved, insufficient evidence, not distinguishable under the current protocol, diagnostic observation only, or causal interpretation unsupported.
 
-A substantive Researcher conclusion intended as durable project knowledge must not remain only in a Codex thread. Persist it through a separately authorized repository-writing task. Until the repository accepts a canonical location for cross-run Researcher reports, report that workflow gap rather than creating a new research hierarchy, index, or report location.
+## Canonical Researcher Syntheses
+
+A substantive Researcher conclusion intended as durable project knowledge must not remain only in a Codex thread. Persist it through a separately authorized repository-writing task at:
+
+```text
+docs/research/<TASK-ID>-<YYYY-MM-DD>[-<ID>].md
+```
+
+Use the optional suffix only when necessary to distinguish multiple syntheses for the same task and date. Do not create empty folders, placeholders, indexes, dashboards, or parallel research hierarchies merely to establish the convention.
+
+A canonical Researcher synthesis must:
+
+- Reference the canonical experiment records under `docs/tests/runs/` that it evaluates.
+- Preserve the distinction between raw runtime evidence, Bart-supplied execution metadata, Test Analyst run-level assessment, historical findings, Researcher inference, and broader empirical conclusion.
+- State confidence, evidence limitations, established findings, findings requiring replication, unresolved questions, and the recommended next action.
+- Use invalid or inconclusive runs only within the limits established by their canonical Test Analyst records.
+- Avoid duplicating full run-level analysis already preserved in canonical experiment records; summarize only what is necessary for the cross-run or general conclusion.
+
+Repository authority to perform research does not automatically authorize writing under `docs/research/`. Persistence still requires explicit authorization from Bart or `CURRENT_TASK.md` and does not imply commit or push authority.
 
 ## Outputs
 
@@ -63,7 +81,7 @@ A substantive Researcher conclusion intended as durable project knowledge must n
 - Cross-test conclusions.
 - Contradictions between runtime evidence and accepted assumptions.
 - Research questions for further testing.
-- Durable Researcher conclusions only through a separately authorized persistence task and an accepted canonical location.
+- Durable Researcher syntheses under `docs/research/` when explicitly authorized.
 
 ## Git Authority
 

@@ -37,6 +37,7 @@ Maintain task scope, sequencing, project state, and role handoffs.
 - `docs/STATUS.md`.
 - `docs/TODO.md`.
 - Accepted canonical experiment records under `docs/tests/runs/`.
+- Accepted canonical Researcher syntheses under `docs/research/`.
 - Relevant accepted project documentation.
 - Specialist handoffs relevant to planning.
 
@@ -49,18 +50,17 @@ Use accepted experiment records to determine whether a run completed, a task rem
 Preserve the provenance chain:
 
 ```text
-runtime experiment
-    -> raw runtime evidence
-    -> Test Analyst run assessment
-    -> canonical experiment record
-    -> Researcher cross-run/general conclusion where needed
-    -> durable Researcher record through a separately authorized workflow where needed
-    -> Planner project-state and task consequences
+raw runtime evidence
+    -> Test Analyst run record
+    -> Researcher synthesis
+    -> Planner project-state consequences
 ```
 
 Route "What happened in this run?" to the Test Analyst. Route "What do these runs establish?" to the Researcher. The Planner may summarize accepted project consequences but does not independently decide runtime truth.
 
-Keep `docs/STATUS.md` concise and project-level. It may record that a dated run was invalid, the project-level reason, and the need for protocol revision; detailed timings, observations, execution metadata, and evidence limitations remain in the canonical experiment record.
+Use accepted Researcher syntheses under `docs/research/` when translating cross-run or general empirical conclusions into project state, sequencing, or specialist handoffs. Preserve links back to the canonical experiment records rather than collapsing evidence provenance into planning documents.
+
+Keep `docs/STATUS.md` concise and project-level. It may record that a dated run was invalid, the project-level reason, an accepted Researcher conclusion, or the need for protocol revision; detailed run timings and execution metadata remain in canonical experiment records, while cross-run confidence, evidence limitations, and unresolved empirical questions remain in the canonical Researcher synthesis.
 
 Experiment findings do not authorize implementation. Record future work in `docs/TODO.md` only when appropriate and authorized; define active work in `CURRENT_TASK.md`. Before routing an observation to Coder, determine whether further Test Analyst work, Researcher synthesis, Architect judgment, or Bart's product-scope decision is required.
 
