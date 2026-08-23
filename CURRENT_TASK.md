@@ -6,13 +6,13 @@ FC-004
 
 ## Status
 
-PROTOCOL DESIGN
+TEST INFRASTRUCTURE
 
 ## Objective
 
-Design a controlled matched experiment that tests whether keeping a Cooler selected/active throughout an extended waiting period changes vanilla Food `lastAged` catch-up timing relative to an otherwise equivalent Cooler left unselected.
+Implement and validate the minimum test-harness support required to execute the accepted controlled matched experiment comparing a sustained selected/active Cooler with an otherwise equivalent unselected Cooler.
 
-This task defines and reviews the protocol only. Runtime execution begins only after Bart accepts the completed protocol.
+The experimental protocol is accepted. This phase authorizes the bounded harness implementation and an infrastructure smoketest only. The substantive FC-004 experiment remains unauthorized until the smoketest is reviewed and Bart separately authorizes execution.
 
 ## Why
 
@@ -40,77 +40,158 @@ This question must remain distinct from:
 
 The protocol may collect evidence relevant to those questions but must not claim to answer them in advance.
 
+## Accepted Experimental Protocol
+
+### Matched Groups
+
+Use two groups named `FC004-A` and `FC004-B`.
+
+Each group must have:
+
+- One exact `Base.Cooler`.
+- One vanilla-frozen `Base.Steak`.
+- One fresh `Base.Steak`.
+- Zero cold packs.
+- The same starting physical context in player inventory.
+- One hand assignment that remains unchanged during measurement.
+
+Both Coolers must remain carried and equipped throughout measurement. One is held in the primary hand and the other in the secondary hand. The selected/active state is the intended experimental variable.
+
+CONTROL may be retained as a player-inventory timing reference, but it is not part of the matched comparison.
+
+### Counterbalanced Runs
+
+The accepted experiment requires two fresh runs:
+
+| Run | Primary | Secondary | Selected |
+| --- | --- | --- | --- |
+| A | FC004-A | FC004-B | FC004-A |
+| B | FC004-A | FC004-B | FC004-B |
+
+Run B must begin from a fresh equivalent setup rather than continuing Run A.
+
+If a secondary-equipped Cooler cannot remain selected/open, do not silently alter this design. Record the infrastructure result and return the hand-assignment confound to Test Analyst.
+
+### Readiness Gate
+
+Immediately before each experimental measurement, an authoritative snapshot must confirm:
+
+- Required runtime/build and sandbox configuration.
+- Unique IDs for both Coolers and all test steaks.
+- Both Coolers in player inventory.
+- Expected primary and secondary hand assignments.
+- Equivalent contents and cold-pack count.
+- One fresh and one nominally frozen steak per Cooler.
+- Starting `lastAged`, age, heat, freezing state, and frozen/thawing state.
+- No unexpected extra test steaks.
+- The reliable selected-container marker identifies the intended selected Cooler and not the unselected Cooler.
+
+### Experimental Measurement
+
+After readiness succeeds:
+
+1. Keep both Coolers equipped according to the run matrix.
+2. Open/select only the assigned selected Cooler and leave its container view visible and unchanged.
+3. Emit `BEGIN` with exact `worldHours` only after the treatment is stable.
+4. Run for at least 4.5 game hours.
+5. Do not click, inspect, transfer, move, consume, equip, unequip, or switch any test item or container during measurement.
+6. Sample selected identity, context, contents, and Food timing at least once per game minute.
+7. Emit `TARGET_REACHED` after 4.5 game hours.
+8. Pause and emit the final `END` snapshot before changing UI, equip, location, or contents.
+9. Preserve the full raw console log and Bart-supplied execution metadata.
+
+Substantive execution of these steps is not authorized in the current infrastructure phase.
+
+### Run Classification
+
+A run is `VALID` only when readiness passes, selected identity remains reliably demonstrated from `BEGIN` through `END`, both Coolers remain correctly carried and equipped, contents remain unchanged, the required duration and sampling are complete, and no unlogged interaction occurs.
+
+A run is `INVALID` when selected identity cannot be demonstrated, selection changes or disappears, the relevant UI closes or collapses, either Cooler is moved or unequipped, contents or starting state are materially mismatched, sampling is insufficient, or the required duration is not reached.
+
+A correctly executed run may be `INCONCLUSIVE` when neither group catches up in the observation window, timing resolution cannot distinguish the groups, the counterbalanced runs disagree, or a hand/UI confound remains unresolved.
+
+Test Analyst owns final run classification. Researcher owns any later cross-run conclusion.
+
+## Authorized Test Infrastructure
+
+The Test Engineer may implement only the minimum FC-004 support needed to:
+
+- Create the two matched `FC004-A` and `FC004-B` Cooler groups deterministically.
+- Prepare and distribute their matched fresh and vanilla-frozen steak contents before measurement.
+- Identify the actual selected player-inventory container through the client inventory UI binding rather than relying on `ItemContainer:isActive()`.
+- Resolve the selected container to its containing Cooler and stable item ID.
+- Log exact `worldHours`, selected Cooler identity, inventory-window visibility, collapsed/pinned state, hand assignment, location, contents, and relevant Food state at least once per game minute and on material state transitions.
+- Emit explicit `READY`, `TREATMENT_STABLE`, `BEGIN`, `SAMPLE`, `INVALIDATED`, `TARGET_REACHED`, and `END` markers as applicable.
+- Detect and report treatment or setup violations without silently repairing them.
+
+This instrumentation observes the treatment and setup. It must not manufacture or directly modify vanilla `lastAged`, Food age, heat, freezing state, or the selected-container state being tested.
+
+## Infrastructure Smoketest
+
+After implementation, Test Engineer may deploy the harness to its documented local runtime target and perform a short non-experimental smoketest that verifies:
+
+1. `FC004-A` selection is identified correctly.
+2. Switching to `FC004-B` changes the marker correctly.
+3. Closing the player inventory is detected.
+4. Collapsing the inventory is detected.
+5. Unequipping either Cooler is detected.
+6. Restoring the required state is detected.
+7. The restored treatment remains correctly logged for ten game minutes.
+8. Matched setup, marker names, exact IDs, `worldHours`, and Food-state fields appear as designed.
+
+The smoketest validates infrastructure only. Its output is not FC-004 experimental evidence and must not be used to answer the research question.
+
 ## Assigned Role and Sequence
 
-1. Test Analyst designs the controlled protocol and validity criteria.
-2. Test Analyst identifies any observability or reproducibility requirement that belongs to Test Engineer.
-3. Planner checks scope and sequencing without replacing Test Analyst experimental judgment.
-4. Bart reviews and accepts the protocol and any separately proposed infrastructure task.
-5. Runtime execution, evidence persistence, run classification, and Researcher synthesis occur only through subsequently authorized steps.
-
-## Protocol Design Requirements
-
-The proposed protocol must:
-
-- Use otherwise matched Cooler groups with equivalent contents and starting state.
-- Hold both groups in the same physical context unless the protocol explicitly identifies context as a separate controlled factor.
-- Keep one group selected/active for the defined measurement interval and the matched group unselected.
-- Avoid inspection, transfer, item movement, or other unequal intervention during the measurement interval.
-- Define how selected/active state is established and verified without assuming that UI appearance proves runtime state.
-- Define an authoritative readiness snapshot for group identity, location, contents, fresh/frozen state, and any required cold-pack state.
-- Record exact `worldHours` boundaries for baseline, intervention, and observation windows.
-- Sample long enough before and after the candidate two-game-hour threshold to capture delayed P1G/FRIDGE-like behavior where relevant.
-- Define whether varied waiting durations are required to help distinguish fixed-period behavior from threshold/update-opportunity behavior.
-- Define controls, validity criteria, invalidating deviations, evidence limitations, and required Bart-supplied execution metadata.
-- Preserve raw runtime evidence and produce a canonical Test Analyst run record after any authorized execution.
-
-The Test Analyst should prefer the smallest design that isolates sustained selected/active state as the primary uncertainty.
-
-## Test Infrastructure Boundary
-
-Possible infrastructure improvements include:
-
-- automatic Cooler filling or distribution;
-- explicit phase markers;
-- stronger final-readiness logging;
-- reliable selected/active-state markers;
-- extended post-intervention sampling.
-
-These are infrastructure candidates, not empirical conclusions and not automatically authorized work. If the protocol requires a harness or diagnostic change, the Test Analyst must identify the minimum requirement and hand it to Test Engineer through a separate Bart-authorized task.
+1. Test Engineer implements the bounded harness changes.
+2. Test Engineer performs the authorized infrastructure smoketest and reports exact results and limitations.
+3. Test Analyst reviews practical executability and marker validity.
+4. Planner confirms readiness for the experiment without interpreting runtime results.
+5. Bart separately authorizes the two substantive FC-004 runs.
+6. Test Analyst classifies authorized runs and persists their evidence when separately authorized.
+7. Researcher evaluates cross-run conclusions only after canonical run records exist.
 
 ## Allowed Changes
 
-- No production source changes are authorized.
-- No harness or test-tooling changes are authorized.
-- No runtime artifact import is authorized because execution has not begun.
-- Planner may update `CURRENT_TASK.md`, `docs/STATUS.md`, and `docs/TODO.md` within this authorized project-state transition.
+- Test Engineer may modify only:
+  - `tools/test-harness/FunctionalCoolersTestHarness/42/media/lua/client/FunctionalCoolersTestSetup.lua`
+  - `tools/test-harness/FunctionalCoolersTestHarness/42/mod.info`
+  - `tools/test-harness/FunctionalCoolersTestHarness/README.md`
+  - `tools/test-harness/FunctionalCoolersTestHarness/README.txt`
+- Test Engineer may deploy those harness changes to the documented local runtime target solely for the authorized smoketest.
+- Planner may update `CURRENT_TASK.md`, `docs/STATUS.md`, and `docs/TODO.md` for this accepted phase transition.
+- Nothing under the repository's production `42/` path may be changed.
+- No raw experiment artifact or canonical run record may be added during the infrastructure phase.
 - Further repository writes require explicit authorization from Bart or a later accepted `CURRENT_TASK.md` revision.
 
 ## Acceptance Criteria
 
-- The Test Analyst proposes a complete, controlled, practically executable protocol.
-- Sustained selected/active state is the primary experimental variable.
-- Matched controls and authoritative readiness evidence are defined.
-- Timing, sampling duration, and post-threshold observation are explicit.
-- Validity and invalidating deviations are explicit.
-- Empirical questions are separated from infrastructure improvements.
-- Any required Test Engineer work is bounded and routed separately.
-- Bart accepts the protocol before runtime execution begins.
+- Only the four authorized harness files change during implementation.
+- The matched setup produces the two required Cooler groups and equivalent contents without modifying the measured vanilla Food state artificially.
+- Selected identity is derived from the actual client inventory UI binding and resolved to the expected Cooler ID.
+- Required context, contents, timing, and Food fields are emitted at the required cadence.
+- Invalidating state changes are detected and reported.
+- The full infrastructure smoketest passes or its exact failure is reported without protocol improvisation.
+- No production source changes occur.
+- No substantive FC-004 experiment is executed.
+- Test Analyst reviews the completed infrastructure before experimental authorization.
 
 ## Out of Scope
 
-- Executing FC-004 before protocol acceptance
+- Executing either substantive FC-004 run
 - Production implementation or fixes
 - Architecture changes
 - Thermal recalibration
 - Save/load, long unattended, vehicles, or multiplayer validation
 - Treating the two-game-hour pattern as an established vanilla period
 - Repeating FC-003 without a defined research purpose
+- Treating infrastructure-smoketest output as experimental evidence
+- Committing, pushing, tagging, releasing, branching, or creating a worktree without separate Git authorization
 
 ## Known Risks
 
-- Current diagnostics may not reliably prove sustained selected/active state.
-- Establishing selection may require equip or UI context that introduces another variable.
+- The selected player-inventory UI binding must still be validated in the actual Build 42.20.3 runtime.
+- A secondary-equipped Cooler may not remain selectable/open, which would return a hand-assignment confound to Test Analyst.
 - The selected and unselected groups may receive unequal vanilla processing for reasons other than selection.
 - A single wait duration cannot distinguish a fixed period from a threshold processed at an update opportunity.
 - Insufficient post-threshold sampling may repeat the incomplete P1G/FRIDGE outcome from FC-003.

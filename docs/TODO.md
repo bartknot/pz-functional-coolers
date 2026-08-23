@@ -4,11 +4,15 @@
 
 ## Active Follow-Up
 
-- [ ] Have the Test Analyst design the FC-004 matched sustained selected/active-versus-unselected protocol.
-- [ ] Define authoritative active-state verification, readiness, exact timing, and sufficient post-threshold sampling.
-- [ ] Identify any minimum Test Engineer infrastructure requirement without implementing it in the protocol-design task.
-- [ ] Obtain Bart's acceptance of the protocol and any separately bounded infrastructure task before execution.
-- [ ] After authorization, execute FC-004, preserve raw evidence, classify the run, and persist its canonical record.
+- [x] Have the Test Analyst design the FC-004 matched sustained selected/active-versus-unselected protocol.
+- [x] Define authoritative active-state verification, readiness, exact timing, and sufficient post-threshold sampling.
+- [x] Identify the minimum Test Engineer infrastructure requirement without implementing it in the protocol-design task.
+- [x] Obtain Bart's acceptance of the protocol and the separately bounded infrastructure task.
+- [ ] Implement the authorized FC-004 matched setup, selected-container observability, state markers, and invalidation detection.
+- [ ] Perform and report the authorized infrastructure-only smoketest.
+- [ ] Have Test Analyst review practical executability and marker validity.
+- [ ] Obtain Bart's separate authorization for the substantive counterbalanced FC-004 runs.
+- [ ] Execute the authorized runs, preserve raw evidence, classify them, and persist their canonical records.
 - [ ] Route assessed FC-004 evidence to Researcher before updating broader project conclusions.
 
 ## Near Term

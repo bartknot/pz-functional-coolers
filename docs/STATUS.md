@@ -4,9 +4,9 @@
 
 - Repository: `pz-functional-coolers`
 - Branch at this snapshot: `main`
-- Canonical evidence and workflow inspected through HEAD: `9ecb059c9f2147c9baf0dfcaee670b5ab75b679d`
+- Canonical evidence and workflow inspected through HEAD: `eaaf0a6ab7d0d82da1aa5c0a31e63b229156ae13`
 - Runtime baseline recorded by the active task: Project Zomboid Build 42.20.3
-- Active task: FC-004, status `PROTOCOL DESIGN`
+- Active task: FC-004, status `TEST INFRASTRUCTURE`
 - Production source identifies itself as `Prototype v0.3.0-dev`.
 - The elapsed-time simulation and FRIDGE/context diagnostics are committed.
 - The Functional Coolers Test Harness is tracked in the same repository.
@@ -78,9 +78,9 @@ Its source prepares the fixed single-player calibration setup, named Cooler grou
 
 ## Current Active Investigation
 
-FC-004 is the active protocol-design task. It will define a matched comparison between a Cooler held selected/active throughout an extended waiting period and an otherwise equivalent Cooler left unselected in the same physical context.
+FC-004 has an accepted matched, counterbalanced protocol comparing a Cooler held selected/active throughout an extended waiting period with an otherwise equivalent unselected Cooler in the same carried/equipped context.
 
-The Test Analyst owns protocol design and validity criteria. Runtime execution is not yet authorized. Any required harness or diagnostic improvement must be identified separately and routed to Test Engineer rather than confused with the empirical question.
+The active phase is bounded Test Engineer implementation and an infrastructure-only smoketest. It must create matched groups, observe the actual player-inventory UI selection binding, emit explicit timing/state markers, and detect invalidating context changes. Nothing under production `42/` may change. The substantive FC-004 runs remain unauthorized until Test Analyst reviews the infrastructure and Bart separately authorizes execution.
 
 ## Known Limitations and Unresolved Questions
 
@@ -107,4 +107,4 @@ These inconsistencies are recorded here, not fixed by this status task.
 
 ## Current Development Position
 
-The project has moved beyond the superseded vanilla-delta approach to an elapsed-time managed prototype and completed the FC-003 evidence chain. The immediate priority is to design, review, and then separately authorize FC-004 so sustained selected/active state can be compared with an unselected matched control. No architecture or production change follows automatically from FC-003. Environment guards, deeper persistence work, calibration, additional contexts, multiplayer, UX, and release preparation remain separately sequenced work.
+The project has moved beyond the superseded vanilla-delta approach to an elapsed-time managed prototype and completed the FC-003 evidence chain. The FC-004 protocol is accepted; the immediate priority is its bounded harness implementation, infrastructure smoketest, and Test Analyst review before Bart separately authorizes experimental execution. No architecture or production change follows automatically from FC-003 or FC-004 infrastructure. Environment guards, deeper persistence work, calibration, additional contexts, multiplayer, UX, and release preparation remain separately sequenced work.
