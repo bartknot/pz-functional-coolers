@@ -4,19 +4,20 @@
 
 ## Active Follow-Up
 
-FC-004 is complete. No successor task or experiment is authorized by this backlog.
+`WF-004` is complete. No successor task is authorized by this backlog.
 
-- [ ] Have Planner/Bart accept, reject, or defer a candidate empirical task testing what happens when an observably stale Cooler is selected for the first time after a controlled waiting interval.
+- [ ] Have Planner/Bart accept, revise, defer, or reject a minimal Architect task establishing the canonical architecture baseline before the next production change.
 
 ## Near Term
 
 - [ ] Characterize lazy vanilla Food refresh sufficiently for production decisions.
 - [ ] Add an environment/calibration guard for `DayLength = 4`, `FoodRotSpeed = 3`, and `FridgeFactor = 3` through a separately authorized implementation task.
-- [ ] Establish canonical architecture documentation, including explicit state ownership and vanilla handoff.
+- [ ] Establish the minimum canonical architecture baseline needed before the next production implementation: system boundary, state ownership, simulation lifecycle, vanilla handoff, context abstraction, and persistence.
 - [ ] Evaluate legacy identity/tracking fields such as `FC_coolerID` after clone and context evidence is available.
 - [ ] Create a production development deployment script.
 - [ ] Create a separate harness deployment script.
 - [ ] Establish a runtime log collection workflow.
+- [ ] Record the exact deployed commit/build identity and automatic hashes or metadata in runtime artifacts through separately authorized tooling.
 - [ ] Document the calibration environment.
 - [ ] Create a dedicated test scenario only if future testing justifies it.
 

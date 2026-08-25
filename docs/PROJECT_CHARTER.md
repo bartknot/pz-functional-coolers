@@ -4,6 +4,15 @@
 
 Functional Coolers is a Project Zomboid Build 42 mod developed in the `pz-functional-coolers` repository. Its production mod ID is `FunctionalCoolers`.
 
+## Project Objectives
+
+Functional Coolers has two durable development objectives:
+
+1. Develop Functional Coolers itself as the product described by this Charter.
+2. Use the project as a practical testbed for developing and validating a reusable AI-assisted development workflow intended for larger and more complex future projects.
+
+The workflow-testbed objective may justify deliberate process experiments whose value extends beyond the size of this mod, but it does not authorize any particular governance, tooling, or automation change. Workflow mechanisms must address an observed problem or test a plausible hypothesis, and their value must be evaluated through use. Simplification or removal is a valid improvement; formality by itself is not value.
+
 ## Product Purpose
 
 Functional Coolers makes the vanilla `Base.Cooler` function as an insulated thermal container. Gameplay behavior should emerge from a thermodynamic model rather than fixed preservation bonuses.

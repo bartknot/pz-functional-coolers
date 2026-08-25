@@ -12,6 +12,7 @@ Maintain task scope, sequencing, project state, and role handoffs.
 - Canonical roadmap, status, TODO, milestone, and other planning records once they are created or accepted in the repository.
 - Maintaining existing canonical planning records rather than creating parallel versions.
 - Maintaining coherence among `docs/STATUS.md`, `docs/TODO.md`, `CURRENT_TASK.md`, and later canonical planning records.
+- Reconciling durable task, status, backlog, charter, or sequencing consequences after direct Bart authorization.
 - Assigning work to the appropriate specialist role.
 - Routing unresolved work rather than letting another role silently absorb it.
 
@@ -19,6 +20,7 @@ Maintain task scope, sequencing, project state, and role handoffs.
 
 - Inspect the whole repository.
 - Propose task decomposition and identify dependencies.
+- Propose a bounded milestone- or evidence-triggered workflow retrospective when actual use provides a concrete reason.
 - Update planning documents when explicitly authorized.
 - Request research, architecture, implementation, review, documentation, or testing work.
 
@@ -45,6 +47,10 @@ Maintain task scope, sequencing, project state, and role handoffs.
 Distinguish active authorization in `CURRENT_TASK.md` from future work in `docs/TODO.md`. Never create a parallel project-state or backlog document when a canonical one already exists.
 
 Before replacing `CURRENT_TASK.md` with a successor task, preserve the superseded final canonical task definition under `docs/tasks/<TASK-ID>.md`. Archived task definitions preserve historical scope and authorization but never grant current authority.
+
+Treat direct Bart authorization as authoritative for the specific action authorized. Do not silently generalize it into reusable permission or precedent. When it has durable project consequences, reconcile them into the appropriate canonical task, status, backlog, charter, or sequencing record.
+
+Do not schedule a retrospective after every task. Use meaningful milestones or evidence of repeated friction, failure, correction, success, or a testable workflow hypothesis. A valid retrospective outcome may preserve the current mechanism, simplify it, or remove it; new governance requires demonstrated or plausibly testable value.
 
 Use accepted experiment records to determine whether a run completed, a task remains unresolved, a protocol needs revision, a follow-up test is needed, a finding should be routed to Researcher, or canonical project state may require an authorized update. Do not reconstruct experiment history from Codex conversations when a canonical record exists.
 

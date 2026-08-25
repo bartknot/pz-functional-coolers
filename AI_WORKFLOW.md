@@ -68,7 +68,7 @@ A role may later operate through normal ChatGPT, ChatGPT Work, Codex, or another
 
 ### Reviewer / Optimization Critic
 
-- Performs independent review.
+- Performs procedurally independent review.
 - Does not implement fixes.
 - Challenges correctness, maintainability, performance, architecture compliance, and hidden assumptions.
 - Reports findings using these classifications:
@@ -109,6 +109,15 @@ The Test Lab is a separate functional role/workspace, but it uses the same `pz-f
 
 Production source under `42/` may only be changed by the Test Lab when `CURRENT_TASK.md` explicitly authorizes that production change.
 
+## Role Execution and Independence
+
+- A project role is a repository-defined set of authority, responsibilities, boundaries, canonical inputs, and expected outputs.
+- An agent instance or Codex run is a temporary execution operating under a project role.
+- Bart is the human Project Owner / Integrator, approval gate, and final authority; no AI role or agent instance represents Bart.
+- Role separation can provide procedural independence by separating scope, evidence, context, authority, acceptance criteria, and implementation from review.
+- Multiple roles executed by the same model family must not be represented as automatically cognitively independent experts or as eliminating shared model bias and technical blind spots.
+- Stronger challenge mechanisms may be explicitly scoped for higher-risk decisions, but a fresh context, another model family, or other independent verification is not mandatory routine overhead without evidence that its value justifies the cost.
+
 ## Authority and Evidence Model
 
 - The repository contains the accepted project truth.
@@ -119,6 +128,8 @@ Production source under `42/` may only be changed by the Test Lab when `CURRENT_
 - Runtime evidence does not silently rewrite accepted architecture, requirements, or scope.
 - Accepted project documentation must subsequently be updated through the appropriate role and review process.
 - Conversation history, memory, or an AI's prior statement is not authoritative when it conflicts with the repository or verified runtime evidence.
+- Direct authorization from Bart is authoritative for the specific action explicitly authorized, but does not silently establish reusable permission, general precedent, or durable project scope.
+- Planner must reconcile any durable task, status, backlog, charter, or sequencing consequence of direct Bart authorization into the appropriate canonical repository record.
 
 ## Core Governance Rules
 
@@ -128,7 +139,7 @@ Production source under `42/` may only be changed by the Test Lab when `CURRENT_
 - Architect owns system design.
 - Researcher owns evidence.
 - Coder owns implementation.
-- Reviewer owns independent criticism.
+- Reviewer owns procedurally independent criticism.
 - Documentation owns reader-facing documentation.
 - Test Lab owns reproducible experiment execution and test tooling.
 - Bart owns acceptance, merge, tags, releases, and project direction.
@@ -147,6 +158,14 @@ Production source under `42/` may only be changed by the Test Lab when `CURRENT_
 - Creating branches, worktrees, commits, or pushes requires explicit authorization from `CURRENT_TASK.md` or Bart.
 - When a Git commit is authorized, the executing role must formulate an appropriate English Conventional Commit message, including `Role` and `Task` traceability where applicable.
 - History-rewriting operations such as force-push, reset of accepted work, or rebase of shared history require explicit authorization from Bart.
+
+## Workflow Learning
+
+- Planner may propose a bounded workflow retrospective after a meaningful milestone or when repeated friction, failure, correction, success, or a plausible workflow hypothesis provides enough evidence to review the process.
+- A retrospective is not required after every task and must not be created merely for formality.
+- The learning loop is: workflow observation → friction, failure, or success → retrospective → workflow hypothesis → accepted process change → use → evaluation.
+- Preserving, simplifying, or removing a workflow mechanism counts as improvement when supported by experience; adding governance is not the default outcome.
+- A workflow change must plausibly improve traceability, retained context, reproducibility, role or scope control, Bart's understanding, safe automation, or resumability and scaling.
 
 ## Stop-and-Report Conditions
 

@@ -2,7 +2,7 @@
 
 ## ID
 
-FC-004
+WF-004
 
 ## Status
 
@@ -10,223 +10,168 @@ COMPLETE
 
 ## Objective
 
-Complete the bounded automatic-endpoint refinement and the controlled matched selected/active-versus-unselected comparison through canonical Test Analyst evidence and Researcher synthesis.
+Conduct one bounded, evidence-based workflow retrospective after FC-003 and FC-004, then align existing governance only where actual project use demonstrates a remaining gap.
 
-The endpoint refinement, replacement Run A, counterbalanced Run B, raw-evidence persistence, Test Analyst records, and Researcher synthesis are complete. FC-004 authorizes no further experiment or implementation work.
+The review must preserve mechanisms that worked, avoid duplicating already solved structures, count justified simplification or removal as improvement, and separate workflow governance from product architecture and test tooling.
 
-## Why
+Bart accepted WF-004 and explicitly accepted the workflow-testbed objective as durable Project Charter direction. The bounded review and its canonical updates are complete.
 
-The canonical FC-003 evidence established that brief equip/inspection was not necessary for the observed carried-Cooler and CONTROL catch-ups in the valid 2026-08-22 run. It did not determine whether sustained selected/active state has an additional effect.
+## Why Now
 
-The FC-003 Researcher synthesis identifies a matched sustained selected/active-versus-unselected comparison as more informative than simply repeating the same brief-inspection A/B/C/D sequence.
+FC-004 is complete and preserved under `docs/tasks/FC-004.md`. No successor task is authorized. FC-003 and FC-004 together exercised the role, evidence, task-lifecycle, handoff, Git-authorization, and human-acceptance mechanisms enough to support an evidence-based review.
 
-## Canonical Evidence
+Bart explicitly accepted a second durable project objective: using Functional Coolers as a practical testbed for reusable AI-assisted development workflow mechanisms intended for larger future projects. Deliberate workflow overhead may be justified when it tests a plausible mechanism, but professional-looking formality alone is not value.
 
-- `docs/tasks/FC-003.md` — preserved final canonical FC-003 task definition and protocol scope.
-- `docs/tests/runs/FC-003-2026-08-21.md` — INVALID run, usable only for the narrower diagnostic observations preserved by its Test Analyst record.
-- `docs/tests/runs/FC-003-2026-08-22.md` — VALID run.
-- `docs/research/FC-003-2026-08-22.md` — accepted cross-run Researcher synthesis.
-- Raw runtime artifacts referenced by the two canonical run records.
-- `docs/tests/runs/FC-004-2026-08-25-A.md` — VALID replacement Run A.
-- `docs/tests/runs/FC-004-2026-08-25-B.md` — VALID counterbalanced Run B.
-- `test-artifacts/FC-004/2026-08-25/console-run-a.txt` and `console-run-b.txt` — byte-verified raw runtime artifacts.
-- `docs/research/FC-004-2026-08-25.md` — canonical FC-004 Researcher synthesis.
+A short workflow review is appropriately sequenced before the next product task because it occurs at a natural milestone and can clarify the knowledge and challenge model before the project establishes its first canonical architecture baseline.
 
-## Research Question
+## Planner Triage Assessment
 
-Does a Cooler held selected/active throughout an extended waiting period show different vanilla Food `lastAged` catch-up timing from an otherwise matched Cooler left unselected in the same physical context?
+### Demonstrably Worked and Should Be Preserved
 
-This question must remain distinct from:
+- Small universal entry-point governance in `AGENTS.md`, canonical authority in `AI_WORKFLOW.md`, role-specific instructions, `CURRENT_TASK.md`, and relevant canonical context form a bounded loading path rather than requiring every role to read everything.
+- Explicit Bart acceptance and narrow Allowed Changes prevented silent scope expansion while still permitting direct human intervention when needed.
+- Test Analyst classification kept invalid runs from supporting intended conclusions while preserving narrower diagnostic value.
+- The chain from raw runtime evidence to Test Analyst run records, Researcher synthesis, and Planner project-state consequences now works end to end.
+- Canonical Test Analyst records prevented completed run interpretation from remaining only in chat.
+- Canonical Researcher synthesis records prevented broader conclusions from remaining only in chat.
+- Superseded task archiving preserves accepted scope and decision history after `CURRENT_TASK.md` moves on.
+- Role and Task commit trailers provide useful provenance without changing Git identity or inventing AI authorship.
+- FC-003 and FC-004 handoffs preserved role, task, result, evidence, validity, limitations, deliberately unchanged scope, and next action sufficiently to resume work from the repository.
+- Later prompts could remain short because the repository carried stable governance and context.
 
-- whether brief equip or inspection is necessary;
-- which vanilla mechanism implements catch-up;
-- whether the approximately two-game-hour recurrence is a fixed period, a threshold, or a threshold processed at an update opportunity.
+### Problems Already Adequately Solved
 
-The protocol may collect evidence relevant to those questions but must not claim to answer them in advance.
+- Canonical locations exist for raw substantive evidence, run-level assessment, Researcher synthesis, active task state, historical task definitions, project status, and backlog.
+- The distinction between Bart as human Project Owner, a project role, and the Codex environment is already explicit in `AGENTS.md` and `AI_WORKFLOW.md`.
+- Git inspection and write authority, Bart's final authority, run validity ownership, evidence provenance, task archiving, and role boundaries are substantially aligned across governance and role files.
+- Existing handoff rules plus canonical outputs preserved FC-003/FC-004 context; no new universal handoff template is justified.
+- Existing Planner triage, Allowed Changes, Acceptance Criteria, Out of Scope, stop-and-report conditions, and Bart approval provide adequate pre-flight control; another checklist is not justified.
+- Stop-and-report plus Bart's authority is sufficient at the present scale; a formal conflict-resolution system is not justified.
+- A new workflow-debt taxonomy is not necessary merely to distinguish workflow gaps from existing technical consistency debt.
 
-## Completion Result
+### Governance Gaps Addressed
 
-Both accepted counterbalanced runs are VALID. Across the tested pair, the sustained selected/active treatment determined which matched carried and equipped Cooler received continuous observable vanilla Food refresh. The mirrored result followed selected identity while A remained primary and B remained secondary, so fixed group identity and hand assignment do not independently explain the observed split.
+1. Governance now states that direct Bart authorization applies to the specific action authorized, does not silently create reusable permission or precedent, and requires Planner reconciliation when it has durable project consequences.
+2. Governance now distinguishes procedural role separation from cognitive or model-family independence and reserves stronger challenge mechanisms for explicitly scoped higher-risk work where their cost is justified.
+3. Governance now defines a lightweight milestone- or evidence-triggered retrospective loop without requiring a retrospective after every task.
 
-This conclusion is bounded to the tested Build 42.20.3 setup and observable Food fields. It does not establish the internal vanilla mechanism, distinguish selection from the bundled visible/open/pinned UI treatment, or determine whether stale unselected Food receives no hidden processing versus deferred catch-up at a later update opportunity.
+### Separate Project Owner Decision — Accepted
 
-## Accepted Experimental Protocol
+Bart explicitly accepted the workflow-testbed objective as durable Project Charter direction. This decision is separate from the three governance gaps and has been recorded in `docs/PROJECT_CHARTER.md`. It does not itself authorize a particular workflow, tooling, automation, or product change.
 
-### Matched Groups
+### Separate Non-Governance Dependencies
 
-Use two groups named `FC004-A` and `FC004-B`.
+- Exact Git-to-runtime provenance remains a tooling gap. FC-004 required recording a reviewed working-tree base plus a deployed Lua hash because the runtime harness refinement was not yet committed. Deployment scripts, runtime commit/build identification, artifact collection, and automatic metadata are future Test Engineer/tooling work, not governance prose.
+- System boundary, state ownership, simulation lifecycle, vanilla handoff, context abstraction, and persistence now form a real product dependency. The next product-development task after this workflow review should be a minimal Architect baseline, not a prebuilt architecture hierarchy.
+- The first-selection-after-stale question and independent FC-004 replication remain empirical backlog items, not part of this workflow task.
 
-Each group must have:
+## Role and Agent Model
 
-- One exact `Base.Cooler`.
-- One vanilla-frozen `Base.Steak`.
-- One fresh `Base.Steak`.
-- Zero cold packs.
-- The same starting physical context in player inventory.
-- One hand assignment that remains unchanged during measurement.
+The review preserves these distinctions:
 
-Both Coolers must remain carried and equipped throughout measurement. One is held in the primary hand and the other in the secondary hand. The selected/active state is the intended experimental variable.
+- A project role is a repository-defined set of authority, responsibilities, boundaries, canonical inputs, and expected outputs.
+- An agent instance or Codex run is a temporary execution operating under a project role.
+- Bart is the human Project Owner / Integrator, approval gate, and final authority.
+- Role provenance remains useful even when no agent instance is continuously active.
+- Separate roles can reduce scope contamination, self-validation, and context mixing without proving cognitive independence.
+- Stronger challenge mechanisms such as a genuinely fresh Reviewer context, another model family, explicit Bart challenge, or independent verification may be justified for high-risk decisions, but must not become mandatory routine overhead without evidence.
 
-CONTROL may be retained as a player-inventory timing reference, but it is not part of the matched comparison.
+## Completed Review Scope
 
-### Counterbalanced Runs
+The bounded review:
 
-The accepted experiment requires two fresh runs:
+1. Compared `AGENTS.md`, `AI_WORKFLOW.md`, all role files, and actual FC-003/FC-004 practice.
+2. Preserved working mechanisms and identified redundancy before changing text.
+3. Made only minimal changes needed to address the three genuine governance gaps.
+4. Recorded Bart's separately accepted dual product/workflow-development objective in `docs/PROJECT_CHARTER.md`.
+5. Defined a lightweight milestone- or evidence-triggered retrospective loop without requiring a retrospective after every task or creating a new document hierarchy.
+6. Clarified procedural role separation versus cognitive/model independence and calibrated stronger challenge mechanisms by risk.
+7. Clarified action-scoped Bart authorization versus durable task or project-state reconciliation.
+8. Confirmed that no new handoff template, pre-flight checklist, conflict-resolution system, or debt taxonomy is justified by current evidence.
+9. Classified candidate improvements as now, after several more tasks, or only when scale or parallelism makes them relevant.
+10. Recorded the minimal next product dependency and longer-term tooling consequences without implementing them.
 
-| Run | Primary | Secondary | Selected |
-| --- | --- | --- | --- |
-| A | FC004-A | FC004-B | FC004-A |
-| B | FC004-A | FC004-B | FC004-B |
+## Improvement Timing
 
-Run B must begin from a fresh equivalent setup rather than continuing Run A.
+### Now
 
-If a secondary-equipped Cooler cannot remain selected/open, do not silently alter this design. Record the infrastructure result and return the hand-assignment confound to Test Analyst.
+- Keep the three completed governance clarifications and the separately accepted Charter objective.
+- Preserve the current handoff, pre-flight, stop-and-report, evidence, and task-archive mechanisms without adding parallel structures.
+- Sequence a minimal Architect baseline as the next justified product dependency, subject to a separate accepted task.
 
-### Readiness Gate
+### After Several More Tasks
 
-Immediately before each experimental measurement, an authoritative snapshot must confirm:
+- Evaluate whether the milestone- or evidence-triggered retrospective loop produces useful correction or simplification.
+- Consider separately authorized Git-to-runtime provenance and artifact-metadata tooling.
+- Use a stronger fresh-context or external challenge only when a concrete higher-risk decision provides a reason to test its value.
 
-- Required runtime/build and sandbox configuration.
-- Unique IDs for both Coolers and all test steaks.
-- Both Coolers in player inventory.
-- Expected primary and secondary hand assignments.
-- Equivalent contents and cold-pack count.
-- One fresh and one nominally frozen steak per Cooler.
-- Starting `lastAged`, age, heat, freezing state, and frozen/thawing state.
-- No unexpected extra test steaks.
-- The reliable selected-container marker identifies the intended selected Cooler and not the unselected Cooler.
+### Only When Greater Scale or Parallelism Requires It
 
-### Experimental Measurement
+- Consider machine-readable handoffs, automated role routing, worktree or parallel-agent orchestration, and more formal conflict resolution.
+- Adopt such mechanisms only when they keep decisions understandable and controllable to Bart and measurably improve safe resumability or scale.
 
-After readiness succeeds:
+## Workflow Hypotheses for Later Evaluation
 
-1. Keep both Coolers equipped according to the run matrix.
-2. Open/select only the assigned selected Cooler and leave its container view visible and unchanged.
-3. Emit `BEGIN` with exact `worldHours` only after the treatment is stable.
-4. Run for at least 4.5 game hours.
-5. Do not click, inspect, transfer, move, consume, equip, unequip, or switch any test item or container during measurement.
-6. Sample selected identity, context, contents, and Food timing at least once per game minute.
-7. Emit `TARGET_REACHED` after 4.5 game hours and automatically emit final `END` from the same authoritative state snapshot.
-8. Mark the harness run complete immediately after automatic `END`. The operator may then pause or exit without needing to monitor the scrolling console or interact with a test container to end measurement.
-9. Preserve the full raw console log and Bart-supplied execution metadata.
+- A milestone- or evidence-triggered retrospective can produce useful correction or simplification without permanent per-task overhead.
+- Durable Planner reconciliation after direct Bart authorization reduces scope, status, and precedent drift.
+- Stronger independent challenge provides measurable value primarily for sufficiently risky decisions rather than routine work.
+- The bounded context-loading path remains sufficient as the repository and its canonical knowledge grow.
 
-The accepted execution authorization covered exactly one replacement Run A and the existing Run B. Both are complete. No protocol deviation or additional substantive run is authorized.
+These hypotheses are not active tasks and do not authorize implementation or experimentation.
 
-### Run Classification
+## Allowed Changes and Completion State
 
-A run is `VALID` only when readiness passes, selected identity remains reliably demonstrated from `BEGIN` through `END`, both Coolers remain correctly carried and equipped, contents remain unchanged, the required duration and sampling are complete, and no unlogged interaction occurs.
+Bart accepted the bounded review and the Charter decision. The completed review modified only:
 
-A run is `INVALID` when selected identity cannot be demonstrated, selection changes or disappears, the relevant UI closes or collapses, either Cooler is moved or unequipped, contents or starting state are materially mismatched, sampling is insufficient, or the required duration is not reached.
+- `AI_WORKFLOW.md`
+- `ai/PLANNER.md`
+- `ai/REVIEWER.md`
+- `docs/PROJECT_CHARTER.md`
+- `CURRENT_TASK.md`
+- `docs/STATUS.md`
+- `docs/TODO.md`
 
-A correctly executed run may be `INCONCLUSIVE` when neither group catches up in the observation window, timing resolution cannot distinguish the groups, the counterbalanced runs disagree, or a hand/UI confound remains unresolved.
+`AGENTS.md` and the other role files were inspected and required no change. The already reviewed FC-004 transition preserves its final task definition at `docs/tasks/FC-004.md`.
 
-Test Analyst owns final run classification. Researcher owns any later cross-run conclusion.
-
-## Attempted Run A Assessment
-
-- The first attempted Run A reached `TARGET_REACHED` after `4.500626` game hours with selected identity, hand assignment, UI state, contents, and sampling intact.
-- It emitted no `INVALIDATED` marker but ended when the game exited without the protocol-required `END` marker.
-- Test Analyst classified the attempt `INVALID` for the accepted experiment solely because the required endpoint marker was absent.
-- Its observations may be retained as narrower diagnostic evidence if repository persistence is later authorized, but they do not replace the authorized counterbalanced runs or establish the research conclusion.
-
-## Completed Test Infrastructure Authorization
-
-The Test Engineer was authorized to implement only the minimum FC-004 support needed to:
-
-- Create the two matched `FC004-A` and `FC004-B` Cooler groups deterministically.
-- Prepare and distribute their matched fresh and vanilla-frozen steak contents before measurement.
-- Identify the actual selected player-inventory container through the client inventory UI binding rather than relying on `ItemContainer:isActive()`.
-- Resolve the selected container to its containing Cooler and stable item ID.
-- Log exact `worldHours`, selected Cooler identity, inventory-window visibility, collapsed/pinned state, hand assignment, location, contents, and relevant Food state at least once per game minute and on material state transitions.
-- Emit explicit `READY`, `TREATMENT_STABLE`, `BEGIN`, `SAMPLE`, `INVALIDATED`, `TARGET_REACHED`, and `END` markers as applicable.
-- Detect and report treatment or setup violations without silently repairing them.
-- When the 4.5-game-hour target is reached, emit `TARGET_REACHED` and `END | status=COMPLETE` from the same state snapshot, then stop further experiment sampling.
-
-This instrumentation observes the treatment and setup. It must not manufacture or directly modify vanilla `lastAged`, Food age, heat, freezing state, or the selected-container state being tested.
-
-The automatic endpoint must not pause the game, change game speed, change UI state, alter equipment or contents, or modify measured Food state. It only defines and records the completed measurement endpoint.
-
-## Infrastructure Smoketest
-
-After implementation, Test Engineer was authorized to deploy the harness to its documented local runtime target and perform a short non-experimental smoketest that verified:
-
-1. `FC004-A` selection is identified correctly.
-2. Switching to `FC004-B` changes the marker correctly.
-3. Closing the player inventory is detected.
-4. Collapsing the inventory is detected.
-5. Unequipping either Cooler is detected.
-6. Restoring the required state is detected.
-7. The restored treatment remains correctly logged for ten game minutes.
-8. Matched setup, marker names, exact IDs, `worldHours`, and Food-state fields appear as designed.
-
-The smoketest validates infrastructure only. Its output is not FC-004 experimental evidence and must not be used to answer the research question.
-
-For the automatic-endpoint refinement, Test Engineer was required to verify the source path from target detection through `TARGET_REACHED`, automatic `END`, and completed state, then deploy the reviewed harness. The existing smoketest demonstrated automatic duration-threshold completion in smoketest mode. Runtime verification of the experiment endpoint occurred during the authorized replacement Run A; no shortened experiment or additional substantive validation run is authorized.
-
-## Infrastructure Readiness Result
-
-- Harness `v0.4.3-dev`, setup version `11`, including automatic experiment completion, is committed with the evidence at `d302f08`.
-- The matched setup and selected-container binding were validated in Project Zomboid Build 42.20.3 with the required sandbox values.
-- The complete infrastructure smoketest detected selection of both FC-004 Coolers, inventory closing and collapse, an equip-assignment change, and correct restoration.
-- `FC004-B` remained correctly selected while secondary-equipped throughout the required restored stability period.
-- The smoketest ended with `status=PASS` and `evidenceEligible=false`.
-- Test Analyst accepted the infrastructure as practically executable and ready for Planner handoff.
-- The automatic experiment endpoint was runtime-verified in both valid substantive runs: `TARGET_REACHED` and `END | status=COMPLETE` used the same endpoint snapshot and no experiment samples followed `END`.
-- Both valid run artifacts and canonical Test Analyst records are persisted in the repository.
-
-## Assigned Role and Sequence
-
-1. Test Engineer implemented the original bounded harness changes. Complete.
-2. Test Engineer and Test Analyst completed and accepted the infrastructure smoketest. Complete.
-3. Planner confirmed readiness and Bart authorized the original counterbalanced runs. Complete.
-4. Test Analyst classified the first attempted Run A `INVALID` because its required `END` marker was absent. Complete.
-5. Bart authorized automatic-`END` instrumentation and exactly one replacement Run A. Complete.
-6. Test Engineer implemented, source-verified, and deployed the bounded endpoint refinement. Complete.
-7. Bart reviewed and accepted the endpoint refinement before replacement Run A. Complete.
-8. Test Analyst classified the fresh replacement Run A `VALID`. Complete.
-9. Test Analyst classified the fresh counterbalanced Run B `VALID`. Complete.
-10. Test Analyst persisted the authorized assessed evidence. Complete.
-11. Researcher persisted the canonical cross-run synthesis. Complete.
-12. Planner closed FC-004 and updated canonical project state. Complete.
-
-## Allowed Changes
-
-- FC-004 is complete and authorizes no further harness changes, experiment execution, evidence writes, architecture changes, or production changes.
-- Bart's closeout authorization permits only the canonical Researcher synthesis and Planner updates to `CURRENT_TASK.md`, `docs/STATUS.md`, and `docs/TODO.md` completed in this transition.
-- Nothing under the repository's production `42/` path may be changed.
-- Any successor experiment, infrastructure change, or other repository write requires new authorization from Bart or a later accepted `CURRENT_TASK.md` revision.
+WF-004 is complete and authorizes no further repository write, governance change, architecture work, product implementation, test work, commit, or push. Any successor work or Git write requires separate authorization from Bart or a later accepted task.
 
 ## Acceptance Criteria
 
-- Only the four authorized harness files change during implementation.
-- The matched setup produces the two required Cooler groups and equivalent contents without modifying the measured vanilla Food state artificially.
-- Selected identity is derived from the actual client inventory UI binding and resolved to the expected Cooler ID.
-- Required context, contents, timing, and Food fields are emitted at the required cadence.
-- Invalidating state changes are detected and reported.
-- `TARGET_REACHED` and `END | status=COMPLETE` use the same authoritative endpoint snapshot, after which no further experiment samples are emitted.
-- Automatic completion changes no game, UI, equipment, contents, or measured Food state.
-- The full infrastructure smoketest passes or its exact failure is reported without protocol improvisation.
-- No production source changes occur.
-- Replacement Run A and Run B are executed only after their readiness gates pass and exactly according to the accepted protocol.
-- Test Analyst reviews the completed infrastructure before experimental authorization.
+- The review identifies what worked, what failed, what was already corrected, and what remains open using FC-003/FC-004 evidence and repository history.
+- Existing solved mechanisms are not duplicated.
+- Role, agent-instance, model-family, and Project Owner distinctions are accurate.
+- Any independence claim is procedural and does not imply independent expertise without evidence.
+- Direct Bart authorization and durable Planner reconciliation are unambiguous.
+- A lightweight retrospective trigger is defined only if it remains evidence- or milestone-based.
+- Simplification or removal is treated as a valid improvement.
+- Context loading continues to follow universal governance → role → active task → relevant canonical context → task-specific evidence/source.
+- New structure is added only when it measurably improves traceability, retained context, reproducibility, role/scope control, Bart's understanding, safe automation, or resumability at scale.
+- Runtime provenance automation and architecture work are sequenced but not implemented.
+- The resulting diff remains small enough for direct Bart review.
 
 ## Out of Scope
 
-- Production implementation or fixes
-- Architecture changes
-- Thermal recalibration
-- Save/load, long unattended, vehicles, or multiplayer validation
-- Treating the two-game-hour pattern as an established vanilla period
-- Repeating FC-003 without a defined research purpose
-- Treating infrastructure-smoketest output as experimental evidence
-- Adding pause automation, visible notifications, new controls, shortened experiment modes, or any endpoint behavior beyond automatic logging and completion
-- Executing any substantive run beyond the authorized replacement Run A and Run B
-- Committing, pushing, tagging, releasing, branching, or creating a worktree without separate Git authorization
+- Reinterpreting FC-003 or FC-004 empirical conclusions
+- Production or harness changes
+- Architecture design or production requirements
+- Deployment, artifact-collection, orchestration, routing, worktree, or parallel-agent implementation
+- Machine-readable handoffs
+- Mandatory fresh-model or external-model review for routine work
+- A retrospective after every task
+- A new generic handoff template or pre-flight checklist without a demonstrated failure
+- A formal conflict-resolution framework
+- A workflow-debt classification unless it improves an actual planning decision
+- New branches, worktrees, tags, releases, commits, pushes, or Git identity changes without separate authorization
 
-## Residual Uncertainties
+## Risks
 
-- The FC-004 effect has one valid counterbalanced pair but no independent replication.
-- The treatment bundles selected identity with a visible, pinned, open inventory context; the responsible subcomponent is unresolved.
-- Observable stale fields do not distinguish absent vanilla processing from deferred catch-up at a later update opportunity.
-- The internal relationship between FC-003's approximately two-game-hour catch-ups and FC-004's continuous selected refresh remains unresolved.
-- Generalization to other builds, contexts, equipment states, durations, and Food items requires further evidence.
+- Turning a useful bounded review into general process expansion.
+- Restating governance that is already clear.
+- Confusing procedural role separation with cognitive independence.
+- Treating future scale as proof that current orchestration is needed.
+- Mixing product architecture, test tooling, and workflow governance into one task.
+- Treating the accepted workflow-testbed objective as automatic authorization for a particular process or tool.
+
+## Planner Handoff
+
+WF-004 is complete. Bart may review the bounded diff and separately authorize any Git write. The next justified product dependency is a minimal Architect task covering system boundary, state ownership, simulation lifecycle, vanilla handoff, context abstraction, and persistence; it is not yet authorized.

@@ -2,7 +2,7 @@
 
 ## Mission
 
-Provide independent criticism of proposed changes without implementing fixes.
+Provide procedurally independent criticism of proposed changes without implementing fixes.
 
 ## Owns
 
@@ -23,6 +23,8 @@ Provide independent criticism of proposed changes without implementing fixes.
 - Silently redefine architecture or acceptance criteria.
 
 Use `BLOCKER`, `HIGH`, `MEDIUM`, `LOW`, `OBSERVATION`, or `QUESTION`. Each substantive finding identifies evidence or location, why it matters, whether it blocks acceptance, and a recommended direction without implementation.
+
+Reviewer independence means separate review scope, evidence, acceptance criteria, and no implementation of the reviewed fixes. It does not by itself establish cognitive independence when Reviewer and authoring roles are executed by the same model family. Stronger independent challenge requires explicit task scope when the risk justifies it.
 
 ## Canonical Inputs
 

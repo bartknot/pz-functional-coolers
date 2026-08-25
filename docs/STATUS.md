@@ -4,9 +4,9 @@
 
 - Repository: `pz-functional-coolers`
 - Branch at this snapshot: `main`
-- Canonical evidence and workflow inspected through HEAD: `d302f089da2a97f0bd559e3faaf4ccb33f91485d`
+- Canonical evidence and workflow inspected through HEAD: `2809410db1d53e5d3e6ff5cd7065ebb01c9f5d9e`
 - Runtime baseline recorded by the active task: Project Zomboid Build 42.20.3
-- Active task: FC-004, status `COMPLETE`; no successor task is currently authorized.
+- Active task: WF-004, status `COMPLETE`; no successor task is currently authorized.
 - Production source identifies itself as `Prototype v0.3.0-dev`.
 - The elapsed-time simulation and FRIDGE/context diagnostics are committed.
 - The Functional Coolers Test Harness is tracked in the same repository.
@@ -84,10 +84,19 @@ FC-004 is complete. Its canonical evidence chain consists of:
 - `docs/tests/runs/FC-004-2026-08-25-B.md` — VALID counterbalanced Run B.
 - `docs/research/FC-004-2026-08-25.md` — accepted Researcher synthesis.
 - The byte-verified raw artifacts referenced by both run records.
+- `docs/tasks/FC-004.md` — preserved final FC-004 task definition.
 
 The accepted synthesis establishes with high confidence within the tested Build 42.20.3 scope that the sustained selected/active treatment determined which matched carried and equipped Cooler received continuous observable vanilla Food refresh. The update pattern reversed with selected identity while A remained primary and B remained secondary, so fixed group identity and hand assignment do not independently explain the split.
 
 This does not establish that selection is necessary for every possible catch-up, identify the internal vanilla update mechanism, distinguish selection from the bundled visible/open/pinned UI treatment, or determine whether unselected stale Food receives no hidden processing versus deferred catch-up at a later update opportunity. One counterbalanced pair is not independent replication.
+
+## Workflow Planning State
+
+- FC-003 and FC-004 demonstrated that the layered canonical context, explicit authorization boundaries, experiment-validity rules, evidence chain, task archiving, and Role/Task Git traceability are operationally useful.
+- No material role-handoff context loss was identified that justifies a mandatory handoff template or additional standing checklist.
+- `WF-004` completed one bounded milestone retrospective addressing three governance gaps: durable reconciliation of direct Bart authorization, the limit of procedural role separation without cognitive independence, and a lightweight trigger for future retrospectives.
+- Separately, Bart explicitly accepted developing and validating a reusable AI-assisted development workflow as a durable second Project Charter objective.
+- The review added no handoff template, pre-flight checklist, conflict-resolution system, debt taxonomy, or new document hierarchy because current evidence did not justify them.
 
 ## Known Limitations and Unresolved Questions
 
@@ -116,4 +125,4 @@ These inconsistencies are recorded here, not fixed by this status task.
 
 ## Current Development Position
 
-The project has moved beyond the superseded vanilla-delta approach to an elapsed-time managed prototype and completed both the FC-003 and FC-004 evidence chains. FC-004 provides a bounded, counterbalanced selected/active refresh finding but no automatic architecture or production consequence. No successor task is currently authorized. The highest-value candidate empirical follow-up is a controlled first-selection-after-stale test that distinguishes deferred observable catch-up from absent processing; independent FC-004 replication also remains necessary. Environment guards, deeper persistence work, calibration, additional contexts, multiplayer, UX, and release preparation remain separately sequenced work.
+The project has moved beyond the superseded vanilla-delta approach to an elapsed-time managed prototype and completed both the FC-003 and FC-004 evidence chains. FC-004 provides a bounded, counterbalanced selected/active refresh finding but no automatic architecture or production consequence. WF-004 is complete. No successor task is currently authorized. The next justified product-development dependency is a minimal canonical architecture baseline before further production implementation. Empirical follow-ups and Git/runtime provenance tooling remain separate backlog concerns and require their own accepted tasks before implementation.
