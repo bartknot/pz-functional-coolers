@@ -16,7 +16,7 @@
 local FCTH = {}
 
 local SETUP_VERSION = 11
-local HARNESS_VERSION = "0.4.2-dev"
+local HARNESS_VERSION = "0.4.3-dev"
 local EXPECTED_BUILD = "42.20.3"
 
 local TEST_SPAWN_X = 10693
@@ -1239,13 +1239,24 @@ local function handleExperimentMinute(state)
     and now
     and beginWorldHours
     and now - beginWorldHours >= EXPERIMENT_TARGET_HOURS then
+        local elapsedGameHours = now - beginWorldHours
         targetReported = true
         emit(
             "TARGET_REACHED",
             state,
             " | status=TARGET_REACHED"
             .. " | elapsedGameHours="
-            .. tostring(now - beginWorldHours)
+            .. tostring(elapsedGameHours)
+        )
+        activeState = "COMPLETE"
+        emit(
+            "END",
+            state,
+            " | status=COMPLETE"
+            .. " | targetReported=true"
+            .. " | completionReason=target_reached"
+            .. " | elapsedGameHours="
+            .. tostring(elapsedGameHours)
         )
     end
 end

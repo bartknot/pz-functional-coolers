@@ -1,4 +1,4 @@
 name=Functional Coolers Test Harness
 id=FunctionalCoolersTestHarness
 description=Creates and observes the matched FC-004 selected-versus-unselected Cooler test setup.
-modversion=0.4.2
+modversion=0.4.3

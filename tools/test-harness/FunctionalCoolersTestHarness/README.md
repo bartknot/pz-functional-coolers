@@ -15,8 +15,8 @@ This is the development and test harness for Functional Coolers. It is test infr
 ## Version and State
 
 - Mod ID: `FunctionalCoolersTestHarness`
-- Mod version: `0.4.2`
-- Source version: `v0.4.2-dev`
+- Mod version: `0.4.3`
+- Source version: `v0.4.3-dev`
 - Setup version: `11`
 
 This version implements the bounded FC-004 matched setup and selected-container observability. It requires a fresh dedicated save; saves prepared with an older setup version are rejected rather than repaired.
@@ -53,6 +53,8 @@ Right-click `FC004-A`, `FC004-B`, or any item inside either Cooler. The FC-004 i
 - `FC-004: End/cancel active harness run` while a run is active.
 
 The context menu replaces the previous function-key controls because `Ctrl+Shift+F9` also opens a Project Zomboid debug editor in the target runtime.
+
+An armed experiment automatically reaches its endpoint after 4.5 game hours. The harness emits `TARGET_REACHED` and `END | status=COMPLETE` from the same authoritative state snapshot, then stops further experiment samples. This endpoint does not pause the game, change time speed, manipulate the UI, alter equipment or contents, or write Food state.
 
 For the smoketest, perform these observable transitions:
 

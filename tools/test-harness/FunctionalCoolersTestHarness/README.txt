@@ -1,4 +1,4 @@
-Functional Coolers Test Harness v0.4.2-dev
+Functional Coolers Test Harness v0.4.3-dev
 
 FC-004 matched selected-versus-unselected infrastructure.
 
@@ -25,6 +25,7 @@ Equip FC004-A primary and FC004-B secondary. Pin and keep the player inventory v
 Right-click FC004-A, FC004-B, or one of their contents to use the FC-004 harness controls.
 The context menu can start the infrastructure smoketest, arm an experiment (separate Bart authorization required), or end/cancel an active run.
 This replaces the function-key controls because Ctrl+Shift+F9 also opens a Project Zomboid debug editor in the target runtime.
+An armed experiment automatically emits TARGET_REACHED and END status=COMPLETE from the same state snapshot after 4.5 game hours, then stops further experiment samples without pausing or manipulating game state.
 
 The smoketest must detect selection A, selection B, inventory closed, inventory collapsed, an equip-assignment change, and ten stable restored game minutes. Smoketest output is not experiment evidence.
 
