@@ -12,7 +12,10 @@
 - [x] Perform and report the authorized infrastructure-only smoketest.
 - [x] Have Test Analyst review practical executability and marker validity.
 - [x] Obtain Bart's separate authorization for the substantive counterbalanced FC-004 runs.
-- [ ] Execute the authorized runs, preserve raw evidence, classify them, and persist their canonical records.
+- [x] Classify the first attempted Run A `INVALID` because the required `END` marker was absent.
+- [x] Obtain Bart's authorization for automatic `END` instrumentation and exactly one replacement Run A.
+- [ ] Implement, source-verify, review, and deploy automatic experiment completion at `TARGET_REACHED`.
+- [ ] Execute the replacement Run A and existing Run B, preserve raw evidence, classify them, and persist their canonical records when separately authorized.
 - [ ] Route assessed FC-004 evidence to Researcher before updating broader project conclusions.
 
 ## Near Term

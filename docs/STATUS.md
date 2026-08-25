@@ -4,9 +4,9 @@
 
 - Repository: `pz-functional-coolers`
 - Branch at this snapshot: `main`
-- Canonical evidence and workflow inspected through HEAD: `352870efe7dcdc74b775c6e210bd42cfdaa5aa37`
+- Canonical evidence and workflow inspected through HEAD: `1cc4ffe727dca9eba6e4c24ef71bf730966f14f5`
 - Runtime baseline recorded by the active task: Project Zomboid Build 42.20.3
-- Active task: FC-004, status `EXPERIMENT AUTHORIZED`
+- Active task: FC-004, status `ENDPOINT REFINEMENT AUTHORIZED`
 - Production source identifies itself as `Prototype v0.3.0-dev`.
 - The elapsed-time simulation and FRIDGE/context diagnostics are committed.
 - The Functional Coolers Test Harness is tracked in the same repository.
@@ -80,7 +80,7 @@ Its source prepares the deterministic matched `FC004-A` and `FC004-B` Cooler gro
 
 FC-004 has an accepted matched, counterbalanced protocol comparing a Cooler held selected/active throughout an extended waiting period with an otherwise equivalent unselected Cooler in the same carried/equipped context.
 
-The bounded Test Engineer implementation and infrastructure-only smoketest are complete. Test Analyst accepted practical executability and marker validity, Planner confirmed readiness, and Bart authorized both substantive counterbalanced FC-004 runs. Nothing under production `42/` changed. Repository persistence of raw run artifacts and canonical run records still requires separate explicit authorization.
+The bounded Test Engineer implementation and infrastructure-only smoketest are complete. The first attempted Run A reached the 4.5-game-hour target with treatment and sampling intact but lacked the required `END` marker, so Test Analyst classified it `INVALID` under the accepted protocol. Bart authorized a bounded automatic-`END` harness refinement and exactly one replacement Run A; the existing Run B authorization remains in force. Nothing under production `42/` changed. Repository persistence of raw run artifacts and canonical run records still requires separate explicit authorization.
 
 ## Known Limitations and Unresolved Questions
 
@@ -107,4 +107,4 @@ These inconsistencies are recorded here, not fixed by this status task.
 
 ## Current Development Position
 
-The project has moved beyond the superseded vanilla-delta approach to an elapsed-time managed prototype and completed the FC-003 evidence chain. The FC-004 protocol, harness implementation, infrastructure smoketest, and Test Analyst review are complete, and both substantive counterbalanced runs are authorized. The immediate priority is executing Run A and Run B exactly as accepted, followed by Test Analyst classification and separately authorized evidence persistence. No architecture or production change follows automatically from FC-003 or FC-004 infrastructure. Environment guards, deeper persistence work, calibration, additional contexts, multiplayer, UX, and release preparation remain separately sequenced work.
+The project has moved beyond the superseded vanilla-delta approach to an elapsed-time managed prototype and completed the FC-003 evidence chain. The FC-004 protocol and core infrastructure are accepted. The immediate priority is the authorized automatic-endpoint refinement, Bart's review of that change, and then execution of the replacement Run A and existing Run B. Test Analyst classification and separately authorized evidence persistence follow. No architecture or production change follows automatically from FC-003 or FC-004 infrastructure. Environment guards, deeper persistence work, calibration, additional contexts, multiplayer, UX, and release preparation remain separately sequenced work.
