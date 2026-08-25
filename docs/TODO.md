@@ -4,19 +4,9 @@
 
 ## Active Follow-Up
 
-- [x] Have the Test Analyst design the FC-004 matched sustained selected/active-versus-unselected protocol.
-- [x] Define authoritative active-state verification, readiness, exact timing, and sufficient post-threshold sampling.
-- [x] Identify the minimum Test Engineer infrastructure requirement without implementing it in the protocol-design task.
-- [x] Obtain Bart's acceptance of the protocol and the separately bounded infrastructure task.
-- [x] Implement the authorized FC-004 matched setup, selected-container observability, state markers, and invalidation detection.
-- [x] Perform and report the authorized infrastructure-only smoketest.
-- [x] Have Test Analyst review practical executability and marker validity.
-- [x] Obtain Bart's separate authorization for the substantive counterbalanced FC-004 runs.
-- [x] Classify the first attempted Run A `INVALID` because the required `END` marker was absent.
-- [x] Obtain Bart's authorization for automatic `END` instrumentation and exactly one replacement Run A.
-- [ ] Implement, source-verify, review, and deploy automatic experiment completion at `TARGET_REACHED`.
-- [ ] Execute the replacement Run A and existing Run B, preserve raw evidence, classify them, and persist their canonical records when separately authorized.
-- [ ] Route assessed FC-004 evidence to Researcher before updating broader project conclusions.
+FC-004 is complete. No successor task or experiment is authorized by this backlog.
+
+- [ ] Have Planner/Bart accept, reject, or defer a candidate empirical task testing what happens when an observably stale Cooler is selected for the first time after a controlled waiting interval.
 
 ## Near Term
 
@@ -32,6 +22,9 @@
 
 ## Validation and Calibration
 
+- [ ] Independently replicate the FC-004 counterbalanced selected/active-versus-unselected effect before broad generalization or production decisions.
+- [ ] Test whether an observably stale unselected Cooler catches up immediately when first selected after a controlled waiting interval.
+- [ ] Distinguish selected-container binding from visible/open/pinned inventory state through a separately accepted experiment if the mechanism remains decision-relevant.
 - [ ] Replicate the approximately two-game-hour carried/CONTROL catch-up pattern with varied waiting durations.
 - [ ] Obtain complete repeated timing for P1G and powered FRIDGE with sufficient post-threshold sampling.
 - [ ] Run long unattended catch-up tests.

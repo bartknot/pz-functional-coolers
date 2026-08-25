@@ -4,9 +4,9 @@
 
 - Repository: `pz-functional-coolers`
 - Branch at this snapshot: `main`
-- Canonical evidence and workflow inspected through HEAD: `1cc4ffe727dca9eba6e4c24ef71bf730966f14f5`
+- Canonical evidence and workflow inspected through HEAD: `d302f089da2a97f0bd559e3faaf4ccb33f91485d`
 - Runtime baseline recorded by the active task: Project Zomboid Build 42.20.3
-- Active task: FC-004, status `ENDPOINT REFINEMENT AUTHORIZED`
+- Active task: FC-004, status `COMPLETE`; no successor task is currently authorized.
 - Production source identifies itself as `Prototype v0.3.0-dev`.
 - The elapsed-time simulation and FRIDGE/context diagnostics are committed.
 - The Functional Coolers Test Harness is tracked in the same repository.
@@ -70,22 +70,31 @@ The approximately two-game-hour carried/CONTROL recurrence is meaningful candida
 The tracked Functional Coolers Test Harness is located at `tools/test-harness/FunctionalCoolersTestHarness/`.
 
 - Mod ID: `FunctionalCoolersTestHarness`
-- Mod version: `0.4.2`
-- Source version: `v0.4.2-dev`
+- Mod version: `0.4.3`
+- Source version: `v0.4.3-dev`
 - Setup version: `11`
 
-Its source prepares the deterministic matched `FC004-A` and `FC004-B` Cooler groups, uses vanilla freezing for their frozen steaks, observes the actual player-inventory selected-container binding, logs exact setup and Food state, and detects invalidating UI, selection, equip, context, or contents changes. The complete Build 42.20.3 infrastructure smoketest passed, including sustained selection of secondary-equipped `FC004-B`. Smoketest output is marked `evidenceEligible=false`. The harness is test infrastructure and must not ship with the production mod.
+Its source prepares the deterministic matched `FC004-A` and `FC004-B` Cooler groups, uses vanilla freezing for their frozen steaks, observes the actual player-inventory selected-container binding, logs exact setup and Food state, detects invalidating UI, selection, equip, context, or contents changes, and automatically completes an experiment at the accepted 4.5-game-hour endpoint. The complete Build 42.20.3 infrastructure smoketest passed, including sustained selection of secondary-equipped `FC004-B`. The automatic endpoint was runtime-verified in both valid FC-004 runs. Smoketest output is marked `evidenceEligible=false`. The harness is test infrastructure and must not ship with the production mod.
 
-## Current Active Investigation
+## Canonical FC-004 Evidence Findings
 
-FC-004 has an accepted matched, counterbalanced protocol comparing a Cooler held selected/active throughout an extended waiting period with an otherwise equivalent unselected Cooler in the same carried/equipped context.
+FC-004 is complete. Its canonical evidence chain consists of:
 
-The bounded Test Engineer implementation and infrastructure-only smoketest are complete. The first attempted Run A reached the 4.5-game-hour target with treatment and sampling intact but lacked the required `END` marker, so Test Analyst classified it `INVALID` under the accepted protocol. Bart authorized a bounded automatic-`END` harness refinement and exactly one replacement Run A; the existing Run B authorization remains in force. Nothing under production `42/` changed. Repository persistence of raw run artifacts and canonical run records still requires separate explicit authorization.
+- `docs/tests/runs/FC-004-2026-08-25-A.md` — VALID replacement Run A.
+- `docs/tests/runs/FC-004-2026-08-25-B.md` — VALID counterbalanced Run B.
+- `docs/research/FC-004-2026-08-25.md` — accepted Researcher synthesis.
+- The byte-verified raw artifacts referenced by both run records.
+
+The accepted synthesis establishes with high confidence within the tested Build 42.20.3 scope that the sustained selected/active treatment determined which matched carried and equipped Cooler received continuous observable vanilla Food refresh. The update pattern reversed with selected identity while A remained primary and B remained secondary, so fixed group identity and hand assignment do not independently explain the split.
+
+This does not establish that selection is necessary for every possible catch-up, identify the internal vanilla update mechanism, distinguish selection from the bundled visible/open/pinned UI treatment, or determine whether unselected stale Food receives no hidden processing versus deferred catch-up at a later update opportunity. One counterbalanced pair is not independent replication.
 
 ## Known Limitations and Unresolved Questions
 
 - The vanilla processing path responsible for pre-inspection carried/CONTROL catch-up remains unresolved.
-- Sustained selected/active state versus unselected state has not been tested.
+- Sustained selected/active state versus unselected state is tested by one valid counterbalanced pair; independent replication and broader generalization remain outstanding.
+- Which part of the selected/visible/open/pinned UI treatment supplies the update opportunity remains unresolved.
+- Whether stale unselected Food receives no hidden processing or catches up when first selected remains unresolved.
 - The approximately two-game-hour recurrence requires replication and varied-duration testing.
 - Complete repeated timing for P1G and FRIDGE remains unresolved.
 - Long unattended, chunk-unloaded, save/load, and 24/72-hour catch-up are unvalidated.
@@ -107,4 +116,4 @@ These inconsistencies are recorded here, not fixed by this status task.
 
 ## Current Development Position
 
-The project has moved beyond the superseded vanilla-delta approach to an elapsed-time managed prototype and completed the FC-003 evidence chain. The FC-004 protocol and core infrastructure are accepted. The immediate priority is the authorized automatic-endpoint refinement, Bart's review of that change, and then execution of the replacement Run A and existing Run B. Test Analyst classification and separately authorized evidence persistence follow. No architecture or production change follows automatically from FC-003 or FC-004 infrastructure. Environment guards, deeper persistence work, calibration, additional contexts, multiplayer, UX, and release preparation remain separately sequenced work.
+The project has moved beyond the superseded vanilla-delta approach to an elapsed-time managed prototype and completed both the FC-003 and FC-004 evidence chains. FC-004 provides a bounded, counterbalanced selected/active refresh finding but no automatic architecture or production consequence. No successor task is currently authorized. The highest-value candidate empirical follow-up is a controlled first-selection-after-stale test that distinguishes deferred observable catch-up from absent processing; independent FC-004 replication also remains necessary. Environment guards, deeper persistence work, calibration, additional contexts, multiplayer, UX, and release preparation remain separately sequenced work.

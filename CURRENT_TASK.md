@@ -6,13 +6,13 @@ FC-004
 
 ## Status
 
-ENDPOINT REFINEMENT AUTHORIZED
+COMPLETE
 
 ## Objective
 
-Implement automatic experiment completion at the accepted target, then execute one replacement Run A and the existing authorized Run B for the controlled matched selected/active-versus-unselected comparison.
+Complete the bounded automatic-endpoint refinement and the controlled matched selected/active-versus-unselected comparison through canonical Test Analyst evidence and Researcher synthesis.
 
-The bounded harness implementation and infrastructure smoketest are complete and reviewed. The first attempted Run A reached the accepted duration with its treatment intact but lacked the required `END` marker and was classified `INVALID` by Test Analyst. Bart authorizes the narrowly bounded automatic-`END` refinement and exactly one replacement Run A. The existing Run B authorization remains in force.
+The endpoint refinement, replacement Run A, counterbalanced Run B, raw-evidence persistence, Test Analyst records, and Researcher synthesis are complete. FC-004 authorizes no further experiment or implementation work.
 
 ## Why
 
@@ -27,6 +27,10 @@ The FC-003 Researcher synthesis identifies a matched sustained selected/active-v
 - `docs/tests/runs/FC-003-2026-08-22.md` — VALID run.
 - `docs/research/FC-003-2026-08-22.md` — accepted cross-run Researcher synthesis.
 - Raw runtime artifacts referenced by the two canonical run records.
+- `docs/tests/runs/FC-004-2026-08-25-A.md` — VALID replacement Run A.
+- `docs/tests/runs/FC-004-2026-08-25-B.md` — VALID counterbalanced Run B.
+- `test-artifacts/FC-004/2026-08-25/console-run-a.txt` and `console-run-b.txt` — byte-verified raw runtime artifacts.
+- `docs/research/FC-004-2026-08-25.md` — canonical FC-004 Researcher synthesis.
 
 ## Research Question
 
@@ -39,6 +43,12 @@ This question must remain distinct from:
 - whether the approximately two-game-hour recurrence is a fixed period, a threshold, or a threshold processed at an update opportunity.
 
 The protocol may collect evidence relevant to those questions but must not claim to answer them in advance.
+
+## Completion Result
+
+Both accepted counterbalanced runs are VALID. Across the tested pair, the sustained selected/active treatment determined which matched carried and equipped Cooler received continuous observable vanilla Food refresh. The mirrored result followed selected identity while A remained primary and B remained secondary, so fixed group identity and hand assignment do not independently explain the observed split.
+
+This conclusion is bounded to the tested Build 42.20.3 setup and observable Food fields. It does not establish the internal vanilla mechanism, distinguish selection from the bundled visible/open/pinned UI treatment, or determine whether stale unselected Food receives no hidden processing versus deferred catch-up at a later update opportunity.
 
 ## Accepted Experimental Protocol
 
@@ -100,7 +110,7 @@ After readiness succeeds:
 8. Mark the harness run complete immediately after automatic `END`. The operator may then pause or exit without needing to monitor the scrolling console or interact with a test container to end measurement.
 9. Preserve the full raw console log and Bart-supplied execution metadata.
 
-Substantive execution of these steps is authorized for exactly one replacement Run A and the existing Run B. No protocol deviation or additional substantive run is authorized.
+The accepted execution authorization covered exactly one replacement Run A and the existing Run B. Both are complete. No protocol deviation or additional substantive run is authorized.
 
 ### Run Classification
 
@@ -119,9 +129,9 @@ Test Analyst owns final run classification. Researcher owns any later cross-run 
 - Test Analyst classified the attempt `INVALID` for the accepted experiment solely because the required endpoint marker was absent.
 - Its observations may be retained as narrower diagnostic evidence if repository persistence is later authorized, but they do not replace the authorized counterbalanced runs or establish the research conclusion.
 
-## Authorized Test Infrastructure
+## Completed Test Infrastructure Authorization
 
-The Test Engineer may implement only the minimum FC-004 support needed to:
+The Test Engineer was authorized to implement only the minimum FC-004 support needed to:
 
 - Create the two matched `FC004-A` and `FC004-B` Cooler groups deterministically.
 - Prepare and distribute their matched fresh and vanilla-frozen steak contents before measurement.
@@ -138,7 +148,7 @@ The automatic endpoint must not pause the game, change game speed, change UI sta
 
 ## Infrastructure Smoketest
 
-After implementation, Test Engineer may deploy the harness to its documented local runtime target and perform a short non-experimental smoketest that verifies:
+After implementation, Test Engineer was authorized to deploy the harness to its documented local runtime target and perform a short non-experimental smoketest that verified:
 
 1. `FC004-A` selection is identified correctly.
 2. Switching to `FC004-B` changes the marker correctly.
@@ -151,18 +161,18 @@ After implementation, Test Engineer may deploy the harness to its documented loc
 
 The smoketest validates infrastructure only. Its output is not FC-004 experimental evidence and must not be used to answer the research question.
 
-For the automatic-endpoint refinement, Test Engineer must verify the source path from target detection through `TARGET_REACHED`, automatic `END`, and completed state, then deploy the reviewed harness. The existing smoketest already demonstrates automatic duration-threshold completion in smoketest mode. Runtime verification of the experiment endpoint occurs during the authorized replacement Run A; no shortened experiment or additional substantive validation run is authorized.
+For the automatic-endpoint refinement, Test Engineer was required to verify the source path from target detection through `TARGET_REACHED`, automatic `END`, and completed state, then deploy the reviewed harness. The existing smoketest demonstrated automatic duration-threshold completion in smoketest mode. Runtime verification of the experiment endpoint occurred during the authorized replacement Run A; no shortened experiment or additional substantive validation run is authorized.
 
 ## Infrastructure Readiness Result
 
-- Harness `v0.4.2-dev`, setup version `11`, is committed at `352870e`.
+- Harness `v0.4.3-dev`, setup version `11`, including automatic experiment completion, is committed with the evidence at `d302f08`.
 - The matched setup and selected-container binding were validated in Project Zomboid Build 42.20.3 with the required sandbox values.
 - The complete infrastructure smoketest detected selection of both FC-004 Coolers, inventory closing and collapse, an equip-assignment change, and correct restoration.
 - `FC004-B` remained correctly selected while secondary-equipped throughout the required restored stability period.
 - The smoketest ended with `status=PASS` and `evidenceEligible=false`.
 - Test Analyst accepted the infrastructure as practically executable and ready for Planner handoff.
-
-Bart's subsequent authorization permits both substantive FC-004 runs. Repository persistence of their raw artifacts and canonical run records still requires separate explicit authorization.
+- The automatic experiment endpoint was runtime-verified in both valid substantive runs: `TARGET_REACHED` and `END | status=COMPLETE` used the same endpoint snapshot and no experiment samples followed `END`.
+- Both valid run artifacts and canonical Test Analyst records are persisted in the repository.
 
 ## Assigned Role and Sequence
 
@@ -171,26 +181,20 @@ Bart's subsequent authorization permits both substantive FC-004 runs. Repository
 3. Planner confirmed readiness and Bart authorized the original counterbalanced runs. Complete.
 4. Test Analyst classified the first attempted Run A `INVALID` because its required `END` marker was absent. Complete.
 5. Bart authorized automatic-`END` instrumentation and exactly one replacement Run A. Complete.
-6. Test Engineer implements and source-verifies the bounded endpoint refinement. Pending.
-7. Bart reviews the endpoint refinement before replacement Run A begins. Pending.
-8. Test Analyst supports and classifies the fresh replacement Run A. Pending.
-9. Test Analyst supports and classifies the fresh Run B. Pending.
-10. Test Analyst persists assessed evidence only when separately authorized.
-11. Researcher evaluates cross-run conclusions only after canonical run records exist.
+6. Test Engineer implemented, source-verified, and deployed the bounded endpoint refinement. Complete.
+7. Bart reviewed and accepted the endpoint refinement before replacement Run A. Complete.
+8. Test Analyst classified the fresh replacement Run A `VALID`. Complete.
+9. Test Analyst classified the fresh counterbalanced Run B `VALID`. Complete.
+10. Test Analyst persisted the authorized assessed evidence. Complete.
+11. Researcher persisted the canonical cross-run synthesis. Complete.
+12. Planner closed FC-004 and updated canonical project state. Complete.
 
 ## Allowed Changes
 
-- Test Engineer may modify only:
-  - `tools/test-harness/FunctionalCoolersTestHarness/42/media/lua/client/FunctionalCoolersTestSetup.lua`
-  - `tools/test-harness/FunctionalCoolersTestHarness/42/mod.info`
-  - `tools/test-harness/FunctionalCoolersTestHarness/README.md`
-  - `tools/test-harness/FunctionalCoolersTestHarness/README.txt`
-- Test Engineer may now modify those same four harness files only as needed to implement, identify, and document automatic `END` at the accepted experiment target.
-- Test Engineer may deploy the reviewed harness changes to the documented local runtime target only for authorized infrastructure verification, replacement Run A, and Run B.
-- Planner may update `CURRENT_TASK.md`, `docs/STATUS.md`, and `docs/TODO.md` for this accepted phase transition.
+- FC-004 is complete and authorizes no further harness changes, experiment execution, evidence writes, architecture changes, or production changes.
+- Bart's closeout authorization permits only the canonical Researcher synthesis and Planner updates to `CURRENT_TASK.md`, `docs/STATUS.md`, and `docs/TODO.md` completed in this transition.
 - Nothing under the repository's production `42/` path may be changed.
-- No raw substantive experiment artifact or canonical run record may be added until Bart separately authorizes repository evidence persistence.
-- Further repository writes require explicit authorization from Bart or a later accepted `CURRENT_TASK.md` revision.
+- Any successor experiment, infrastructure change, or other repository write requires new authorization from Bart or a later accepted `CURRENT_TASK.md` revision.
 
 ## Acceptance Criteria
 
@@ -219,11 +223,10 @@ Bart's subsequent authorization permits both substantive FC-004 runs. Repository
 - Executing any substantive run beyond the authorized replacement Run A and Run B
 - Committing, pushing, tagging, releasing, branching, or creating a worktree without separate Git authorization
 
-## Known Risks
+## Residual Uncertainties
 
-- The selected player-inventory UI binding and sustained secondary selection passed the infrastructure smoketest but must still remain valid throughout each 4.5-game-hour substantive run.
-- The experiment endpoint path is not runtime-verified until replacement Run A reaches its target.
-- The selected and unselected groups may receive unequal vanilla processing for reasons other than selection.
-- A single wait duration cannot distinguish a fixed period from a threshold processed at an update opportunity.
-- Insufficient post-threshold sampling may repeat the incomplete P1G/FRIDGE outcome from FC-003.
-- Adding infrastructure and changing the empirical intervention in one step could introduce multiple separable uncertainties.
+- The FC-004 effect has one valid counterbalanced pair but no independent replication.
+- The treatment bundles selected identity with a visible, pinned, open inventory context; the responsible subcomponent is unresolved.
+- Observable stale fields do not distinguish absent vanilla processing from deferred catch-up at a later update opportunity.
+- The internal relationship between FC-003's approximately two-game-hour catch-ups and FC-004's continuous selected refresh remains unresolved.
+- Generalization to other builds, contexts, equipment states, durations, and Food items requires further evidence.
