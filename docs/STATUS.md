@@ -4,9 +4,9 @@
 
 - Repository: `pz-functional-coolers`
 - Branch at this snapshot: `main`
-- Canonical evidence and workflow inspected through HEAD: `eaaf0a6ab7d0d82da1aa5c0a31e63b229156ae13`
+- Canonical evidence and workflow inspected through HEAD: `352870efe7dcdc74b775c6e210bd42cfdaa5aa37`
 - Runtime baseline recorded by the active task: Project Zomboid Build 42.20.3
-- Active task: FC-004, status `TEST INFRASTRUCTURE`
+- Active task: FC-004, status `EXPERIMENT AUTHORIZED`
 - Production source identifies itself as `Prototype v0.3.0-dev`.
 - The elapsed-time simulation and FRIDGE/context diagnostics are committed.
 - The Functional Coolers Test Harness is tracked in the same repository.
@@ -70,17 +70,17 @@ The approximately two-game-hour carried/CONTROL recurrence is meaningful candida
 The tracked Functional Coolers Test Harness is located at `tools/test-harness/FunctionalCoolersTestHarness/`.
 
 - Mod ID: `FunctionalCoolersTestHarness`
-- Mod version: `0.3.7`
-- Source version: `v0.3.7-dev`
-- Setup version: `9`
+- Mod version: `0.4.2`
+- Source version: `v0.4.2-dev`
+- Setup version: `11`
 
-Its source prepares the fixed single-player calibration setup, named Cooler groups, freezer cohort, NEUTRAL container, and readiness workflow. It reports `[FCTH] status=READY_TO_DISTRIBUTE` before Bart manually distributes test items. The harness is test infrastructure and must not ship with the production mod.
+Its source prepares the deterministic matched `FC004-A` and `FC004-B` Cooler groups, uses vanilla freezing for their frozen steaks, observes the actual player-inventory selected-container binding, logs exact setup and Food state, and detects invalidating UI, selection, equip, context, or contents changes. The complete Build 42.20.3 infrastructure smoketest passed, including sustained selection of secondary-equipped `FC004-B`. Smoketest output is marked `evidenceEligible=false`. The harness is test infrastructure and must not ship with the production mod.
 
 ## Current Active Investigation
 
 FC-004 has an accepted matched, counterbalanced protocol comparing a Cooler held selected/active throughout an extended waiting period with an otherwise equivalent unselected Cooler in the same carried/equipped context.
 
-The active phase is bounded Test Engineer implementation and an infrastructure-only smoketest. It must create matched groups, observe the actual player-inventory UI selection binding, emit explicit timing/state markers, and detect invalidating context changes. Nothing under production `42/` may change. The substantive FC-004 runs remain unauthorized until Test Analyst reviews the infrastructure and Bart separately authorizes execution.
+The bounded Test Engineer implementation and infrastructure-only smoketest are complete. Test Analyst accepted practical executability and marker validity, Planner confirmed readiness, and Bart authorized both substantive counterbalanced FC-004 runs. Nothing under production `42/` changed. Repository persistence of raw run artifacts and canonical run records still requires separate explicit authorization.
 
 ## Known Limitations and Unresolved Questions
 
@@ -107,4 +107,4 @@ These inconsistencies are recorded here, not fixed by this status task.
 
 ## Current Development Position
 
-The project has moved beyond the superseded vanilla-delta approach to an elapsed-time managed prototype and completed the FC-003 evidence chain. The FC-004 protocol is accepted; the immediate priority is its bounded harness implementation, infrastructure smoketest, and Test Analyst review before Bart separately authorizes experimental execution. No architecture or production change follows automatically from FC-003 or FC-004 infrastructure. Environment guards, deeper persistence work, calibration, additional contexts, multiplayer, UX, and release preparation remain separately sequenced work.
+The project has moved beyond the superseded vanilla-delta approach to an elapsed-time managed prototype and completed the FC-003 evidence chain. The FC-004 protocol, harness implementation, infrastructure smoketest, and Test Analyst review are complete, and both substantive counterbalanced runs are authorized. The immediate priority is executing Run A and Run B exactly as accepted, followed by Test Analyst classification and separately authorized evidence persistence. No architecture or production change follows automatically from FC-003 or FC-004 infrastructure. Environment guards, deeper persistence work, calibration, additional contexts, multiplayer, UX, and release preparation remain separately sequenced work.

@@ -8,10 +8,10 @@
 - [x] Define authoritative active-state verification, readiness, exact timing, and sufficient post-threshold sampling.
 - [x] Identify the minimum Test Engineer infrastructure requirement without implementing it in the protocol-design task.
 - [x] Obtain Bart's acceptance of the protocol and the separately bounded infrastructure task.
-- [ ] Implement the authorized FC-004 matched setup, selected-container observability, state markers, and invalidation detection.
-- [ ] Perform and report the authorized infrastructure-only smoketest.
-- [ ] Have Test Analyst review practical executability and marker validity.
-- [ ] Obtain Bart's separate authorization for the substantive counterbalanced FC-004 runs.
+- [x] Implement the authorized FC-004 matched setup, selected-container observability, state markers, and invalidation detection.
+- [x] Perform and report the authorized infrastructure-only smoketest.
+- [x] Have Test Analyst review practical executability and marker validity.
+- [x] Obtain Bart's separate authorization for the substantive counterbalanced FC-004 runs.
 - [ ] Execute the authorized runs, preserve raw evidence, classify them, and persist their canonical records.
 - [ ] Route assessed FC-004 evidence to Researcher before updating broader project conclusions.
 

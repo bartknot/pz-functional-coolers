@@ -6,13 +6,13 @@ FC-004
 
 ## Status
 
-TEST INFRASTRUCTURE
+EXPERIMENT AUTHORIZED
 
 ## Objective
 
-Implement and validate the minimum test-harness support required to execute the accepted controlled matched experiment comparing a sustained selected/active Cooler with an otherwise equivalent unselected Cooler.
+Execute the accepted controlled matched experiment comparing a sustained selected/active Cooler with an otherwise equivalent unselected Cooler.
 
-The experimental protocol is accepted. This phase authorizes the bounded harness implementation and an infrastructure smoketest only. The substantive FC-004 experiment remains unauthorized until the smoketest is reviewed and Bart separately authorizes execution.
+The bounded harness implementation and infrastructure smoketest are complete and reviewed. The experimental protocol is accepted, Planner confirms infrastructure readiness, and Bart authorizes both substantive counterbalanced FC-004 runs.
 
 ## Why
 
@@ -100,7 +100,7 @@ After readiness succeeds:
 8. Pause and emit the final `END` snapshot before changing UI, equip, location, or contents.
 9. Preserve the full raw console log and Bart-supplied execution metadata.
 
-Substantive execution of these steps is not authorized in the current infrastructure phase.
+Substantive execution of these steps is authorized for both accepted counterbalanced runs. No protocol deviation or additional substantive run is authorized.
 
 ### Run Classification
 
@@ -141,13 +141,24 @@ After implementation, Test Engineer may deploy the harness to its documented loc
 
 The smoketest validates infrastructure only. Its output is not FC-004 experimental evidence and must not be used to answer the research question.
 
+## Infrastructure Readiness Result
+
+- Harness `v0.4.2-dev`, setup version `11`, is committed at `352870e`.
+- The matched setup and selected-container binding were validated in Project Zomboid Build 42.20.3 with the required sandbox values.
+- The complete infrastructure smoketest detected selection of both FC-004 Coolers, inventory closing and collapse, an equip-assignment change, and correct restoration.
+- `FC004-B` remained correctly selected while secondary-equipped throughout the required restored stability period.
+- The smoketest ended with `status=PASS` and `evidenceEligible=false`.
+- Test Analyst accepted the infrastructure as practically executable and ready for Planner handoff.
+
+Bart's subsequent authorization permits both substantive FC-004 runs. Repository persistence of their raw artifacts and canonical run records still requires separate explicit authorization.
+
 ## Assigned Role and Sequence
 
-1. Test Engineer implements the bounded harness changes.
-2. Test Engineer performs the authorized infrastructure smoketest and reports exact results and limitations.
-3. Test Analyst reviews practical executability and marker validity.
-4. Planner confirms readiness for the experiment without interpreting runtime results.
-5. Bart separately authorizes the two substantive FC-004 runs.
+1. Test Engineer implements the bounded harness changes. Complete.
+2. Test Engineer performs the authorized infrastructure smoketest and reports exact results and limitations. Complete.
+3. Test Analyst reviews practical executability and marker validity. Complete.
+4. Planner confirms readiness for the experiment without interpreting runtime results. Complete.
+5. Bart separately authorizes the two substantive FC-004 runs. Complete.
 6. Test Analyst classifies authorized runs and persists their evidence when separately authorized.
 7. Researcher evaluates cross-run conclusions only after canonical run records exist.
 
@@ -161,7 +172,7 @@ The smoketest validates infrastructure only. Its output is not FC-004 experiment
 - Test Engineer may deploy those harness changes to the documented local runtime target solely for the authorized smoketest.
 - Planner may update `CURRENT_TASK.md`, `docs/STATUS.md`, and `docs/TODO.md` for this accepted phase transition.
 - Nothing under the repository's production `42/` path may be changed.
-- No raw experiment artifact or canonical run record may be added during the infrastructure phase.
+- No raw substantive experiment artifact or canonical run record may be added until Bart separately authorizes repository evidence persistence.
 - Further repository writes require explicit authorization from Bart or a later accepted `CURRENT_TASK.md` revision.
 
 ## Acceptance Criteria
@@ -173,12 +184,11 @@ The smoketest validates infrastructure only. Its output is not FC-004 experiment
 - Invalidating state changes are detected and reported.
 - The full infrastructure smoketest passes or its exact failure is reported without protocol improvisation.
 - No production source changes occur.
-- No substantive FC-004 experiment is executed.
+- Both substantive runs are executed only after their readiness gates pass and exactly according to the accepted protocol.
 - Test Analyst reviews the completed infrastructure before experimental authorization.
 
 ## Out of Scope
 
-- Executing either substantive FC-004 run
 - Production implementation or fixes
 - Architecture changes
 - Thermal recalibration
@@ -190,8 +200,7 @@ The smoketest validates infrastructure only. Its output is not FC-004 experiment
 
 ## Known Risks
 
-- The selected player-inventory UI binding must still be validated in the actual Build 42.20.3 runtime.
-- A secondary-equipped Cooler may not remain selectable/open, which would return a hand-assignment confound to Test Analyst.
+- The selected player-inventory UI binding and sustained secondary selection passed the infrastructure smoketest but must still remain valid throughout each 4.5-game-hour substantive run.
 - The selected and unselected groups may receive unequal vanilla processing for reasons other than selection.
 - A single wait duration cannot distinguish a fixed period from a threshold processed at an update opportunity.
 - Insufficient post-threshold sampling may repeat the incomplete P1G/FRIDGE outcome from FC-003.
