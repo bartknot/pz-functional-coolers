@@ -1,4 +1,4 @@
 name=Functional Coolers Test Harness
 id=FunctionalCoolersTestHarness
-description=Creates and observes the matched FC-004 selected-versus-unselected Cooler test setup.
-modversion=0.4.3
+description=Creates and observes the bounded FC-006 managed-to-vanilla Food handoff test setup.
+modversion=0.5.1

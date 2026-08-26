@@ -1,32 +1,31 @@
-Functional Coolers Test Harness v0.4.3-dev
+Functional Coolers Test Harness v0.5.1-dev
 
-FC-004 matched selected-versus-unselected infrastructure.
+FC-006 managed-to-vanilla Food handoff infrastructure.
 
-Use a fresh dedicated save. Wait for WAITING_FOR_FREEZER_SELECTION, then open the nearby powered refrigerator/freezer and keep its freezer selected until MATCHED_SETUP_CREATED. Do not move or manipulate the two preparation steaks. FREEZER_SELECTED, FREEZER_SELECTION_LOST, and per-game-minute FREEZER_SAMPLE markers record the setup dependency and individual freezing state. Passive waiting is not a reliable freezer-preparation method in the tested Build 42.20.3 runtime.
+Use a fresh dedicated save on Build 42.20.3. Enable this harness and disable the production Functional Coolers mod. Required sandbox values: DayLength=4, FoodRotSpeed=3, FridgeFactor=3.
 
 Fixed test position:
   x=10693 y=9986 z=0
 
 On a fresh dedicated save the harness:
   - configures the absolute Lua spawn at x=10693 y=9986 z=0 before the player is created
-  - finds a nearby powered vanilla fridge/freezer
-  - clears fridge and freezer once
-  - freezes 2 Base.Steak entirely through vanilla behavior
-  - creates player-inventory Coolers FC004-A and FC004-B
-  - puts 1 fresh and 1 vanilla-frozen Base.Steak in each Cooler
-  - uses zero cold packs in both matched groups
+  - creates empty player-inventory Cooler FC006-GUARD
+  - creates player-inventory Cooler FC006-TEST
+  - puts labeled Base.Steak groups V, A and U in FC006-TEST
+  - aligns and projects their common public baseline
   - adds Base.WristWatch_Right_DigitalRed to player inventory
   - logs the actual selected player-inventory container binding
-  - logs exact IDs, worldHours, hand assignment, UI state, contents and Food state every game minute during an active mode
+  - logs exact IDs, worldHours, hand assignment, UI state, contents, lastAged, age, heat, freezing time and phase flags
   - rejects saves carrying an older harness setup version
 
-Equip FC004-A primary and FC004-B secondary. Pin and keep the player inventory visible.
+Equip FC006-GUARD primary and FC006-TEST secondary. Pin and keep the player inventory visible. Select FC006-GUARD and leave it selected.
 
-Right-click FC004-A, FC004-B, or one of their contents to use the FC-004 harness controls.
-The context menu can start the infrastructure smoketest, arm an experiment (separate Bart authorization required), or end/cancel an active run.
-This replaces the function-key controls because Ctrl+Shift+F9 also opens a Project Zomboid debug editor in the target runtime.
-An armed experiment automatically emits TARGET_REACHED and END status=COMPLETE from the same state snapshot after 4.5 game hours, then stops further experiment samples without pausing or manipulating game state.
+Right-click an FC-006 Cooler or V/A/U item to use the FC-006 harness controls. Start only the infrastructure smoketest under the current authorization. Do not arm the substantive experiment without separate Bart authorization.
 
-The smoketest must detect selection A, selection B, inventory closed, inventory collapsed, an equip-assignment change, and ten stable restored game minutes. Smoketest output is not experiment evidence.
+For the smoketest, wait for READY, start it, and perform no further UI, container, equip, or item interaction. It first calls updateAge on disposable group U after exactly ten game minutes. The thaw gate requires a freezingTime decrease greater than 0.05, correct phase flags, valid setter calls, valid stale-version and public-state guard behavior, and timing within 0.001 game hour.
+
+After that gate the smoke emits one expected mismatch INVALIDATED marker without a handoff commit, resets V/A/U, and runs the real shared one-hour handoff state-machine followed by UPDATE_1, UPDATE_2 and UPDATE_3 at ten-game-minute intervals. PASS requires exact marker order and a final baseline reset. The full smoke takes about 16 minutes 40 seconds of real time at DayLength=4 on normal speed. Do not use fast-forward.
+
+All setup and smoketest output has evidenceEligible=false and is not experiment evidence.
 
 Use a dedicated sandbox with loot disabled.

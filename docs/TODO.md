@@ -4,9 +4,11 @@
 
 ## Active Follow-Up
 
-`FC-006` is accepted as one bounded evidence task for managed-to-vanilla Food handoff continuity. `CURRENT_TASK.md` authorizes only the initial Researcher feasibility/observability and Test Analyst protocol-design phases; this backlog adds no authority.
+`FC-006` is accepted as one bounded evidence task for managed-to-vanilla Food handoff continuity. Its Researcher feasibility, Test Analyst protocol design, and setup-13 infrastructure phases are complete and accepted. Phase D awaits separate Bart authorization; this backlog adds no authority.
 
-- [ ] Complete the FC-006 Researcher feasibility/observability assessment and route its bounded handoff to Test Analyst.
+- [ ] Canonicalize the reviewed setup-13 Planner and four-file harness transition through a separately authorized Git commit/push.
+- [ ] Obtain separate Bart authorization for one substantive FC-006 run.
+- [ ] Execute the authorized run on a new fresh setup-13 save and route its raw evidence to Test Analyst under a separately authorized evidence-persistence step.
 
 
 ## Near Term
