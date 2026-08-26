@@ -4,9 +4,10 @@
 
 - Repository: `pz-functional-coolers`
 - Branch at this snapshot: `main`
-- Canonical evidence and workflow inspected through HEAD: `2809410db1d53e5d3e6ff5cd7065ebb01c9f5d9e`
+- Canonical evidence and workflow inspected through HEAD: `3a626040d96cabaeacecde9f976499a79fb880e8`
 - Runtime baseline recorded by the active task: Project Zomboid Build 42.20.3
-- Active task: WF-004, status `COMPLETE`; no successor task is currently authorized.
+- Active task: FC-005, status `COMPLETE`; no successor task is currently authorized.
+- `docs/ARCHITECTURE.md` is the accepted canonical architecture baseline after the task-specific fresh Reviewer pass, material Architect revisions, focused closure review, and Bart's acceptance on 2026-08-26.
 - Production source identifies itself as `Prototype v0.3.0-dev`.
 - The elapsed-time simulation and FRIDGE/context diagnostics are committed.
 - The Functional Coolers Test Harness is tracked in the same repository.
@@ -97,6 +98,8 @@ This does not establish that selection is necessary for every possible catch-up,
 - `WF-004` completed one bounded milestone retrospective addressing three governance gaps: durable reconciliation of direct Bart authorization, the limit of procedural role separation without cognitive independence, and a lightweight trigger for future retrospectives.
 - Separately, Bart explicitly accepted developing and validating a reusable AI-assisted development workflow as a durable second Project Charter objective.
 - The review added no handoff template, pre-flight checklist, conflict-resolution system, debt taxonomy, or new document hierarchy because current evidence did not justify them.
+- The final WF-004 task definition is preserved in `docs/tasks/WF-004.md`.
+- FC-005 completed one minimal architecture baseline with a task-specific fresh Reviewer gate. The Architect addressed all five findings materially; the closure review classified each as `RESOLVED`, found no material new issue, and Bart accepted the result as canonical architecture.
 
 ## Known Limitations and Unresolved Questions
 
@@ -112,7 +115,6 @@ This does not establish that selection is necessary for every possible catch-up,
 - Transfers, nested contexts, and vehicle contexts require validation.
 - Clone/item-ID/`modData` behavior and the continuing need for `FC_coolerID` remain unresolved.
 - Multiplayer is neither implemented nor tested; current production diagnostics still contain single-player assumptions such as `getSpecificPlayer(0)`.
-- Canonical architecture and state-ownership documentation has not yet been established.
 - The calibration environment is specified but not automatically guarded.
 
 ## Repository and Version Inconsistencies
@@ -125,4 +127,4 @@ These inconsistencies are recorded here, not fixed by this status task.
 
 ## Current Development Position
 
-The project has moved beyond the superseded vanilla-delta approach to an elapsed-time managed prototype and completed both the FC-003 and FC-004 evidence chains. FC-004 provides a bounded, counterbalanced selected/active refresh finding but no automatic architecture or production consequence. WF-004 is complete. No successor task is currently authorized. The next justified product-development dependency is a minimal canonical architecture baseline before further production implementation. Empirical follow-ups and Git/runtime provenance tooling remain separate backlog concerns and require their own accepted tasks before implementation.
+The project has moved beyond the superseded vanilla-delta approach to an elapsed-time managed prototype, completed both the FC-003 and FC-004 evidence chains, and accepted its first canonical architecture baseline through FC-005. No successor task or production implementation is currently authorized. The next bounded task proposal must follow the accepted architecture, choose one coherent slice, and route any required unresolved Project Zomboid behavior to Researcher/Test Lab rather than treating it as fact. Empirical follow-ups and Git/runtime provenance tooling remain separate backlog concerns and require their own accepted tasks before implementation.

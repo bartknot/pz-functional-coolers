@@ -4,15 +4,15 @@
 
 ## Active Follow-Up
 
-`WF-004` is complete. No successor task is authorized by this backlog.
+`FC-005` is complete and its reviewed result is the accepted canonical `docs/ARCHITECTURE.md`. No successor task is currently authorized by this backlog.
 
-- [ ] Have Planner/Bart accept, revise, defer, or reject a minimal Architect task establishing the canonical architecture baseline before the next production change.
+- [ ] Have Planner/Bart accept, revise, defer, or reject one bounded successor task derived from the accepted architecture and its unresolved runtime-evidence blockers.
+
 
 ## Near Term
 
 - [ ] Characterize lazy vanilla Food refresh sufficiently for production decisions.
 - [ ] Add an environment/calibration guard for `DayLength = 4`, `FoodRotSpeed = 3`, and `FridgeFactor = 3` through a separately authorized implementation task.
-- [ ] Establish the minimum canonical architecture baseline needed before the next production implementation: system boundary, state ownership, simulation lifecycle, vanilla handoff, context abstraction, and persistence.
 - [ ] Evaluate legacy identity/tracking fields such as `FC_coolerID` after clone and context evidence is available.
 - [ ] Create a production development deployment script.
 - [ ] Create a separate harness deployment script.
