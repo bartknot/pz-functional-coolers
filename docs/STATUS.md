@@ -4,11 +4,11 @@
 
 - Repository: `pz-functional-coolers`
 - Branch at this snapshot: `main`
-- Canonical evidence and workflow inspected through HEAD: `3a626040d96cabaeacecde9f976499a79fb880e8`
-- Runtime baseline recorded by the active task: Project Zomboid Build 42.20.3
-- Active task: FC-006, status `READY — SUBSTANTIVE RUN AUTHORIZATION REQUIRED`.
-- FC-006 Researcher feasibility, Test Analyst protocol design, and Test Engineer infrastructure are complete. Bart accepted setup 13 after its complete non-evidence infrastructure smoketest passed and Test Analyst confirmed protocol readiness. Substantive runtime experiments, production changes, evidence persistence, and Git writes retain separate gates.
-- `docs/ARCHITECTURE.md` is the accepted canonical architecture baseline after the task-specific fresh Reviewer pass, material Architect revisions, focused closure review, and Bart's acceptance on 2026-08-26.
+- Canonical evidence and workflow inspected through HEAD: `ca59dbeca2c27454c639e7acc82bc84c757db831`
+- Accepted FC-006 runtime baseline: Project Zomboid Build 42.20.4 (`b0bbce05d5`), harness `v0.5.2-dev`, setup 14
+- Active task: FC-007, status `COMPLETE — P-4 RECONCILIATION ACCEPTED`.
+- FC-006 is empirically complete. Its one substantive Build 42.20.4 run was `VALID`, the one-run authorization is consumed, and its raw artifact, Test Analyst record, Researcher synthesis, and final task definition are canonical. FC-007 reconciled P-4 with that bounded evidence; production implementation remains unauthorized.
+- `docs/ARCHITECTURE.md` is the accepted canonical architecture baseline after the FC-005 task-specific Reviewer gate and Bart acceptance, plus the FC-007 bounded P-4 revision, fresh review, and Bart acceptance on 2026-08-26.
 - Production source identifies itself as `Prototype v0.3.0-dev`.
 - The elapsed-time simulation and FRIDGE/context diagnostics are committed.
 - The Functional Coolers Test Harness is tracked in the same repository.
@@ -72,13 +72,26 @@ The approximately two-game-hour carried/CONTROL recurrence is meaningful candida
 The tracked Functional Coolers Test Harness is located at `tools/test-harness/FunctionalCoolersTestHarness/`.
 
 - Mod ID: `FunctionalCoolersTestHarness`
-- Mod version: `0.5.1`
-- Source version: `v0.5.1-dev`
-- Setup version: `13`
+- Mod version: `0.5.2`
+- Source version: `v0.5.2-dev`
+- Setup version: `14`
 
-Its current source prepares the deterministic FC-006 `FC006-GUARD` and `FC006-TEST` setup with V/A/U `Base.Steak` groups, enforces the accepted build/mod/sandbox/UI/context boundaries, applies the candidate and control handoff sequences, logs public Food state and timing fields, and schedules three explicit post-handoff `updateAge()` rounds with automatic END. The substantive experiment path remains separately gated. The harness is test infrastructure and must not ship with the production mod.
+Its current source prepares the deterministic FC-006 `FC006-GUARD` and `FC006-TEST` setup with V/A/U `Base.Steak` groups, enforces the accepted build/mod/sandbox/UI/context boundaries, applies the candidate and control handoff sequences, logs public Food state and timing fields, and schedules three explicit post-handoff `updateAge()` rounds with automatic END. The one authorized substantive FC-006 run is complete; no further run or harness change is authorized. The harness is test infrastructure and must not ship with the production mod.
 
-Setup 13 passed the complete Build 42.20.3 infrastructure smoke with every line marked `evidenceEligible=false`. It verified the measurable ten-game-minute thaw response, required getter/setter calls and public phase flags, stale-version guard, expected mismatch invalidation without handoff commit, the shared one-hour handoff state-machine, exact `BEGIN,PRE_HANDOFF,HANDOFF_COMMITTED,UPDATE_1,UPDATE_2,UPDATE_3,END` order, update timing, V/A agreement with visible U sensitivity, and final baseline reset. Test Analyst accepted the infrastructure gate; this smoke is not empirical FC-006 evidence.
+Setup 14 passed the complete Build 42.20.4 infrastructure smoke with every relevant line marked `evidenceEligible=false`. It verified the measurable ten-game-minute thaw response, required getter/setter calls and public phase flags, stale-version guard, expected mismatch invalidation without handoff commit, the shared one-hour handoff state-machine, exact `BEGIN,PRE_HANDOFF,HANDOFF_COMMITTED,UPDATE_1,UPDATE_2,UPDATE_3,END` order, update timing, V/A agreement with visible U sensitivity, and final baseline reset. Test Analyst accepted the infrastructure gate; this smoke is not empirical FC-006 evidence.
+
+## Canonical FC-006 Evidence Findings
+
+FC-006 is complete. Its canonical evidence chain consists of:
+
+- `test-artifacts/FC-006/2026-08-26/console.txt` — unchanged raw runtime artifact;
+- `docs/tests/runs/FC-006-2026-08-26.md` — `VALID` Test Analyst run record;
+- `docs/research/FC-006-2026-08-26.md` — bounded Researcher synthesis;
+- `docs/tasks/FC-006.md` — preserved final task definition.
+
+Within the exact tested Build 42.20.4 scope, candidate A used `setAutoAge()` followed by immediate reapplication of the final managed public age, heat, and freezing-time projection. A remained exactly equal to reference V through three post-handoff `updateAge()` opportunities. Projection-only U processed the stale interval and supplied the required sensitivity contrast.
+
+The accepted synthesis therefore supports that sequence for the tested no-repeat/no-omit handoff outcome. It does not establish universal safety across Food classes, thermal phases, contexts, durations, natural scheduler opportunities, saves, transfers, failure paths, or Project Zomboid builds. The private freezing-update cursor was not directly observed. FC-007 reconciled P-4 with these bounded findings without broadening them.
 
 ## Canonical FC-004 Evidence Findings
 
@@ -103,7 +116,7 @@ This does not establish that selection is necessary for every possible catch-up,
 - The review added no handoff template, pre-flight checklist, conflict-resolution system, debt taxonomy, or new document hierarchy because current evidence did not justify them.
 - The final WF-004 task definition is preserved in `docs/tasks/WF-004.md`.
 - FC-005 completed one minimal architecture baseline with a task-specific fresh Reviewer gate. The Architect addressed all five findings materially; the closure review classified each as `RESOLVED`, found no material new issue, and Bart accepted the result as canonical architecture.
-- The final FC-005 task definition is preserved in `docs/tasks/FC-005.md`. FC-006 is accepted as the next bounded evidence dependency; its Researcher, Test Analyst design, and Test Engineer infrastructure phases are complete. Phase D now waits for separate Bart authorization.
+- The final FC-005 task definition is preserved in `docs/tasks/FC-005.md`. FC-006 completed the next bounded evidence dependency with one valid Build 42.20.4 run and canonical synthesis. FC-007 completed the narrowly scoped P-4 reconciliation, passed a fresh Reviewer check with no required fixes, and was accepted by Bart as canonical architecture.
 
 ## Known Limitations and Unresolved Questions
 
@@ -120,6 +133,8 @@ This does not establish that selection is necessary for every possible catch-up,
 - Clone/item-ID/`modData` behavior and the continuing need for `FC_coolerID` remain unresolved.
 - Multiplayer is neither implemented nor tested; current production diagnostics still contain single-player assumptions such as `getSpecificPlayer(0)`.
 - The calibration environment is specified but not automatically guarded.
+- The FC-006 handoff sequence has one valid bounded run but no independent replication or broader Food-state/context coverage.
+- Natural vanilla post-handoff scheduling and partial API-call failure recovery remain outside the FC-006 evidence scope.
 
 ## Repository and Version Inconsistencies
 
@@ -131,4 +146,4 @@ These inconsistencies are recorded here, not fixed by this status task.
 
 ## Current Development Position
 
-The project has moved beyond the superseded vanilla-delta approach to an elapsed-time managed prototype, completed both the FC-003 and FC-004 evidence chains, and accepted its first canonical architecture baseline through FC-005. FC-006 is accepted as one bounded Researcher/Test Lab evidence task for the managed-to-vanilla Food handoff that blocks complete handoff implementation. Its feasibility, protocol, and setup-13 infrastructure phases are complete and accepted. The substantive run, evidence persistence, and production implementation remain separately gated. Other empirical follow-ups and Git/runtime provenance tooling remain separate backlog concerns and require their own accepted tasks before implementation.
+The project has moved beyond the superseded vanilla-delta approach to an elapsed-time managed prototype, completed the FC-003, FC-004, and FC-006 evidence chains, and accepted its first canonical architecture baseline through FC-005. FC-006 established one bounded supported managed-to-vanilla Food timing-alignment sequence on Build 42.20.4. FC-007 reconciled P-4 and directly dependent wording with that evidence and Bart accepted the revision as canonical architecture. No successor task is currently authorized. Production implementation, further experiments, and all other architecture expansion remain separately gated. Other empirical follow-ups and Git/runtime provenance tooling remain separate backlog concerns and require their own accepted tasks before implementation.

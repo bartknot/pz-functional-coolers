@@ -2,14 +2,19 @@
 
 ## Status and Authority
 
-- Task: `FC-005`
+- Baseline task: `FC-005`
+- Evidence-reconciliation task: `FC-007`
 - Status: `ACCEPTED — CANONICAL ARCHITECTURE`
+- FC-007 revision status: `ACCEPTED — CANONICAL ARCHITECTURE`
 - Proposal owner: Software Architect
 - Reviewer gate: `COMPLETED — CLOSURE REVIEW PASSED`
 - Architect response: `MATERIAL REVISIONS APPLIED AND ACCEPTED`
+- FC-007 fresh Reviewer: `COMPLETED — READY FOR BART ACCEPTANCE`
 - Final acceptance authority: Bart, Project Owner / Integrator
 
 This is the first accepted canonical architecture baseline for Functional Coolers. The required Reviewer gate and post-revision closure review are complete, and Bart explicitly accepted the resulting proposal on 2026-08-26.
+
+FC-007 revised only the bounded P-4 reconciliation required by canonical FC-006 evidence. The fresh Reviewer found no required fixes, reported one optional `LOW` precision improvement, and concluded `READY FOR BART ACCEPTANCE`. Bart accepted the revision as canonical architecture on 2026-08-26 and explicitly required no further revision for the optional `LOW` finding.
 
 Accepted architecture at the start of FC-005: none. Charter principles and verified evidence supplied accepted constraints; the decisions below became accepted architecture only through the completed FC-005 review and Bart's explicit acceptance.
 
@@ -45,8 +50,10 @@ This proposal derives from:
 - [Project Status](STATUS.md)
 - [FC-003 Researcher synthesis](research/FC-003-2026-08-22.md)
 - [FC-004 Researcher synthesis](research/FC-004-2026-08-25.md)
+- [FC-006 Test Analyst run record](tests/runs/FC-006-2026-08-26.md)
+- [FC-006 Researcher synthesis](research/FC-006-2026-08-26.md)
 - [Current production source](../42/media/lua/server/FunctionalCoolers.lua)
-- [Active FC-005 task](../CURRENT_TASK.md)
+- [Active FC-007 task](../CURRENT_TASK.md)
 
 Detailed run records remain authoritative for run-level assessment. This proposal does not reclassify experiments or infer an undocumented Project Zomboid mechanism.
 
@@ -92,12 +99,15 @@ The prototype demonstrates useful APIs and a working elapsed-time model. It does
 - **Verified evidence constraint:** the selected treatment bundles selection with visible, open, pinned UI state; its responsible subcomponent is unresolved.
 - **Verified evidence constraint:** the experiments do not distinguish absent processing from deferred catch-up for stale unselected Food.
 - **Verified evidence constraint:** the internal vanilla scheduler and the relationship between FC-003 and FC-004 timing remain unresolved.
+- **Verified evidence constraint:** FC-006 supports `setAutoAge()` followed by immediate reapplication of final managed public age, heat, and freezing-time values as a no-repeat/no-omit handoff sequence within one valid Build 42.20.4 `Base.Steak` scenario with three explicit post-handoff `updateAge()` opportunities.
+- **Verified evidence constraint:** FC-006's projection-only control processed the stale interval, while its aligned candidate remained exactly equal to the reference; the private freezing-update cursor itself was not directly observed.
+- **Verified evidence constraint:** FC-006 does not establish universal behavior across Food classes, thermal phases, contexts, stale durations, natural scheduler opportunities, failure paths, saves, transfers, or Project Zomboid builds.
 
 Consequently, UI selection, inspection, `lastAged`, and observed vanilla refresh opportunities may be diagnostic inputs, but none may be the Functional Coolers simulation clock, physical boundary, or sole production trigger.
 
-## Proposed Architecture Decisions
+## Architecture Decisions
 
-Every decision below remains proposed until Bart accepts this document.
+The FC-005 decisions below and the FC-007 changes to P-4 and directly dependent wording are accepted canonical architecture.
 
 ### P-1. Cooler Aggregate Is the Thermodynamic System
 
@@ -209,17 +219,24 @@ Functional Coolers is the logical authority for managed temperature, age, and fr
 
 #### Functional Coolers to vanilla
 
-When Food leaves management:
+For a handoff within an explicitly accepted support boundary backed by FC-006 or later verified evidence, when Food leaves management:
 
 1. advance the source Cooler and Food to the transition time;
-2. project the final managed values to vanilla;
-3. align vanilla's internal aging/freezing timing so the next vanilla update neither repeats nor omits the managed interval;
-4. change the ownership mode to vanilla and retire the completed managed epoch only after the handoff succeeds;
-5. treat any retained managed values as historical and invalid for a future entry snapshot.
+2. while Functional Coolers remains authoritative, call the FC-006-supported timing-alignment operation `setAutoAge()`;
+3. immediately reapply the final managed age, heat, and freezing-time values through the verified public projection APIs, because those final managed values—not any public-state mutation performed by `setAutoAge()`—are the state being handed back;
+4. validate that timing alignment and every required final projection call succeeded, preserving the outcome that the next vanilla update neither repeats nor omits the managed interval;
+5. only after that complete handoff succeeds, change the ownership mode to vanilla and retire the completed managed epoch;
+6. treat any retained managed values as historical and invalid for a future entry snapshot.
+
+If timing alignment or any final projection call fails, Functional Coolers remains the logical authority and the managed epoch is not retired. The failure must be reported while retaining the durable managed state needed for an explicitly accepted retry, reconciliation, or recovery path. A partially mutated vanilla object is not proof that ownership transferred successfully, and the implementation must not silently create two authorities. Exact rollback, retry scheduling, and player-facing failure behavior remain implementation decisions.
+
+An exit outside the explicitly accepted support boundary must not be reported as a successful vanilla handoff merely by applying the bounded sequence speculatively. The transition remains unsupported until additional evidence extends the boundary or Bart accepts an explicit limited-support or recovery policy through the appropriate architecture and planning task.
 
 A transfer directly between managed Coolers advances the source state, carries the Food's physical/biological state and active ownership epoch, and assigns it to the destination without rereading stale vanilla state or resetting because the Cooler identity changed.
 
-The conceptual handoff is proposed architecture. The exact safe API sequence is unresolved. In particular, the repository does not yet establish how `setAge`, `setHeat`, and `setFreezingTime` interact with vanilla's internal `lastAged` cursor at exit. Full production implementation of this handoff is blocked until Researcher evidence establishes a safe sequence or the architecture is explicitly revised around a verified limitation.
+FC-006 supplies bounded evidence for this sequence: in one valid Build 42.20.4 carried/equipped `Base.Steak` scenario, `setAutoAge()` followed by final public projection remained exactly aligned with the reference through three explicit post-handoff `updateAge()` opportunities, while public projection alone processed the stale interval. This supports the architectural sequence within that verified boundary; it is not a universal or future-build API guarantee.
+
+Functional Coolers does not write `lastAged` directly and does not use `lastAged`, UI state, or observed natural refresh timing as its simulation clock. FC-006 did not establish when vanilla naturally schedules the next update or whether untested Food states and contexts have additional side effects. A later implementation task must either remain within an enforceable evidence-supported boundary or include the additional evidence gates required by its broader claimed support.
 
 Simpler alternative rejected: allowing Functional Coolers and vanilla deltas to advance managed Food concurrently creates two authorities and previously failed when vanilla fields became stale. Continuously rereading vanilla state would also couple simulation correctness to UI-dependent refresh opportunities demonstrated by FC-004.
 
@@ -311,7 +328,7 @@ Lua item writes are not assumed to be database transactions. “Logical commit�
 
 ## Constraints for the Next Implementation Task
 
-Planner may derive a bounded implementation task only after this architecture is reviewed and accepted. That task must:
+Any bounded implementation task derived from the accepted FC-007 revision must:
 
 - choose one coherent architectural slice rather than rewrite the entire prototype at once;
 - preserve the one-authority Food invariant;
@@ -320,6 +337,8 @@ Planner may derive a bounded implementation task only after this architecture is
 - avoid reinitializing Food merely because it changes Coolers or contexts;
 - keep diagnostics observational and test setup outside production responsibilities;
 - stop if the slice requires an unresolved Project Zomboid API assumption;
+- use the FC-006-supported handoff sequence only within the implementation's explicitly accepted and testable support boundary;
+- keep the managed epoch authoritative on any timing-alignment or final-projection failure and define observable failure handling before claiming handoff completion;
 - include migration or compatibility handling for existing prototype state when that state becomes in scope;
 - leave calibration and unrelated prototype cleanup to separately accepted tasks.
 
@@ -327,24 +346,27 @@ This proposal does not select that first slice. Planner owns sequencing after Ba
 
 ## Unresolved Runtime Questions
 
-### Blocking before complete Food handoff implementation
+### Bounded handoff evidence established; broader support remains unresolved
 
-1. Which verified API sequence can transfer managed age and freezing state back to vanilla while aligning vanilla's internal timing cursor and avoiding duplicate or omitted elapsed processing?
-2. Do `setAge`, `setHeat`, and `setFreezingTime` have delayed or hidden side effects when vanilla next refreshes a previously stale Food item?
+FC-006 resolves the former exact-sequence blocker within its tested boundary: `setAutoAge()` followed by immediate final public projection produced the required observable no-repeat/no-omit outcome relative to the reference. Remaining questions are:
+
+1. Does the sequence preserve continuity across additional Food classes, thermal phases, contexts, stale durations, natural update opportunities, saves, transfers, and future Project Zomboid builds?
+2. Do `setAutoAge()`, `setAge`, `setHeat`, and `setFreezingTime` have delayed, hidden, or state-specific side effects outside the FC-006 observations?
 3. Can vanilla Food processing be safely treated as projection-only while managed, or do intermediate vanilla updates create gameplay side effects that must be suppressed or reconciled?
+4. What retry, reconciliation, or recovery behavior is safe when timing alignment succeeds but one or more final projection calls fail?
 
 ### Blocking before reliable transfer and unattended support
 
-4. Which server-observable inventory/container events cover entry, exit, nested transfer, ground placement, and unloaded/reactivated transitions, and what authoritative time is available at each event?
-5. What boundary history can be known across save/load, chunk unload, or transfer while the item is not actively discovered?
-6. How do item IDs and `modData` behave across cloning, duplication, save/load, and server replication, and can any current identifier safely represent durable ownership?
+5. Which server-observable inventory/container events cover entry, exit, nested transfer, ground placement, and unloaded/reactivated transitions, and what authoritative time is available at each event?
+6. What boundary history can be known across save/load, chunk unload, or transfer while the item is not actively discovered?
+7. How do item IDs and `modData` behave across cloning, duplication, save/load, and server replication, and can any current identifier safely represent durable ownership?
 
 ### Required before broader context or multiplayer work
 
-7. Which server-side APIs provide authoritative local ambient, indoor/outdoor, powered refrigeration, and later vehicle boundary data?
-8. Which server hooks can discover or schedule relevant Coolers without a first-player or nearby-scan assumption?
-9. How are item `modData` mutations replicated and conflict-resolved in the intended multiplayer runtime?
-10. What exact vanilla semantics connect `freezingTime`, `isFrozen`, heat, age, and thawing across the supported Food types?
+8. Which server-side APIs provide authoritative local ambient, indoor/outdoor, powered refrigeration, and later vehicle boundary data?
+9. Which server hooks can discover or schedule relevant Coolers without a first-player or nearby-scan assumption?
+10. How are item `modData` mutations replicated and conflict-resolved in the intended multiplayer runtime?
+11. What exact vanilla semantics connect `freezingTime`, `isFrozen`, heat, age, and thawing across the supported Food types?
 
 These questions are Researcher/Test Lab handoffs, not assumptions for Architect or Coder to answer from documentation alone.
 
@@ -433,3 +455,5 @@ No production code, task scope, calibration, detailed vehicle behavior, multipla
 The required fresh Reviewer pass, Architect response, and focused post-revision closure review are complete. The closure review classified findings 1–5 as `RESOLVED`, identified no material new finding, and concluded `READY FOR BART ACCEPTANCE`.
 
 Bart accepted the revised proposal as canonical architecture on 2026-08-26. Planner owns subsequent task sequencing; unresolved runtime questions and implementation constraints in this document remain binding until addressed through the appropriate role and acceptance process.
+
+FC-007 completed the bounded P-4 evidence reconciliation above. It preserves the accepted ownership and transaction model, replaces the wholly unresolved exact-sequence statement with the FC-006-supported sequence and scope, and adds no production implementation. The fresh Reviewer found no required fix and Bart accepted the revision as canonical architecture on 2026-08-26. Handoff returns to Planner for separately authorized sequencing of the smallest justified next task.

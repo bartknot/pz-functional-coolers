@@ -4,16 +4,15 @@
 
 ## Active Follow-Up
 
-`FC-006` is accepted as one bounded evidence task for managed-to-vanilla Food handoff continuity. Its Researcher feasibility, Test Analyst protocol design, and setup-13 infrastructure phases are complete and accepted. Phase D awaits separate Bart authorization; this backlog adds no authority.
+`FC-007` is complete. Its bounded P-4 revision passed fresh Reviewer scrutiny and Bart accepted it as canonical architecture. No successor task is currently authorized; this backlog adds no authority.
 
-- [ ] Canonicalize the reviewed setup-13 Planner and four-file harness transition through a separately authorized Git commit/push.
-- [ ] Obtain separate Bart authorization for one substantive FC-006 run.
-- [ ] Execute the authorized run on a new fresh setup-13 save and route its raw evidence to Test Analyst under a separately authorized evidence-persistence step.
+- [x] Architect proposed the minimum P-4 reconciliation in `docs/ARCHITECTURE.md` without broadening FC-006 evidence.
+- [x] A fresh Reviewer found no required fixes, and Bart explicitly accepted the proposed architecture revision.
+- [ ] Planner proposes the smallest justified successor task for separate Bart acceptance.
 
 
 ## Near Term
 
-- [ ] Establish a verified managed-to-vanilla Food handoff sequence, or a verified limitation requiring explicit architecture reconsideration, before complete handoff implementation.
 - [ ] Characterize lazy vanilla Food refresh sufficiently for production decisions.
 - [ ] Add an environment/calibration guard for `DayLength = 4`, `FoodRotSpeed = 3`, and `FridgeFactor = 3` through a separately authorized implementation task.
 - [ ] Evaluate legacy identity/tracking fields such as `FC_coolerID` after clone and context evidence is available.
@@ -43,6 +42,8 @@
 - [ ] Calibrate Food and cold-pack capacities and exchange rates.
 - [ ] Calibrate freezer recharge behavior.
 - [ ] Characterize vanilla freeze/thaw semantics and improve thaw-rate calibration.
+- [ ] Independently replicate the FC-006 handoff sequence before generalizing it beyond the exact tested Build 42.20.4 scope.
+- [ ] Test additional Food classes, thermal phases, contexts, stale durations, and natural post-handoff update opportunities only when their uncertainty blocks an accepted implementation scope.
 - [ ] Validate frozen Food as meaningful cold thermal mass.
 - [ ] Integrate real ambient/local temperature when supported by evidence and accepted design.
 - [ ] Consider a latent-heat/phase-transition model after basic calibration is stable.
