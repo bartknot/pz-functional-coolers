@@ -1,8 +1,8 @@
-Functional Coolers Test Harness v0.5.1-dev
+Functional Coolers Test Harness v0.5.2-dev
 
 FC-006 managed-to-vanilla Food handoff infrastructure.
 
-Use a fresh dedicated save on Build 42.20.3. Enable this harness and disable the production Functional Coolers mod. Required sandbox values: DayLength=4, FoodRotSpeed=3, FridgeFactor=3.
+Use a fresh dedicated save on Build 42.20.4. Enable this harness and disable the production Functional Coolers mod. Required sandbox values: DayLength=4, FoodRotSpeed=3, FridgeFactor=3.
 
 Fixed test position:
   x=10693 y=9986 z=0

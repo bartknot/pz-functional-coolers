@@ -1,0 +1,992 @@
+LOG  : General      f:0> 26-08-2026 18:40:17
+LOG  : General      f:0> SLF4J(I): Attempting to load provider "zombie.core.logger.Slf4jBridge" specified via "slf4j.provider" system property
+LOG  : General      f:0> ===== System specs =====
+LOG  : General      f:0> CPU: AMD Ryzen 7 3700X 8-Core Processor             , vendor: AuthenticAMD, cores: 8, threads: 16
+LOG  : General      f:0> RAM: 32716 Mb
+LOG  : General      f:0> Base board: X570 AORUS ELITE, vendor: Gigabyte Technology Co., Ltd.
+LOG  : General      f:0> GPU: NVIDIA GeForce GTX 1660 SUPER, vendor: NVIDIA, video memory: 6144 Mb, driver: 32.0.15.9186
+LOG  : General      f:0> Disk info: 1862.26 Gb, free space: 267.21 Gb, usable space: 267.21 Gb
+LOG  : General      f:0> OS: Windows 11, version: 10.0, arch: amd64, build: 26200
+LOG  : General      f:0> JVM (free: 376 Mb, max: 3072 Mb, total available: 512 Mb)
+LOG  : General      f:0> ========================
+LOG  : General      f:0> java.specification.version=25
+LOG  : General      f:0> sun.cpu.isalist=amd64
+LOG  : General      f:0> sun.jnu.encoding=Cp1252
+LOG  : General      f:0> java.vm.vendor=Azul Systems, Inc.
+LOG  : General      f:0> sun.arch.data.model=64
+LOG  : General      f:0> java.vendor.url=http://www.azul.com/
+LOG  : General      f:0> zomboid.steam=1
+LOG  : General      f:0> java.vm.specification.version=25
+LOG  : General      f:0> os.name=Windows 11
+LOG  : General      f:0> zomboid.znetlog=1
+LOG  : General      f:0> slf4j.provider=zombie.core.logger.Slf4jBridge
+LOG  : General      f:0> jdk.debug=release
+LOG  : General      f:0> sun.cpu.endian=little
+LOG  : General      f:0> java.specification.vendor=Oracle Corporation
+LOG  : General      f:0> java.version.date=2025-10-21
+LOG  : General      f:0> java.home=C:\Program Files (x86)\Steam\steamapp...
+LOG  : General      f:0> file.separator=\
+LOG  : General      f:0> line.separator=
+
+LOG  : General      f:0> java.vm.specification.vendor=Oracle Corporation
+LOG  : General      f:0> java.specification.name=Java Platform API Specification
+LOG  : General      f:0> java.awt.headless=true
+LOG  : General      f:0> sun.management.compiler=HotSpot 64-Bit Tiered Compilers
+LOG  : General      f:0> java.runtime.version=25.0.1+8-LTS
+LOG  : General      f:0> stdout.encoding=Cp1252
+LOG  : General      f:0> os.version=10.0
+LOG  : General      f:0> jna.nosys=false
+LOG  : General      f:0> java.runtime.name=OpenJDK Runtime Environment
+LOG  : General      f:0> file.encoding=UTF-8
+LOG  : General      f:0> java.vm.name=OpenJDK 64-Bit Server VM
+LOG  : General      f:0> java.vendor.version=Zulu25.30+17-CA
+LOG  : General      f:0> jna.loaded=true
+LOG  : General      f:0> java.vendor.url.bug=http://www.azul.com/support/
+LOG  : General      f:0> java.version=25.0.1
+LOG  : General      f:0> os.arch=amd64
+LOG  : General      f:0> java.vm.specification.name=Java Virtual Machine Specification
+LOG  : General      f:0> sun.os.patch.level=
+LOG  : General      f:0> native.encoding=Cp1252
+LOG  : General      f:0> java.vm.info=mixed mode, sharing
+LOG  : General      f:0> stderr.encoding=Cp1252
+LOG  : General      f:0> java.vendor=Azul Systems, Inc.
+LOG  : General      f:0> java.vm.version=25.0.1+8-LTS
+LOG  : General      f:0> stdin.encoding=Cp1252
+LOG  : General      f:0> sun.io.unicode.encoding=UnicodeLittle
+LOG  : General      f:0> java.class.version=69.0
+LOG  : General      f:0> -----
+LOG  : General      f:0> version=42.20.4 b0bbce05d5 demo=false
+LOG  : General      f:0> revision=b0bbce05d5 pzbullet=1.0.0.28
+LOG  : General      f:0> Logs configuration:
+LOG  : General      f:0>      General: General
+LOG  : General      f:0>      Network: General
+LOG  : General      f:0>          Lua: General
+LOG  : General      f:0>          Mod: General
+LOG  : General      f:0>  Multiplayer: General
+LOG  : General      f:0>      Default: General
+LOG  : General      f:0> LightingFPS set to 15
+LOG  : General      f:0> closest width=640 freq=59
+LOG  : General      f:0> closest width=640 freq=60
+LOG  : General      f:0> closest width=640 freq=75
+LOG  : General      f:0> closest width=640 freq=100
+LOG  : General      f:0> closest width=640 freq=119
+LOG  : General      f:0> closest width=640 freq=120
+LOG  : General      f:0> closest width=640 freq=240
+LOG  : General      f:0> closest width=720 freq=59
+LOG  : General      f:0> closest width=720 freq=60
+LOG  : General      f:0> closest width=720 freq=100
+LOG  : General      f:0> closest width=720 freq=119
+LOG  : General      f:0> closest width=720 freq=120
+LOG  : General      f:0> closest width=720 freq=240
+LOG  : General      f:0> closest width=800 freq=60
+LOG  : General      f:0> closest width=800 freq=75
+LOG  : General      f:0> closest width=800 freq=100
+LOG  : General      f:0> closest width=800 freq=119
+LOG  : General      f:0> closest width=800 freq=120
+LOG  : General      f:0> closest width=800 freq=240
+LOG  : General      f:0> closest width=1176 freq=50
+LOG  : General      f:0> closest width=1176 freq=59
+LOG  : General      f:0> closest width=1176 freq=60
+LOG  : General      f:0> closest width=1176 freq=100
+LOG  : General      f:0> closest width=1176 freq=119
+LOG  : General      f:0> closest width=1176 freq=120
+LOG  : General      f:0> closest width=1176 freq=240
+LOG  : General      f:0> closest width=1280 freq=50
+LOG  : General      f:0> closest width=1280 freq=59
+LOG  : General      f:0> closest width=1280 freq=60
+LOG  : General      f:0> closest width=1280 freq=100
+LOG  : General      f:0> closest width=1280 freq=119
+LOG  : General      f:0> closest width=1280 freq=120
+LOG  : General      f:0> closest width=1280 freq=240
+LOG  : General      f:0> closest width=1360 freq=23
+LOG  : General      f:0> closest width=1360 freq=24
+LOG  : General      f:0> closest width=1360 freq=25
+LOG  : General      f:0> closest width=1360 freq=29
+LOG  : General      f:0> closest width=1360 freq=30
+LOG  : General      f:0> closest width=1360 freq=50
+LOG  : General      f:0> closest width=1360 freq=59
+LOG  : General      f:0> closest width=1360 freq=60
+LOG  : General      f:0> closest width=1360 freq=100
+LOG  : General      f:0> closest width=1360 freq=119
+LOG  : General      f:0> closest width=1360 freq=120
+LOG  : General      f:0> closest width=1360 freq=240
+LOG  : General      f:0> closest width=1366 freq=23
+LOG  : General      f:0> closest width=1366 freq=24
+LOG  : General      f:0> closest width=1366 freq=25
+LOG  : General      f:0> closest width=1366 freq=29
+LOG  : General      f:0> closest width=1366 freq=30
+LOG  : General      f:0> closest width=1366 freq=50
+LOG  : General      f:0> closest width=1366 freq=59
+LOG  : General      f:0> closest width=1366 freq=60
+LOG  : General      f:0> closest width=1366 freq=100
+LOG  : General      f:0> closest width=1366 freq=119
+LOG  : General      f:0> closest width=1366 freq=120
+LOG  : General      f:0> closest width=1366 freq=240
+LOG  : General      f:0> closest width=1600 freq=23
+LOG  : General      f:0> closest width=1600 freq=24
+LOG  : General      f:0> closest width=1600 freq=25
+LOG  : General      f:0> closest width=1600 freq=29
+LOG  : General      f:0> closest width=1600 freq=30
+LOG  : General      f:0> closest width=1600 freq=50
+LOG  : General      f:0> closest width=1600 freq=59
+LOG  : General      f:0> closest width=1600 freq=60
+LOG  : General      f:0> closest width=1600 freq=100
+LOG  : General      f:0> closest width=1600 freq=119
+LOG  : General      f:0> closest width=1600 freq=120
+LOG  : General      f:0> closest width=1600 freq=240
+LOG  : General      f:0> closest width=1680 freq=23
+LOG  : General      f:0> closest width=1680 freq=24
+LOG  : General      f:0> closest width=1680 freq=25
+LOG  : General      f:0> closest width=1680 freq=29
+LOG  : General      f:0> closest width=1680 freq=30
+LOG  : General      f:0> closest width=1680 freq=50
+LOG  : General      f:0> closest width=1680 freq=59
+LOG  : General      f:0> closest width=1680 freq=60
+LOG  : General      f:0> closest width=1680 freq=100
+LOG  : General      f:0> closest width=1680 freq=119
+LOG  : General      f:0> closest width=1680 freq=120
+LOG  : General      f:0> closest width=1680 freq=240
+LOG  : General      f:0> closest width=1920 freq=23
+LOG  : General      f:0> closest width=1920 freq=24
+LOG  : General      f:0> closest width=1920 freq=25
+LOG  : General      f:0> closest width=1920 freq=29
+LOG  : General      f:0> closest width=1920 freq=30
+LOG  : General      f:0> closest width=1920 freq=50
+LOG  : General      f:0> closest width=1920 freq=59
+LOG  : General      f:0> closest width=1920 freq=60
+LOG  : General      f:0> closest width=1920 freq=100
+LOG  : General      f:0> closest width=1920 freq=119
+LOG  : General      f:0> closest width=1920 freq=120
+LOG  : General      f:0> closest width=1920 freq=240
+LOG  : General      f:0> closest width=2048 freq=23
+LOG  : General      f:0> closest width=2048 freq=24
+LOG  : General      f:0> closest width=2048 freq=25
+LOG  : General      f:0> closest width=2048 freq=29
+LOG  : General      f:0> closest width=2048 freq=30
+LOG  : General      f:0> closest width=2048 freq=50
+LOG  : General      f:0> closest width=2048 freq=59
+LOG  : General      f:0> closest width=2048 freq=60
+LOG  : General      f:0> closest width=2048 freq=100
+LOG  : General      f:0> closest width=2048 freq=119
+LOG  : General      f:0> closest width=2048 freq=120
+LOG  : General      f:0> closest width=2048 freq=240
+LOG  : General      f:0> closest width=2560 freq=59
+LOG  : General      f:0> Display mode changed to 2560x1440 freq=60 fullScreen=true
+LOG  : General      f:0> GraphicsCard: NVIDIA Corporation NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2
+LOG  : General      f:0> OpenGL version: 4.6.0 NVIDIA 591.86
+LOG  : General      f:0> Desktop resolution 2560x1440
+LOG  : General      f:0> Initial resolution 2560x1440 fullScreen=true
+LOG  : General      f:0> OpenGL 1.5 buffer objects supported
+LOG  : General      f:0> VSync: OFF
+LOG  : General      f:0> 1787762419513 fmod: Java loging: OK
+LOG  : General      f:0> 1787762419519 fmod: FMOD::Studio::System::create() result: No errors.
+LOG  : General      f:0> 1787762419519 fmod: FMOD::Studio::System::getCoreSystem() result: No errors.
+LOG  : General      f:0> 1787762419519 fmod: FMOD_System_GetVersion() result: No errors.
+LOG  : General      f:0> 1787762419519 fmod: fmodintegration built with version 20309, fmod shared library version 20309
+LOG  : General      f:0> 1787762419520 fmod: System Create: OK
+LOG  : General      f:0> 1787762419520 fmod: FMOD_System_SetSoftwareFormat() result: No errors.
+LOG  : General      f:0> 1787762419606 fmod: FMOD::Studio::System::Initialize() result: No errors.
+LOG  : General      f:0> 1787762419607 fmod: Creating DSP for capture sound
+LOG  : General      f:0> 1787762419607 fmod: FMOD_System_CreateDSP() result: No errors.
+LOG  : General      f:0> 1787762419607 fmod: FMOD_DSP_SetBypass() result: No errors.
+LOG  : General      f:0> 1787762419607 fmod: FMOD_System_GetMasterChannelGroup() result: No errors.
+LOG  : General      f:0> 1787762419607 fmod: FMOD_ChannelGroup_AddDSP() result: No errors.
+LOG  : General      f:0> 1787762419608 fmod: FMOD_System_Set3DSettings() result: No errors.
+LOG  : Mod          f:0> refusing to list examplemod
+LOG  : General      f:0> Loading networking libraries...
+LOG  : General      f:0> Loading steam_api64...
+LOG  : General      f:0> Loading RakNet64...
+LOG  : General      f:0> Loading ZNetJNI64...
+LOG  : General      f:0> SteamUtils initialised successfully
+LOG  : General      f:0> Loading Mods
+LOG  : Mod          f:0> refusing to list examplemod
+LOG  : Mod          f:0> loading FunctionalCoolersTestHarness
+LOG  : General      f:0> Loading Translations
+LOG  : General      f:0> texturepack: loading UI
+LOG  : General      f:0> Loading UI texture pack
+LOG  : General      f:0> texturepack: loading UI2
+LOG  : General      f:0> Loading UI2 texture pack
+LOG  : General      f:0> texturepack: loading IconsMoveables
+LOG  : General      f:0> Loading IconsMoveables texture pack
+LOG  : General      f:0> texturepack: loading RadioIcons
+LOG  : General      f:0> Loading RadioIcons texture pack
+LOG  : General      f:0> texturepack: loading ApComUI
+LOG  : General      f:0> Loading ApComUI texture pack
+LOG  : General      f:0> texturepack: loading Mechanics
+LOG  : General      f:0> Loading Mechanics texture pack
+LOG  : General      f:0> texturepack: loading WeatherFx
+LOG  : General      f:0> Loading WeatherFx texture pack
+LOG  : General      f:0> Loading Scripts
+ERROR: General      f:0 at FluidContainerScript.load           > Sanitizing container name 'Large Bucket', name may not contain whitespaces.
+ERROR: General      f:0 at FluidContainerScript.load           > Sanitizing container name 'Fuel Pump', name may not contain whitespaces.
+WARN : General      f:0 at XuiSkin$EntityUiStyle.Load          > Could not find icon: Build_AnvilStone, script = Stone Anvil
+WARN : General      f:0 at XuiSkin$EntityUiStyle.LoadComponentInfo> Could not find icon: Build_AnvilStone
+WARN : General      f:0 at XuiSkin$EntityUiStyle.Load          > Could not find icon: Build_AnvilStone, script = Stone Anvil
+WARN : General      f:0 at XuiSkin$EntityUiStyle.LoadComponentInfo> Could not find icon: Build_AnvilStone
+WARN : General      f:0 at XuiSkin$EntityUiStyle.Load          > Could not find icon: Build_AnvilStone, script = Stone Anvil
+WARN : General      f:0 at XuiSkin$EntityUiStyle.LoadComponentInfo> Could not find icon: Build_AnvilStone
+WARN : General      f:0 at XuiSkin$EntityUiStyle.Load          > Could not find icon: Build_AnvilStone, script = Stone Anvil
+WARN : General      f:0 at XuiSkin$EntityUiStyle.LoadComponentInfo> Could not find icon: Build_AnvilStone
+WARN : General      f:0 at TaggedObjectManager.createTagBits   > manager-> new tag discovered that was not preprocessed, tag: keyduplicator
+WARN : General      f:0 at TaggedObjectManager.createTagBits   > manager-> new tag discovered that was not preprocessed, tag: choppingblock
+WARN : General      f:0 at SoundManager.debugScriptSound       > no such sound "CorpseDrop" in item Base.CorpseFemale
+WARN : General      f:0 at SoundManager.debugScriptSound       > no such sound "CorpseDrop" in item Base.CorpseMale
+LOG  : General      f:0> Loading Clothing
+LOG  : General      f:0> 
+LOG  : General      f:0> Loading Lua
+WARN : Lua          f:0 at Lua(Vanilla).corpseStorageCheck     > require("ISUI/ISInventoryPaneContextMenu") failed
+WARN : Lua          f:0 at Lua(Vanilla).corpseStorageCheck     > require("ISUI/ISVehicleMenu") failed
+WARN : Lua          f:0 at Lua(Vanilla).corpseStorageCheck     > require("ISUI/ISContextMenu") failed
+WARN : Lua          f:0 at Lua(Vanilla).ISCampingMenu          > require("Camping/CCampfireSystem") failed
+WARN : Lua          f:0 at Lua(Vanilla).ISInventoryTransferUtil> require("TimedActions/ISInventoryTransferAction") failed
+WARN : Lua          f:0 at Lua(Vanilla).ISInventoryTransferUtil> require("ISUI/PlayerData/ISPlayerData") failed
+WARN : Lua          f:0 at Lua(Vanilla).ISAnimalContextMenu    > require("BuildingObjects/ISAnimalPickMateCursor") failed
+WARN : Lua          f:0 at Lua(Vanilla).TakeSameType           > require("ISUI/InventoryWindow/ISLootWindowControlHandler") failed
+WARN : Lua          f:0 at Lua(Vanilla).FloorTakeSameType      > require("ISUI/InventoryWindow/ISLootWindowControlHandler") failed
+WARN : Lua          f:0 at Lua(Vanilla).testUI                 > require("pzapi/ui/ui") failed
+LOG  : Lua          f:0> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=false | status=LOADED | expectedBuild=42.20.4 | controls=FC006_INVENTORY_CONTEXT_MENU | requiredPrimary=FC006-GUARD | requiredSecondary=FC006-TEST | requiredSelected=FC006-GUARD | substantiveRunAuthorized=false
+LOG  : Lua          f:0> OnLoadSoundbanks
+LOG  : General      f:0> texturepack: loading Tiles2x
+LOG  : General      f:0> Loading Tiles2x texture pack
+LOG  : General      f:0> texturepack: loading Overlays2x
+LOG  : General      f:0> Loading Overlays2x texture pack
+LOG  : General      f:0> texturepack: loading JumboTrees2x
+LOG  : General      f:0> Loading JumboTrees2x texture pack
+LOG  : General      f:0> texturepack: loading JumboTreesBigs2x
+LOG  : General      f:0> Loading JumboTreesBigs2x texture pack
+LOG  : General      f:0> texturepack: loading Tiles2x.floor
+LOG  : General      f:0> Loading Tiles2x.floor texture pack
+LOG  : General      f:0> texturepack: loading B42ChunkCaching2x
+LOG  : General      f:0> Loading B42ChunkCaching2x texture pack
+LOG  : General      f:0> texturepack: loading B42ChunkCaching2x.floor
+LOG  : General      f:0> Loading B42ChunkCaching2x.floor texture pack
+LOG  : General      f:0> texturepack: loading Clock2x
+LOG  : General      f:0> Loading Clock2x texture pack
+LOG  : General      f:0> Loading models and animations
+LOG  : General      f:0> 1787762455766 fmod: globalSystem = 0x2159D598
+LOG  : General      f:0> 1787762455766 fmod: FMOD_System_GetRecordDriverInfo: nativeRate = 48000, nativeChannels = 2
+LOG  : General      f:0> 1787762455767 fmod: System create record sound: OK
+LOG  : General      f:0> 1787762455767 fmod: Create resampler: OK
+LOG  : General      f:0> 1787762455767 fmod: Create acoustic echo canceller: OK
+LOG  : General      f:0> 1787762455791 fmod: GetRecordNumDrivers id = 0, sound = 0xd78661b8 loop=1
+LOG  : General      f:0> Game booting
+LOG  : General      f:0> STATE: exit zombie.gameStates.TermsOfServiceState
+LOG  : General      f:0> binkId: 1
+WARN : Lua          f:0 at Lua(Vanilla).namedColorToTable      > env.lua-> namedColorToTable color not found: ProgressYellow
+LOG  : General      f:0> binkId: 2
+LOG  : General      f:0> binkId: 3
+LOG  : General      f:0> MapGroup 1/1
+LOG  : General      f:0>   Brandenburg, KY
+LOG  : General      f:0>   Echo Creek, KY
+LOG  : General      f:0>   Ekron, KY
+LOG  : General      f:0>   Fallas Lake, KY
+LOG  : General      f:0>   Irvington, KY
+LOG  : General      f:0>   March Ridge, KY
+LOG  : General      f:0>   Riverside, KY
+LOG  : General      f:0>   Rosewood, KY
+LOG  : General      f:0>   Valley Station, KY
+LOG  : General      f:0>   West Point, KY
+LOG  : General      f:0>   Muldraugh, KY
+LOG  : General      f:0> -----
+LOG  : General      f:0> MapGroup 1/1
+LOG  : General      f:0>   Brandenburg, KY
+LOG  : General      f:0>   Echo Creek, KY
+LOG  : General      f:0>   Ekron, KY
+LOG  : General      f:0>   Fallas Lake, KY
+LOG  : General      f:0>   Irvington, KY
+LOG  : General      f:0>   March Ridge, KY
+LOG  : General      f:0>   Riverside, KY
+LOG  : General      f:0>   Rosewood, KY
+LOG  : General      f:0>   Valley Station, KY
+LOG  : General      f:0>   West Point, KY
+LOG  : General      f:0>   Muldraugh, KY
+LOG  : General      f:0> -----
+LOG  : General      f:0> binkId: 4
+WARN : General      f:0 at AnimatedModel$AnimatedModelInstanceRenderData.initMatrixPalette> skinningData is null, matrixPalette may be invalid
+LOG  : General      f:0> STATE: exit zombie.gameStates.MainScreenState
+LOG  : General      f:0> LOADED UP A TOTAL OF 5981 TEXTURES
+LOG  : General      f:0> STATE: exit zombie.gameStates.LoadingQueueState
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: appliances_01_30
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_32
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_33
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_34
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_35
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_36
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_37
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_38
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_39
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_40
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_41
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_42
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_43
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_44
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_45
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_46
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_47
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_40
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_41
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_42
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_43
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_44
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_45
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_46
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_47
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_40
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_41
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_42
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_43
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_44
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_45
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_46
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_47
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_0
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_1
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_2
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_3
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_4
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_5
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_6
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_7
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_8
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_9
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_10
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_11
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_12
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_13
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_14
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_15
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_16
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_17
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_18
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_19
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_20
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_21
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_22
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_23
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_8
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_9
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_10
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_11
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_12
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_13
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_14
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_15
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_40
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_41
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_42
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_43
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_44
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_45
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_46
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_47
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_48
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_49
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_50
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_51
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_52
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_53
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_54
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_55
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_8
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_9
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_10
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_11
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_12
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_13
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_14
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_15
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_40
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_41
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_42
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_43
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_44
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_45
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_46
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_47
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_24
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_25
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_26
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_27
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_28
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_29
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_30
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_31
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_32
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_33
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_34
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_35
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_36
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_37
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_38
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_39
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_24
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_25
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_26
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_27
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_28
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_29
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_30
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_31
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_32
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_33
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_34
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_35
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_36
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_37
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_38
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_39
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_0
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_1
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_2
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_3
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_4
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_5
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_6
+LOG  : General      f:0> BLANK OVERLAY TEXTURE. Set it to "none".: floors_overlay_wood_01_7
+LOG  : Lua          f:0> Initializing Randomized World Tabletop Clutter Tables
+WARN : Lua          f:0 at Lua(Vanilla).Features               > recursive require(): C:/Program Files (x86)/Steam/steamapps/common/ProjectZomboid/media/lua/server/WorldGen/WorldGen.lua
+WARN : Lua          f:0 at Lua(Vanilla).Biomes                 > recursive require(): C:/Program Files (x86)/Steam/steamapps/common/ProjectZomboid/media/lua/server/WorldGen/WorldGen.lua
+WARN : Lua          f:0 at Lua(Vanilla).Selection              > recursive require(): C:/Program Files (x86)/Steam/steamapps/common/ProjectZomboid/media/lua/server/WorldGen/WorldGen.lua
+WARN : Lua          f:0 at Lua(Vanilla).Veins                  > recursive require(): C:/Program Files (x86)/Steam/steamapps/common/ProjectZomboid/media/lua/server/WorldGen/WorldGen.lua
+WARN : Lua          f:0 at Lua(Vanilla).Roads                  > recursive require(): C:/Program Files (x86)/Steam/steamapps/common/ProjectZomboid/media/lua/server/WorldGen/WorldGen.lua
+WARN : Lua          f:0 at Lua(Vanilla).WorldGen               > recursive require(): C:/Program Files (x86)/Steam/steamapps/common/ProjectZomboid/media/lua/server/WorldGen/attachments/Priorities.lua
+ERROR: General      f:0 at CraftRecipeComponentScript.getIconTexture> CraftRecipeComponentScript: Recipe Piano missing UiConfigScript - falling back to SpriteConfigScript first world object face for recipe icon.
+LOG  : General      f:0> SafeMode is off
+LOG  : General      f:0> Loading worldgen params
+LOG  : General      f:0> IsoMetaGrid.Create: begin scanning directories
+LOG  : General      f:0> Looking in these map folders:
+LOG  : General      f:0> <End of map-folders list>
+LOG  : General      f:0> IsoMetaGrid.Create: X: [ -250 250 ], Y: [ -250 250 ]
+LOG  : General      f:0> World seed: ADOjbLliWlovCYYU 27715635
+LOG  : General      f:0> IsoMetaGrid.Create: finished scanning directories in 0.062 seconds
+LOG  : General      f:0> IsoMetaGrid.Create: begin loading
+LOG  : General      f:0> VehiclesDB2.init() start
+LOG  : General      f:0> VehiclesDB2.init() end
+LOG  : General      f:0> triggerEvent OnInitWorld
+LOG  : Lua          f:0> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=false | status=SPAWN_CONFIGURED | x=10693 | y=9986 | z=0
+LOG  : General      f:0> SandboxOptions.load() start
+LOG  : General      f:0> SandboxOptions.load() end
+LOG  : General      f:0> ItemPickerJava.Parse() start
+LOG  : General      f:0> ItemPickerJava.Parse() end
+LOG  : General      f:0> LoadTileDefinitions start
+LOG  : General      f:0> LoadTileDefinitions end
+LOG  : General      f:0> triggerEvent OnLoadedTileDefinitions
+LOG  : General      f:0> loadAnimalDefinitions start
+LOG  : General      f:0> loadAnimalDefinitions end
+LOG  : General      f:0> GameTime.init() and load() start
+LOG  : General      f:0> GameTime.init() and load() end
+LOG  : General      f:0> ZomboidRadio.Init() start
+LOG  : Lua          f:0> scriptmanager = zombie.radio.scripting.RadioScriptManager@45c979c9, isNewGame = true
+LOG  : Lua          f:0> name = Automated Emergency Broadcast System, freq = 88800, cat = Emergency, uuid = EMRG-711984
+LOG  : Lua          f:0> Found radio channel: Automated Emergency Broadcast System, freq = EMRG-711984, freqcheck = 88800, multi = 1
+LOG  : General      f:0> ZomboidRadio.Init() end
+LOG  : General      f:0> GlobalModData.init() start
+LOG  : General      f:0> GlobalModData.init() end
+LOG  : General      f:0> InstanceTracker.load() start
+LOG  : General      f:0> InstanceTracker.load() end
+LOG  : General      f:0> ErosionGlobals.Boot() start
+LOG  : General      f:0> ErosionGlobals.Boot() end
+LOG  : General      f:0> WorldDictionary.init() start
+LOG  : General      f:0> WorldDictionary: Checking dictionary...
+LOG  : General      f:0> WorldDictionary.init() end
+LOG  : General      f:0> GameEntityManager.Init() start
+LOG  : General      f:0> GameEntityManager.Init() end
+LOG  : General      f:0> PersistentOutfits.init() start
+LOG  : General      f:0> PersistentOutfits.init() end
+LOG  : General      f:0> IsoMetaGrid.Create: finished loading in 17.494 seconds
+ERROR: Lua          f:0 at Lua(Vanilla).handleMannequinZone    > ERROR: Mannequin zone missing properties in media/maps/Muldraugh, KY/objects.lua coords: 13583, 1299, 0
+WARN : Lua          f:0 at Lua(Vanilla).doMapZones             > can't find map objects file: media/maps/West Point, KY/objects.lua
+WARN : Lua          f:0 at Lua(Vanilla).doMapZones             > can't find map objects file: media/maps/Valley Station, KY/objects.lua
+WARN : Lua          f:0 at Lua(Vanilla).doMapZones             > can't find map objects file: media/maps/Rosewood, KY/objects.lua
+WARN : Lua          f:0 at Lua(Vanilla).doMapZones             > can't find map objects file: media/maps/Riverside, KY/objects.lua
+WARN : Lua          f:0 at Lua(Vanilla).doMapZones             > can't find map objects file: media/maps/March Ridge, KY/objects.lua
+WARN : Lua          f:0 at Lua(Vanilla).doMapZones             > can't find map objects file: media/maps/Irvington, KY/objects.lua
+WARN : Lua          f:0 at Lua(Vanilla).doMapZones             > can't find map objects file: media/maps/Fallas Lake, KY/objects.lua
+WARN : Lua          f:0 at Lua(Vanilla).doMapZones             > can't find map objects file: media/maps/Ekron, KY/objects.lua
+WARN : Lua          f:0 at Lua(Vanilla).doMapZones             > can't find map objects file: media/maps/Echo Creek, KY/objects.lua
+WARN : Lua          f:0 at Lua(Vanilla).doMapZones             > can't find map objects file: media/maps/Brandenburg, KY/objects.lua
+ERROR: General      f:0 at Basements.mergeRoomsOntoMetaCell    > duplicate RoomDef.metaID for room at 10707,9484,0
+LOG  : General      f:0> Max #ZONES on one chunk is 27
+LOG  : General      f:0> triggerEvent OnLoadedMapZones
+LOG  : General      f:0> ItemConfigurator.Preprocess() start
+LOG  : General      f:0> ItemConfigurator.Preprocess() end
+LOG  : General      f:0> MapCollisionData.init() start
+LOG  : General      f:0> MapCollisionData.init() end
+LOG  : General      f:0> AnimalPopulationManager.init() start
+LOG  : General      f:0> AnimalPopulationManager.init() end
+LOG  : General      f:0> ZombiePopulationManager.init() start
+LOG  : General      f:0> ZombiePopulationManager.init() end
+LOG  : General      f:0> Pathfind init() start
+LOG  : General      f:0> Pathfind init() end
+LOG  : General      f:0> WorldStreamer.create() start
+LOG  : General      f:0> WorldStreamer.create() end
+LOG  : General      f:0> CellLoader.LoadCellBinaryChunk start
+LOG  : General      f:0> CellLoader.LoadCellBinaryChunk start
+LOG  : General      f:0> MapItem.LoadWorldMap() start
+LOG  : General      f:0> MapItem.LoadWorldMap() start
+LOG  : General      f:0> WorldStreamer.isBusy() loop start
+ERROR: General      f:0 at CellLoader.DoTileObjectCreation     > CellLoader> missing tile vegetation_groundcover_01_23
+ERROR: General      f:0 at CellLoader.DoTileObjectCreation     > CellLoader> missing tile vegetation_groundcover_01_19
+ERROR: General      f:0 at CellLoader.DoTileObjectCreation     > CellLoader> missing tile vegetation_groundcover_01_18
+ERROR: General      f:0 at CellLoader.DoTileObjectCreation     > CellLoader> missing tile vegetation_groundcover_01_21
+ERROR: General      f:0 at CellLoader.DoTileObjectCreation     > CellLoader> missing tile vegetation_groundcover_01_22
+ERROR: General      f:0 at CellLoader.DoTileObjectCreation     > CellLoader> missing tile vegetation_groundcover_01_20
+Aug 26, 2026 6:52:48 PM zombie.iso.IsoCell PlaceLot
+SEVERE: Missing tile definition: overlay_graffiti_wall_02_22
+WARN : General      f:0 at SpriteConfig.initObjectInfo         > Invalid SpriteConfig object! scripted object = Wooden_Windows
+Aug 26, 2026 6:52:48 PM zombie.iso.IsoCell PlaceLot
+SEVERE: Missing tile definition: overlay_graffiti_wall_02_22
+WARN : General      f:0 at SpriteConfig.initObjectInfo         > Invalid SpriteConfig object! scripted object = Wooden_Windows
+Aug 26, 2026 6:52:48 PM zombie.iso.IsoCell PlaceLot
+SEVERE: Missing tile definition: overlay_graffiti_wall_02_22
+WARN : General      f:0 at SpriteConfig.initObjectInfo         > Invalid SpriteConfig object! scripted object = Wooden_Windows
+Aug 26, 2026 6:52:48 PM zombie.iso.IsoCell PlaceLot
+SEVERE: Missing tile definition: overlay_graffiti_wall_02_22
+WARN : General      f:0 at SpriteConfig.initObjectInfo         > Invalid SpriteConfig object! scripted object = Wooden_Windows
+LOG  : General      f:0> WorldStreamer.isBusy() loop end
+LOG  : General      f:0> Verifying that all Craft Recipes are Learnable
+LOG  : General      f:0> CraftRecipe MakeTarpTankTop only learnable by: Research. Profession(base:tailor;)
+LOG  : General      f:0> CraftRecipe MakeTarpChestRig only learnable by: Research. Profession(base:veteran;base:tailor;)
+LOG  : General      f:0> CraftRecipe SewShellsBandolier only learnable by: Research. Profession(base:tailor;)
+LOG  : General      f:0> CraftRecipe SewHidePants2 only learnable by: Research.
+LOG  : General      f:0> CraftRecipe MakeBodyMagazineArmor only learnable by: Research. Profession(base:burglar;)
+LOG  : General      f:0> CraftRecipe AssembleLargeTarpFramepack only learnable by: Research.
+LOG  : General      f:0> CraftRecipe SewTarpFannyBag only learnable by: Research.
+LOG  : General      f:0> Craft Recipe Learning possible issues detected; this may be a false positive on account of intentional design however.
+LOG  : General      f:0> MetaTracker.load() start
+LOG  : General      f:0> MetaTracker.load() end
+LOG  : General      f:0> triggerEvent OnGameTimeLoaded
+LOG  : General      f:0> GlobalObjects.initSystems() start
+LOG  : General      f:0> SGlobalObjects: newSystem campfire
+LOG  : General      f:0> SGlobalObjects: newSystem farming
+LOG  : General      f:0> SGlobalObjects: newSystem feedingTrough
+LOG  : General      f:0> SGlobalObjects: newSystem trap
+LOG  : General      f:0> SGlobalObjects: newSystem rainbarrel
+LOG  : General      f:0> CGlobalObjects: newSystem campfire
+LOG  : General      f:0> CGlobalObjects: newSystem farming
+LOG  : General      f:0> CGlobalObjects: newSystem feedingTrough
+LOG  : General      f:0> CGlobalObjects: newSystem rainbarrel
+LOG  : General      f:0> CGlobalObjects: newSystem trap
+LOG  : General      f:0> GlobalObjects.initSystems() end
+LOG  : General      f:0> GameWindow.save() start
+LOG  : General      f:0> Saving worldgen params
+LOG  : General      f:0> Saving GlobalModData
+LOG  : General      f:0> GameWindow.save() end
+LOG  : General      f:0> [26-08-26 18:53:07.862][info] Init chat system....
+LOG  : General      f:0> [26-08-26 18:53:07.862][info] Mode: single player.
+LOG  : General      f:0> bWaitForAssetLoadingToFinish2 start
+LOG  : General      f:0> bWaitForAssetLoadingToFinish2 end
+LOG  : General      f:0> FBORenderChunkManager.gameLoaded() start
+LOG  : General      f:0> FBORenderChunkManager.gameLoaded() end
+LOG  : General      f:0> Bullet.initPhysicsMeshes() start
+LOG  : General      f:0> Bullet.initPhysicsMeshes() end
+LOG  : General      f:0> game loading took 48 seconds
+LOG  : General      f:0> STATE: exit zombie.gameStates.GameLoadingState
+LOG  : Lua          f:0> 1 players found
+LOG  : Lua          f:0> player 0 is mouse
+LOG  : General      f:0> Game Mode: Sandbox
+LOG  : General      f:0> Sandbox Options:
+LOG  : General      f:0> Zombies 6
+LOG  : General      f:0> Distribution 1
+LOG  : General      f:0> ZombieVoronoiNoise true
+LOG  : General      f:0> ZombieRespawn 4
+LOG  : General      f:0> ZombieMigrate true
+LOG  : General      f:0> DayLength 4
+LOG  : General      f:0> StartYear 1
+LOG  : General      f:0> StartMonth 7
+LOG  : General      f:0> StartDay 9
+LOG  : General      f:0> StartTime 2
+LOG  : General      f:0> DayNightCycle 1
+LOG  : General      f:0> ClimateCycle 1
+LOG  : General      f:0> FogCycle 1
+LOG  : General      f:0> WaterShut 2
+LOG  : General      f:0> ElecShut 2
+LOG  : General      f:0> AlarmDecay 2
+LOG  : General      f:0> WaterShutModifier 26
+LOG  : General      f:0> ElecShutModifier 23
+LOG  : General      f:0> AlarmDecayModifier 14
+LOG  : General      f:0> FoodLootNew 0.0
+LOG  : General      f:0> LiteratureLootNew 0.0
+LOG  : General      f:0> SkillBookLoot 0.0
+LOG  : General      f:0> RecipeResourceLoot 0.0
+LOG  : General      f:0> MedicalLootNew 0.0
+LOG  : General      f:0> SurvivalGearsLootNew 0.0
+LOG  : General      f:0> CannedFoodLootNew 0.0
+LOG  : General      f:0> WeaponLootNew 0.0
+LOG  : General      f:0> RangedWeaponLootNew 0.0
+LOG  : General      f:0> AmmoLootNew 0.0
+LOG  : General      f:0> MechanicsLootNew 0.0
+LOG  : General      f:0> OtherLootNew 0.0
+LOG  : General      f:0> ClothingLootNew 0.0
+LOG  : General      f:0> ContainerLootNew 0.0
+LOG  : General      f:0> KeyLootNew 0.0
+LOG  : General      f:0> MediaLootNew 0.0
+LOG  : General      f:0> MementoLootNew 0.0
+LOG  : General      f:0> CookwareLootNew 0.0
+LOG  : General      f:0> MaterialLootNew 0.0
+LOG  : General      f:0> FarmingLootNew 0.0
+LOG  : General      f:0> ToolLootNew 0.0
+LOG  : General      f:0> RollsMultiplier 1.0
+LOG  : General      f:0> LootItemRemovalList 
+LOG  : General      f:0> RemoveStoryLoot false
+LOG  : General      f:0> RemoveZombieLoot false
+LOG  : General      f:0> ZombiePopLootEffect 0
+LOG  : General      f:0> InsaneLootFactor 0.05
+LOG  : General      f:0> ExtremeLootFactor 0.2
+LOG  : General      f:0> RareLootFactor 0.6
+LOG  : General      f:0> NormalLootFactor 1.0
+LOG  : General      f:0> CommonLootFactor 2.0
+LOG  : General      f:0> AbundantLootFactor 3.0
+LOG  : General      f:0> Temperature 3
+LOG  : General      f:0> Rain 3
+LOG  : General      f:0> ErosionSpeed 4
+LOG  : General      f:0> ErosionDays 0
+LOG  : General      f:0> Farming 3
+LOG  : General      f:0> CompostTime 2
+LOG  : General      f:0> StatsDecrease 3
+LOG  : General      f:0> NatureAbundance 3
+LOG  : General      f:0> Alarm 4
+LOG  : General      f:0> LockedHouses 6
+LOG  : General      f:0> StarterKit false
+LOG  : General      f:0> Nutrition true
+LOG  : General      f:0> FoodRotSpeed 3
+LOG  : General      f:0> FridgeFactor 3
+LOG  : General      f:0> SeenHoursPreventLootRespawn 0
+LOG  : General      f:0> HoursForLootRespawn 0
+LOG  : General      f:0> MaxItemsForLootRespawn 5
+LOG  : General      f:0> ConstructionPreventsLootRespawn true
+LOG  : General      f:0> WorldItemRemovalList Base.Hat, Base.Glasses, Base.Maggots, Base.Slug, Base.Slug2, Base.Snail, Base.Worm, Base.Dung_Mouse, Base.Dung_Rat
+LOG  : General      f:0> HoursForWorldItemRemoval 24.0
+LOG  : General      f:0> ItemRemovalListBlacklistToggle false
+LOG  : General      f:0> TimeSinceApo 1
+LOG  : General      f:0> PlantResilience 3
+LOG  : General      f:0> PlantAbundance 3
+LOG  : General      f:0> EndRegen 3
+LOG  : General      f:0> Helicopter 2
+LOG  : General      f:0> MetaEvent 2
+LOG  : General      f:0> SleepingEvent 1
+LOG  : General      f:0> GeneratorFuelConsumption 0.1
+LOG  : General      f:0> GeneratorSpawning 1
+LOG  : General      f:0> AnnotatedMapChance 4
+LOG  : General      f:0> CharacterFreePoints 0
+LOG  : General      f:0> ConstructionBonusPoints 3
+LOG  : General      f:0> NightDarkness 3
+LOG  : General      f:0> NightLength 3
+LOG  : General      f:0> BoneFracture true
+LOG  : General      f:0> InjurySeverity 2
+LOG  : General      f:0> HoursForCorpseRemoval 216.0
+LOG  : General      f:0> DecayingCorpseHealthImpact 3
+LOG  : General      f:0> ZombieHealthImpact false
+LOG  : General      f:0> BloodLevel 3
+LOG  : General      f:0> ClothingDegradation 3
+LOG  : General      f:0> FireSpread true
+LOG  : General      f:0> DaysForRottenFoodRemoval -1
+LOG  : General      f:0> AllowExteriorGenerator true
+LOG  : General      f:0> MaxFogIntensity 1
+LOG  : General      f:0> MaxRainFxIntensity 1
+LOG  : General      f:0> EnableSnowOnGround true
+LOG  : General      f:0> AttackBlockMovements true
+LOG  : General      f:0> SurvivorHouseChance 3
+LOG  : General      f:0> VehicleStoryChance 3
+LOG  : General      f:0> ZoneStoryChance 3
+LOG  : General      f:0> AllClothesUnlocked false
+LOG  : General      f:0> EnableTaintedWaterText true
+LOG  : General      f:0> EnableVehicles true
+LOG  : General      f:0> CarSpawnRate 3
+LOG  : General      f:0> ZombieAttractionMultiplier 1.0
+LOG  : General      f:0> VehicleEasyUse false
+LOG  : General      f:0> InitialGas 2
+LOG  : General      f:0> FuelStationGasInfinite false
+LOG  : General      f:0> FuelStationGasMin 0.0
+LOG  : General      f:0> FuelStationGasMax 0.8
+LOG  : General      f:0> FuelStationGasEmptyChance 20
+LOG  : General      f:0> LockedCar 4
+LOG  : General      f:0> CarGasConsumption 1.0
+LOG  : General      f:0> CarGeneralCondition 3
+LOG  : General      f:0> CarDamageOnImpact 3
+LOG  : General      f:0> DamageToPlayerFromHitByACar 1
+LOG  : General      f:0> TrafficJam true
+LOG  : General      f:0> CarAlarm 3
+LOG  : General      f:0> PlayerDamageFromCrash true
+LOG  : General      f:0> SirenShutoffHours 0.0
+LOG  : General      f:0> ChanceHasGas 2
+LOG  : General      f:0> RecentlySurvivorVehicles 2
+LOG  : General      f:0> MultiHitZombies false
+LOG  : General      f:0> RearVulnerability 3
+LOG  : General      f:0> SirenEffectsZombies true
+LOG  : General      f:0> AnimalStatsModifier 4
+LOG  : General      f:0> AnimalMetaStatsModifier 4
+LOG  : General      f:0> AnimalPregnancyTime 4
+LOG  : General      f:0> AnimalAgeModifier 4
+LOG  : General      f:0> AnimalMilkIncModifier 4
+LOG  : General      f:0> AnimalWoolIncModifier 4
+LOG  : General      f:0> AnimalRanchChance 5
+LOG  : General      f:0> AnimalGrassRegrowTime 240
+LOG  : General      f:0> AnimalMetaPredator false
+LOG  : General      f:0> AnimalMatingSeason true
+LOG  : General      f:0> AnimalEggHatch 4
+LOG  : General      f:0> AnimalSoundAttractZombies true
+LOG  : General      f:0> AnimalTrackChance 4
+LOG  : General      f:0> AnimalPathChance 4
+LOG  : General      f:0> MaximumRatIndex 25
+LOG  : General      f:0> DaysUntilMaximumRatIndex 90
+LOG  : General      f:0> MetaKnowledge 3
+LOG  : General      f:0> SeeNotLearntRecipe true
+LOG  : General      f:0> MaximumLootedBuildingRooms 50
+LOG  : General      f:0> EnablePoisoning 1
+LOG  : General      f:0> MaggotSpawn 1
+LOG  : General      f:0> LightBulbLifespan 2.0
+LOG  : General      f:0> FishAbundance 2
+LOG  : General      f:0> LevelForMediaXPCutoff 3
+LOG  : General      f:0> LevelForDismantleXPCutoff 0
+LOG  : General      f:0> BloodSplatLifespanDays 0
+LOG  : General      f:0> LiteratureCooldown 45
+LOG  : General      f:0> NegativeTraitsPenalty 1
+LOG  : General      f:0> MinutesPerPage 2.0
+LOG  : General      f:0> KillInsideCrops true
+LOG  : General      f:0> PlantGrowingSeasons true
+LOG  : General      f:0> PlaceDirtAboveground false
+LOG  : General      f:0> FarmingSpeedNew 1.0
+LOG  : General      f:0> FarmingAmountNew 1.0
+LOG  : General      f:0> MaximumLooted 25
+LOG  : General      f:0> DaysUntilMaximumLooted 90
+LOG  : General      f:0> RuralLooted 0.5
+LOG  : General      f:0> MaximumDiminishedLoot 20
+LOG  : General      f:0> DaysUntilMaximumDiminishedLoot 3650
+LOG  : General      f:0> MuscleStrainFactor 0.7
+LOG  : General      f:0> DiscomfortFactor 0.8
+LOG  : General      f:0> WoundInfectionFactor 1.0
+LOG  : General      f:0> NoBlackClothes true
+LOG  : General      f:0> EasyClimbing false
+LOG  : General      f:0> MaximumFireFuelHours 8
+LOG  : General      f:0> FirearmUseDamageChance 2
+LOG  : General      f:0> FirearmNoiseMultiplier 1.0
+LOG  : General      f:0> FirearmJamMultiplier 1.0
+LOG  : General      f:0> FirearmMoodleMultiplier 1.0
+LOG  : General      f:0> FirearmWeatherMultiplier 1.0
+LOG  : General      f:0> FirearmHeadGearEffect true
+LOG  : General      f:0> ClayLakeChance 0.05
+LOG  : General      f:0> ClayRiverChance 0.05
+LOG  : General      f:0> GeneratorTileRange 20
+LOG  : General      f:0> GeneratorVerticalPowerRange 3
+LOG  : General      f:0> SpawnFrequency 4
+LOG  : General      f:0> AllowMiniMap false
+LOG  : General      f:0> AllowWorldMap true
+LOG  : General      f:0> MapAllKnown false
+LOG  : General      f:0> MapNeedsLight true
+LOG  : General      f:0> Speed 4
+LOG  : General      f:0> SprinterPercentage 0
+LOG  : General      f:0> Strength 2
+LOG  : General      f:0> Toughness 4
+LOG  : General      f:0> Transmission 1
+LOG  : General      f:0> Mortality 5
+LOG  : General      f:0> Reanimate 3
+LOG  : General      f:0> Cognition 3
+LOG  : General      f:0> DoorOpeningPercentage 0
+LOG  : General      f:0> CrawlUnderVehicle 5
+LOG  : General      f:0> Memory 2
+LOG  : General      f:0> Sight 5
+LOG  : General      f:0> Hearing 5
+LOG  : General      f:0> SpottedLogic true
+LOG  : General      f:0> ThumpNoChasing false
+LOG  : General      f:0> ThumpOnConstruction true
+LOG  : General      f:0> ActiveOnly 1
+LOG  : General      f:0> TriggerHouseAlarm true
+LOG  : General      f:0> ZombiesDragDown true
+LOG  : General      f:0> ZombiesCrawlersDragDown false
+LOG  : General      f:0> ZombiesFenceLunge true
+LOG  : General      f:0> ZombiesArmorFactor 2.0
+LOG  : General      f:0> ZombiesMaxDefense 85
+LOG  : General      f:0> ChanceOfAttachedWeapon 6
+LOG  : General      f:0> ZombiesFallDamage 1.0
+LOG  : General      f:0> DisableFakeDead 1
+LOG  : General      f:0> PlayerSpawnZombieRemoval 1
+LOG  : General      f:0> FenceThumpersRequired 25
+LOG  : General      f:0> FenceDamageMultiplier 1.0
+LOG  : General      f:0> PopulationMultiplier 0.0
+LOG  : General      f:0> PopulationStartMultiplier 1.0
+LOG  : General      f:0> PopulationPeakMultiplier 1.5
+LOG  : General      f:0> PopulationPeakDay 28
+LOG  : General      f:0> RespawnHours 0.0
+LOG  : General      f:0> RespawnUnseenHours 0.0
+LOG  : General      f:0> RespawnMultiplier 0.0
+LOG  : General      f:0> RedistributeHours 12.0
+LOG  : General      f:0> FollowSoundDistance 100
+LOG  : General      f:0> RallyGroupSize 20
+LOG  : General      f:0> RallyGroupSizeVariance 50
+LOG  : General      f:0> RallyTravelDistance 20
+LOG  : General      f:0> RallyGroupSeparation 15
+LOG  : General      f:0> RallyGroupRadius 3
+LOG  : General      f:0> ZombiesCountBeforeDelete 300
+LOG  : General      f:0> Global 1.0
+LOG  : General      f:0> GlobalToggle true
+LOG  : General      f:0> Fitness 1.0
+LOG  : General      f:0> Strength 1.0
+LOG  : General      f:0> Sprinting 1.0
+LOG  : General      f:0> Lightfoot 1.0
+LOG  : General      f:0> Nimble 1.0
+LOG  : General      f:0> Sneak 1.0
+LOG  : General      f:0> Axe 1.0
+LOG  : General      f:0> Blunt 1.0
+LOG  : General      f:0> SmallBlunt 1.0
+LOG  : General      f:0> LongBlade 1.0
+LOG  : General      f:0> SmallBlade 1.0
+LOG  : General      f:0> Spear 1.0
+LOG  : General      f:0> Maintenance 1.0
+LOG  : General      f:0> Woodwork 1.0
+LOG  : General      f:0> Cooking 1.0
+LOG  : General      f:0> Farming 1.0
+LOG  : General      f:0> Doctor 1.0
+LOG  : General      f:0> Electricity 1.0
+LOG  : General      f:0> MetalWelding 1.0
+LOG  : General      f:0> Mechanics 1.0
+LOG  : General      f:0> Tailoring 1.0
+LOG  : General      f:0> Aiming 1.0
+LOG  : General      f:0> Reloading 1.0
+LOG  : General      f:0> Fishing 1.0
+LOG  : General      f:0> Trapping 1.0
+LOG  : General      f:0> PlantScavenging 1.0
+LOG  : General      f:0> FlintKnapping 1.0
+LOG  : General      f:0> Masonry 1.0
+LOG  : General      f:0> Pottery 1.0
+LOG  : General      f:0> Carving 1.0
+LOG  : General      f:0> Husbandry 1.0
+LOG  : General      f:0> Tracking 1.0
+LOG  : General      f:0> Blacksmith 1.0
+LOG  : General      f:0> Butchering 1.0
+LOG  : General      f:0> Glassmaking 1.0
+LOG  : Lua          f:0> farming: created farming/houseplant luaObject from pre-existing isoObject 10728,10001
+LOG  : Lua          f:0> farming: created farming/houseplant luaObject from pre-existing isoObject 10728,10002
+LOG  : Lua          f:0> farming: created farming/houseplant luaObject from pre-existing isoObject 10729,10001
+LOG  : Lua          f:0> farming: created farming/houseplant luaObject from pre-existing isoObject 10729,10002
+LOG  : Lua          f:0> farming: created farming/houseplant luaObject from pre-existing isoObject 10730,10001
+LOG  : Lua          f:0> farming: created farming/houseplant luaObject from pre-existing isoObject 10730,10002
+LOG  : Lua          f:0> farming: created farming/houseplant luaObject from pre-existing isoObject 10728,9995
+LOG  : Lua          f:0> farming: created farming/houseplant luaObject from pre-existing isoObject 10728,9996
+LOG  : Lua          f:0> farming: created farming/houseplant luaObject from pre-existing isoObject 10728,9998
+LOG  : Lua          f:0> farming: created farming/houseplant luaObject from pre-existing isoObject 10728,9999
+LOG  : Lua          f:0> farming: created farming/houseplant luaObject from pre-existing isoObject 10729,9995
+LOG  : Lua          f:0> farming: created farming/houseplant luaObject from pre-existing isoObject 10729,9996
+LOG  : Lua          f:0> farming: created farming/houseplant luaObject from pre-existing isoObject 10729,9998
+LOG  : Lua          f:0> farming: created farming/houseplant luaObject from pre-existing isoObject 10729,9999
+LOG  : Lua          f:0> farming: created farming/houseplant luaObject from pre-existing isoObject 10730,9995
+LOG  : Lua          f:0> farming: created farming/houseplant luaObject from pre-existing isoObject 10730,9996
+LOG  : Lua          f:0> farming: created farming/houseplant luaObject from pre-existing isoObject 10730,9998
+LOG  : Lua          f:0> farming: created farming/houseplant luaObject from pre-existing isoObject 10730,9999
+LOG  : Lua          f:0> farming: created farming/houseplant luaObject from pre-existing isoObject 10727,10001
+LOG  : Lua          f:0> farming: created farming/houseplant luaObject from pre-existing isoObject 10727,10002
+LOG  : Lua          f:0> farming: created farming/houseplant luaObject from pre-existing isoObject 10727,9995
+LOG  : Lua          f:0> farming: created farming/houseplant luaObject from pre-existing isoObject 10727,9996
+LOG  : Lua          f:0> farming: created farming/houseplant luaObject from pre-existing isoObject 10727,9998
+LOG  : Lua          f:0> farming: created farming/houseplant luaObject from pre-existing isoObject 10727,9999
+LOG  : General      f:0> Reseeding weather period, new seed: 635943
+LOG  : General      f:0> Cheats enabled/disabled on game start in lua from the file CheatPanel.ini.
+LOG  : General      f:0> binkId: 5
+LOG  : Lua          f:1> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=false | status=SPAWN_VERIFIED | x=10693 | y=9986 | z=0 | build=42.20.4 b0bbce05d5
+LOG  : Lua          f:1> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=false | status=MATCHED_SETUP_CREATED | worldHours=2.0000743865966797 | guardID=984846483 | testID=1012071938 | vID=1462015840 | aID=875160373 | uID=992537179 | guardContents=0 | testContents=V_A_U | projectedAge=0.5 | projectedHeat=1 | projectedFreezingTime=80
+LOG  : Lua          f:1> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=false | status=WAITING_FOR_EQUIP_AND_SELECTION | requiredPrimary=FC006-GUARD | requiredSecondary=FC006-TEST | requiredSelected=FC006-GUARD | action=equip_pin_open_select_guard
+LOG  : Lua          f:215> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=false | mode=MONITOR | phase=READY | worldHours=2.016721725463867 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=NONE | secondaryID=NONE | selectedID=NONE | selectedType=NONE | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=false | selectedReady=false | treatmentReady=false | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.016572952270508 | vage=0.5006873607635498 | vheat=1 | vfreezingTime=78.90008544921875 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.016572952270508 | aage=0.5006873607635498 | aheat=1 | afreezingTime=78.90008544921875 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.016572952270508 | uage=0.5006873607635498 | uheat=1 | ufreezingTime=78.90008544921875 | ufrozen=false | ufreezing=false | uthawing=true | status=WAITING | reason=equip_assignment
+LOG  : Lua          f:1335> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=false | mode=MONITOR | phase=READY | worldHours=2.100029945373535 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=NONE | selectedID=NONE | selectedType=NONE | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=false | selectedReady=false | treatmentReady=false | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.099806785583496 | vage=0.5041553378105164 | vheat=1 | vfreezingTime=73.35115051269531 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.099806785583496 | aage=0.5041553378105164 | aheat=1 | afreezingTime=73.35115051269531 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.099806785583496 | uage=0.5041553378105164 | uheat=1 | ufreezingTime=73.35115051269531 | ufrozen=false | ufreezing=false | uthawing=true | status=WAITING | reason=equip_assignment
+LOG  : Lua          f:1559> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=false | mode=MONITOR | phase=READY | worldHours=2.116692543029785 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.1125268936157227 | vage=0.5046853423118591 | vheat=1 | vfreezingTime=72.50314331054688 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.1125268936157227 | aage=0.5046853423118591 | aheat=1 | afreezingTime=72.50314331054688 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.1125268936157227 | uage=0.5046853423118591 | uheat=1 | ufreezingTime=72.50314331054688 | ufrozen=false | ufreezing=false | uthawing=true | status=READY | selectedBinding=playerInventory.inventoryPane.inventory
+LOG  : Lua          f:2612> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=CONTROL | worldHours=2.1950149536132812 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.1125268936157227 | vage=0.5046853423118591 | vheat=1 | vfreezingTime=72.50314331054688 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.1125268936157227 | aage=0.5046853423118591 | aheat=1 | afreezingTime=72.50314331054688 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.1125268936157227 | uage=0.5046853423118591 | uheat=1 | ufreezingTime=72.50314331054688 | ufrozen=false | ufreezing=false | uthawing=true | status=ARMED | operatorAuthorizationRequired=true | substantiveRunAuthorizedByHarness=false
+LOG  : Lua          f:2613> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STATE_TRANSITION | worldHours=2.195089340209961 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.1125268936157227 | vage=0.5046853423118591 | vheat=1 | vfreezingTime=72.50314331054688 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.1125268936157227 | aage=0.5046853423118591 | aheat=1 | afreezingTime=72.50314331054688 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.1125268936157227 | uage=0.5046853423118591 | uheat=1 | ufreezingTime=72.50314331054688 | ufrozen=false | ufreezing=false | uthawing=true | status=OBSERVED
+LOG  : Lua          f:2680> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=ARMED_SAMPLE | worldHours=2.2000722885131836 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.1125268936157227 | vage=0.5046853423118591 | vheat=1 | vfreezingTime=72.50314331054688 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.1125268936157227 | aage=0.5046853423118591 | aheat=1 | afreezingTime=72.50314331054688 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.1125268936157227 | uage=0.5046853423118591 | uheat=1 | ufreezingTime=72.50314331054688 | ufrozen=false | ufreezing=false | uthawing=true | status=WAITING_FOR_BEGIN | stableSamples=1
+LOG  : Lua          f:2904> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=ARMED_SAMPLE | worldHours=2.2167348861694336 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.1125268936157227 | vage=0.5046853423118591 | vheat=1 | vfreezingTime=72.50314331054688 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.1125268936157227 | aage=0.5046853423118591 | aheat=1 | afreezingTime=72.50314331054688 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.1125268936157227 | uage=0.5046853423118591 | uheat=1 | ufreezingTime=72.50314331054688 | ufrozen=false | ufreezing=false | uthawing=true | status=WAITING_FOR_BEGIN | stableSamples=2
+LOG  : Lua          f:2904> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=BEGIN | worldHours=2.2167348861694336 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=RUNNING | managedStaleGameHours=1 | harnessStateUpdatesDuringInterval=0 | protocolDryRun=false
+LOG  : Lua          f:3128> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=2.2333974838256836 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.01666259765625 | harnessStateUpdates=0
+LOG  : Lua          f:3352> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=2.2500572204589844 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.03332233428955078 | harnessStateUpdates=0
+LOG  : Lua          f:3576> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=2.2667198181152344 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.04998493194580078 | harnessStateUpdates=0
+LOG  : Lua          f:3800> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=2.2833824157714844 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.06664752960205078 | harnessStateUpdates=0
+LOG  : Lua          f:4024> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=2.3000450134277344 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.08331012725830078 | harnessStateUpdates=0
+LOG  : Lua          f:4248> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=2.316706657409668 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.09997177124023438 | harnessStateUpdates=0
+LOG  : Lua          f:4472> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=2.333369255065918 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.11663436889648438 | harnessStateUpdates=0
+LOG  : Lua          f:4696> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=2.350031852722168 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.13329696655273438 | harnessStateUpdates=0
+LOG  : Lua          f:4920> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=2.366694450378418 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.14995956420898438 | harnessStateUpdates=0
+LOG  : Lua          f:5144> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=2.3833560943603516 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.16662120819091797 | harnessStateUpdates=0
+LOG  : Lua          f:5368> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=2.4000186920166016 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.18328380584716797 | harnessStateUpdates=0
+LOG  : Lua          f:5592> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=2.4166812896728516 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.19994640350341797 | harnessStateUpdates=0
+LOG  : Lua          f:5816> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=2.4333438873291016 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.21660900115966797 | harnessStateUpdates=0
+LOG  : Lua          f:6040> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=2.4500064849853516 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.23327159881591797 | harnessStateUpdates=0
+LOG  : Lua          f:6264> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=2.4666690826416016 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.24993419647216797 | harnessStateUpdates=0
+LOG  : Lua          f:6489> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=2.4834060668945312 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.26667118072509766 | harnessStateUpdates=0
+LOG  : Lua          f:6713> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=2.5000686645507812 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.28333377838134766 | harnessStateUpdates=0
+LOG  : Lua          f:6937> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=2.516730308532715 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.29999542236328125 | harnessStateUpdates=0
+LOG  : Lua          f:7161> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=2.533392906188965 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.31665802001953125 | harnessStateUpdates=0
+LOG  : Lua          f:7385> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=2.550055503845215 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.33332061767578125 | harnessStateUpdates=0
+LOG  : Lua          f:7609> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=2.566718101501465 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.34998321533203125 | harnessStateUpdates=0
+LOG  : Lua          f:7833> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=2.5833797454833984 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.36664485931396484 | harnessStateUpdates=0
+LOG  : Lua          f:8057> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=2.6000423431396484 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.38330745697021484 | harnessStateUpdates=0
+LOG  : Lua          f:8281> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=2.6167049407958984 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.39997005462646484 | harnessStateUpdates=0
+LOG  : Lua          f:8505> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=2.6333675384521484 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.41663265228271484 | harnessStateUpdates=0
+LOG  : Lua          f:8729> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=2.650029182434082 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.43329429626464844 | harnessStateUpdates=0
+LOG  : Lua          f:8953> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=2.666689872741699 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.4499549865722656 | harnessStateUpdates=0
+LOG  : Lua          f:9177> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=2.683352470397949 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.4666175842285156 | harnessStateUpdates=0
+LOG  : Lua          f:9401> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=2.700015068054199 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.4832801818847656 | harnessStateUpdates=0
+LOG  : Lua          f:9625> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=2.716677665710449 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.4999427795410156 | harnessStateUpdates=0
+LOG  : Lua          f:9849> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=2.733340263366699 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.5166053771972656 | harnessStateUpdates=0
+LOG  : Lua          f:10073> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=2.750002861022949 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.5332679748535156 | harnessStateUpdates=0
+LOG  : Lua          f:10298> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=2.766739845275879 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.5500049591064453 | harnessStateUpdates=0
+LOG  : Lua          f:10522> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=2.783402442932129 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.5666675567626953 | harnessStateUpdates=0
+LOG  : Lua          f:10746> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=2.800065040588379 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.5833301544189453 | harnessStateUpdates=0
+LOG  : Lua          f:10970> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=2.816727638244629 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.5999927520751953 | harnessStateUpdates=0
+LOG  : Lua          f:11194> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=2.833390235900879 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.6166553497314453 | harnessStateUpdates=0
+LOG  : Lua          f:11418> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=2.8500518798828125 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.6333169937133789 | harnessStateUpdates=0
+LOG  : Lua          f:11642> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=2.8667144775390625 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.6499795913696289 | harnessStateUpdates=0
+LOG  : Lua          f:11866> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=2.8833770751953125 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.6666421890258789 | harnessStateUpdates=0
+LOG  : Lua          f:12090> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=2.900038719177246 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.6833038330078125 | harnessStateUpdates=0
+LOG  : Lua          f:12314> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=2.9167003631591797 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.6999654769897461 | harnessStateUpdates=0
+LOG  : Lua          f:12538> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=2.9333629608154297 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.7166280746459961 | harnessStateUpdates=0
+LOG  : Lua          f:12762> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=2.9500255584716797 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.7332906723022461 | harnessStateUpdates=0
+LOG  : Lua          f:12986> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=2.9666872024536133 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.7499523162841797 | harnessStateUpdates=0
+LOG  : Lua          f:13210> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=2.983348846435547 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.7666139602661133 | harnessStateUpdates=0
+LOG  : Lua          f:13434> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=3.000011444091797 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.7832765579223633 | harnessStateUpdates=0
+LOG  : Lua          f:13658> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=3.016674041748047 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.7999391555786133 | harnessStateUpdates=0
+LOG  : Lua          f:13882> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=3.033336639404297 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.8166017532348633 | harnessStateUpdates=0
+LOG  : Lua          f:14107> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=3.0500736236572266 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.833338737487793 | harnessStateUpdates=0
+LOG  : Lua          f:14331> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=3.0667343139648438 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.8499994277954102 | harnessStateUpdates=0
+LOG  : Lua          f:14555> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=3.0833969116210938 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.8666620254516602 | harnessStateUpdates=0
+LOG  : Lua          f:14779> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=3.1000595092773438 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.8833246231079102 | harnessStateUpdates=0
+LOG  : Lua          f:15003> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=3.1167211532592773 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.8999862670898438 | harnessStateUpdates=0
+LOG  : Lua          f:15227> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=3.1333837509155273 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.9166488647460938 | harnessStateUpdates=0
+LOG  : Lua          f:15451> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=3.150045394897461 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.9333105087280273 | harnessStateUpdates=0
+LOG  : Lua          f:15675> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=3.166707992553711 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.9499731063842773 | harnessStateUpdates=0
+LOG  : Lua          f:15899> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=3.1833696365356445 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.9666347503662109 | harnessStateUpdates=0
+LOG  : Lua          f:16123> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=3.2000322341918945 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.9832973480224609 | harnessStateUpdates=0
+LOG  : Lua          f:16347> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=STALE_SAMPLE | worldHours=3.2166948318481445 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=GETTER_ONLY | elapsedGameHours=0.9999599456787109 | harnessStateUpdates=0
+LOG  : Lua          f:16348> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=PRE_HANDOFF | worldHours=3.216769218444824 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=2.2167348861694336 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=2.2167348861694336 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=OBSERVED
+LOG  : Lua          f:16348> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=HANDOFF_APPLIED | worldHours=3.216769218444824 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=3.216769218444824 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=3.216769218444824 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=OBSERVED | staleElapsedGameHours=1.0000343322753906 | vSequence=updateAge_then_public_projection | aSequence=setAutoAge_then_public_projection | uSequence=public_projection_only | timestampSpread=0 | callsPassed=true | vUpdateFailure=NONE | vProjectionFailure=NONE | aAlignFailure=NONE | aProjectionFailure=NONE | uProjectionFailure=NONE
+LOG  : Lua          f:16348> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=HANDOFF_COMMITTED | worldHours=3.216769218444824 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=3.216769218444824 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=3.216769218444824 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=COMMITTED | timestampSpread=0 | requiredFlags=frozen_false_freezing_false_thawing_true | nextUpdateWorldHours=3.3834358851114907
+LOG  : Lua          f:16571> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=POST_HANDOFF_SAMPLE | worldHours=3.2333574295043945 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=3.216769218444824 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=3.216769218444824 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=WAITING_FOR_EXPLICIT_UPDATE | completedUpdates=0 | nextUpdateWorldHours=3.3834358851114907
+LOG  : Lua          f:16795> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=POST_HANDOFF_SAMPLE | worldHours=3.2500171661376953 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=3.216769218444824 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=3.216769218444824 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=WAITING_FOR_EXPLICIT_UPDATE | completedUpdates=0 | nextUpdateWorldHours=3.3834358851114907
+LOG  : Lua          f:17019> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=POST_HANDOFF_SAMPLE | worldHours=3.2666797637939453 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=3.216769218444824 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=3.216769218444824 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=WAITING_FOR_EXPLICIT_UPDATE | completedUpdates=0 | nextUpdateWorldHours=3.3834358851114907
+LOG  : Lua          f:17243> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=POST_HANDOFF_SAMPLE | worldHours=3.2833423614501953 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=3.216769218444824 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=3.216769218444824 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=WAITING_FOR_EXPLICIT_UPDATE | completedUpdates=0 | nextUpdateWorldHours=3.3834358851114907
+LOG  : Lua          f:17467> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=POST_HANDOFF_SAMPLE | worldHours=3.3000049591064453 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=3.216769218444824 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=3.216769218444824 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=WAITING_FOR_EXPLICIT_UPDATE | completedUpdates=0 | nextUpdateWorldHours=3.3834358851114907
+LOG  : Lua          f:17691> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=POST_HANDOFF_SAMPLE | worldHours=3.3166675567626953 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=3.216769218444824 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=3.216769218444824 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=WAITING_FOR_EXPLICIT_UPDATE | completedUpdates=0 | nextUpdateWorldHours=3.3834358851114907
+LOG  : Lua          f:17916> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=POST_HANDOFF_SAMPLE | worldHours=3.333404541015625 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=3.216769218444824 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=3.216769218444824 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=WAITING_FOR_EXPLICIT_UPDATE | completedUpdates=0 | nextUpdateWorldHours=3.3834358851114907
+LOG  : Lua          f:18140> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=POST_HANDOFF_SAMPLE | worldHours=3.350067138671875 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=3.216769218444824 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=3.216769218444824 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=WAITING_FOR_EXPLICIT_UPDATE | completedUpdates=0 | nextUpdateWorldHours=3.3834358851114907
+LOG  : Lua          f:18364> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=POST_HANDOFF_SAMPLE | worldHours=3.366729736328125 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=3.216769218444824 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=3.216769218444824 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=WAITING_FOR_EXPLICIT_UPDATE | completedUpdates=0 | nextUpdateWorldHours=3.3834358851114907
+LOG  : Lua          f:18588> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=POST_HANDOFF_SAMPLE | worldHours=3.383392333984375 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=3.216769218444824 | vage=0.5 | vheat=1 | vfreezingTime=80 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=3.216769218444824 | aage=0.5 | aheat=1 | afreezingTime=80 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=2.2167348861694336 | uage=0.5 | uheat=1 | ufreezingTime=80 | ufrozen=false | ufreezing=false | uthawing=true | status=WAITING_FOR_EXPLICIT_UPDATE | completedUpdates=0 | nextUpdateWorldHours=3.3834358851114907
+LOG  : Lua          f:18589> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=UPDATE_1 | worldHours=3.3834667205810547 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=3.3834667205810547 | vage=0.5069457292556763 | vheat=1 | vfreezingTime=68.88683319091797 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=3.3834667205810547 | aage=0.5069457292556763 | aheat=1 | afreezingTime=68.88683319091797 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=3.3834667205810547 | uage=0.5486138463020325 | uheat=1 | ufreezingTime=2.2178726196289062 | ufrozen=false | ufreezing=false | uthawing=true | status=OBSERVED | explicitUpdateAgeCalls=V_A_U | scheduledWorldHours=3.3834358851114907 | actualWorldHours=3.3834667205810547 | scheduleDelta=3.083546956395011E-5 | callbackSpread=0 | callsPassed=true | failures=NONE
+LOG  : Lua          f:18812> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=POST_HANDOFF_SAMPLE | worldHours=3.4000539779663086 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=3.3834667205810547 | vage=0.5069457292556763 | vheat=1 | vfreezingTime=68.88683319091797 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=3.3834667205810547 | aage=0.5069457292556763 | aheat=1 | afreezingTime=68.88683319091797 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=3.3834667205810547 | uage=0.5486138463020325 | uheat=1 | ufreezingTime=2.2178726196289062 | ufrozen=false | ufreezing=false | uthawing=true | status=WAITING_FOR_EXPLICIT_UPDATE | completedUpdates=1 | nextUpdateWorldHours=3.5501025517781573
+LOG  : Lua          f:19036> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=POST_HANDOFF_SAMPLE | worldHours=3.416714668273926 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=3.3834667205810547 | vage=0.5069457292556763 | vheat=1 | vfreezingTime=68.88683319091797 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=3.3834667205810547 | aage=0.5069457292556763 | aheat=1 | afreezingTime=68.88683319091797 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=3.3834667205810547 | uage=0.5486138463020325 | uheat=1 | ufreezingTime=2.2178726196289062 | ufrozen=false | ufreezing=false | uthawing=true | status=WAITING_FOR_EXPLICIT_UPDATE | completedUpdates=1 | nextUpdateWorldHours=3.5501025517781573
+LOG  : Lua          f:19260> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=POST_HANDOFF_SAMPLE | worldHours=3.433377265930176 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=3.3834667205810547 | vage=0.5069457292556763 | vheat=1 | vfreezingTime=68.88683319091797 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=3.3834667205810547 | aage=0.5069457292556763 | aheat=1 | afreezingTime=68.88683319091797 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=3.3834667205810547 | uage=0.5486138463020325 | uheat=1 | ufreezingTime=2.2178726196289062 | ufrozen=false | ufreezing=false | uthawing=true | status=WAITING_FOR_EXPLICIT_UPDATE | completedUpdates=1 | nextUpdateWorldHours=3.5501025517781573
+LOG  : Lua          f:19484> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=POST_HANDOFF_SAMPLE | worldHours=3.450039863586426 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=3.3834667205810547 | vage=0.5069457292556763 | vheat=1 | vfreezingTime=68.88683319091797 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=3.3834667205810547 | aage=0.5069457292556763 | aheat=1 | afreezingTime=68.88683319091797 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=3.3834667205810547 | uage=0.5486138463020325 | uheat=1 | ufreezingTime=2.2178726196289062 | ufrozen=false | ufreezing=false | uthawing=true | status=WAITING_FOR_EXPLICIT_UPDATE | completedUpdates=1 | nextUpdateWorldHours=3.5501025517781573
+LOG  : Lua          f:19708> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=POST_HANDOFF_SAMPLE | worldHours=3.466702461242676 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=3.3834667205810547 | vage=0.5069457292556763 | vheat=1 | vfreezingTime=68.88683319091797 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=3.3834667205810547 | aage=0.5069457292556763 | aheat=1 | afreezingTime=68.88683319091797 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=3.3834667205810547 | uage=0.5486138463020325 | uheat=1 | ufreezingTime=2.2178726196289062 | ufrozen=false | ufreezing=false | uthawing=true | status=WAITING_FOR_EXPLICIT_UPDATE | completedUpdates=1 | nextUpdateWorldHours=3.5501025517781573
+LOG  : Lua          f:19932> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=POST_HANDOFF_SAMPLE | worldHours=3.483365058898926 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=3.3834667205810547 | vage=0.5069457292556763 | vheat=1 | vfreezingTime=68.88683319091797 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=3.3834667205810547 | aage=0.5069457292556763 | aheat=1 | afreezingTime=68.88683319091797 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=3.3834667205810547 | uage=0.5486138463020325 | uheat=1 | ufreezingTime=2.2178726196289062 | ufrozen=false | ufreezing=false | uthawing=true | status=WAITING_FOR_EXPLICIT_UPDATE | completedUpdates=1 | nextUpdateWorldHours=3.5501025517781573
+LOG  : Lua          f:20156> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=POST_HANDOFF_SAMPLE | worldHours=3.5000267028808594 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=3.3834667205810547 | vage=0.5069457292556763 | vheat=1 | vfreezingTime=68.88683319091797 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=3.3834667205810547 | aage=0.5069457292556763 | aheat=1 | afreezingTime=68.88683319091797 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=3.3834667205810547 | uage=0.5486138463020325 | uheat=1 | ufreezingTime=2.2178726196289062 | ufrozen=false | ufreezing=false | uthawing=true | status=WAITING_FOR_EXPLICIT_UPDATE | completedUpdates=1 | nextUpdateWorldHours=3.5501025517781573
+LOG  : Lua          f:20380> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=POST_HANDOFF_SAMPLE | worldHours=3.516688346862793 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=3.3834667205810547 | vage=0.5069457292556763 | vheat=1 | vfreezingTime=68.88683319091797 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=3.3834667205810547 | aage=0.5069457292556763 | aheat=1 | afreezingTime=68.88683319091797 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=3.3834667205810547 | uage=0.5486138463020325 | uheat=1 | ufreezingTime=2.2178726196289062 | ufrozen=false | ufreezing=false | uthawing=true | status=WAITING_FOR_EXPLICIT_UPDATE | completedUpdates=1 | nextUpdateWorldHours=3.5501025517781573
+LOG  : Lua          f:20604> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=POST_HANDOFF_SAMPLE | worldHours=3.5333499908447266 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=3.3834667205810547 | vage=0.5069457292556763 | vheat=1 | vfreezingTime=68.88683319091797 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=3.3834667205810547 | aage=0.5069457292556763 | aheat=1 | afreezingTime=68.88683319091797 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=3.3834667205810547 | uage=0.5486138463020325 | uheat=1 | ufreezingTime=2.2178726196289062 | ufrozen=false | ufreezing=false | uthawing=true | status=WAITING_FOR_EXPLICIT_UPDATE | completedUpdates=1 | nextUpdateWorldHours=3.5501025517781573
+LOG  : Lua          f:20828> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=POST_HANDOFF_SAMPLE | worldHours=3.5500125885009766 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=3.3834667205810547 | vage=0.5069457292556763 | vheat=1 | vfreezingTime=68.88683319091797 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=3.3834667205810547 | aage=0.5069457292556763 | aheat=1 | afreezingTime=68.88683319091797 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=3.3834667205810547 | uage=0.5486138463020325 | uheat=1 | ufreezingTime=2.2178726196289062 | ufrozen=false | ufreezing=false | uthawing=true | status=WAITING_FOR_EXPLICIT_UPDATE | completedUpdates=1 | nextUpdateWorldHours=3.5501025517781573
+LOG  : Lua          f:20830> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=UPDATE_2 | worldHours=3.550161361694336 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=3.550161361694336 | vage=0.513891339302063 | vheat=1 | vfreezingTime=57.77385711669922 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=3.550161361694336 | aage=0.513891339302063 | aheat=1 | afreezingTime=57.77385711669922 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=3.550161361694336 | uage=0.5555594563484192 | uheat=1 | ufreezingTime=0 | ufrozen=false | ufreezing=false | uthawing=false | status=OBSERVED | explicitUpdateAgeCalls=V_A_U | scheduledWorldHours=3.5501025517781573 | actualWorldHours=3.550161361694336 | scheduleDelta=5.8809916178681476E-5 | callbackSpread=0 | callsPassed=true | failures=NONE
+LOG  : Lua          f:21052> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=POST_HANDOFF_SAMPLE | worldHours=3.5666751861572266 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=3.550161361694336 | vage=0.513891339302063 | vheat=1 | vfreezingTime=57.77385711669922 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=3.550161361694336 | aage=0.513891339302063 | aheat=1 | afreezingTime=57.77385711669922 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=3.550161361694336 | uage=0.5555594563484192 | uheat=1 | ufreezingTime=0 | ufrozen=false | ufreezing=false | uthawing=false | status=WAITING_FOR_EXPLICIT_UPDATE | completedUpdates=2 | nextUpdateWorldHours=3.7167692184448238
+LOG  : Lua          f:21276> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=POST_HANDOFF_SAMPLE | worldHours=3.5833377838134766 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=3.550161361694336 | vage=0.513891339302063 | vheat=1 | vfreezingTime=57.77385711669922 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=3.550161361694336 | aage=0.513891339302063 | aheat=1 | afreezingTime=57.77385711669922 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=3.550161361694336 | uage=0.5555594563484192 | uheat=1 | ufreezingTime=0 | ufrozen=false | ufreezing=false | uthawing=false | status=WAITING_FOR_EXPLICIT_UPDATE | completedUpdates=2 | nextUpdateWorldHours=3.7167692184448238
+LOG  : Lua          f:21500> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=POST_HANDOFF_SAMPLE | worldHours=3.6000003814697266 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=3.550161361694336 | vage=0.513891339302063 | vheat=1 | vfreezingTime=57.77385711669922 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=3.550161361694336 | aage=0.513891339302063 | aheat=1 | afreezingTime=57.77385711669922 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=3.550161361694336 | uage=0.5555594563484192 | uheat=1 | ufreezingTime=0 | ufrozen=false | ufreezing=false | uthawing=false | status=WAITING_FOR_EXPLICIT_UPDATE | completedUpdates=2 | nextUpdateWorldHours=3.7167692184448238
+LOG  : Lua          f:21725> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=POST_HANDOFF_SAMPLE | worldHours=3.6167373657226562 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=3.550161361694336 | vage=0.513891339302063 | vheat=1 | vfreezingTime=57.77385711669922 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=3.550161361694336 | aage=0.513891339302063 | aheat=1 | afreezingTime=57.77385711669922 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=3.550161361694336 | uage=0.5555594563484192 | uheat=1 | ufreezingTime=0 | ufrozen=false | ufreezing=false | uthawing=false | status=WAITING_FOR_EXPLICIT_UPDATE | completedUpdates=2 | nextUpdateWorldHours=3.7167692184448238
+LOG  : Lua          f:21949> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=POST_HANDOFF_SAMPLE | worldHours=3.6333999633789062 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=3.550161361694336 | vage=0.513891339302063 | vheat=1 | vfreezingTime=57.77385711669922 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=3.550161361694336 | aage=0.513891339302063 | aheat=1 | afreezingTime=57.77385711669922 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=3.550161361694336 | uage=0.5555594563484192 | uheat=1 | ufreezingTime=0 | ufrozen=false | ufreezing=false | uthawing=false | status=WAITING_FOR_EXPLICIT_UPDATE | completedUpdates=2 | nextUpdateWorldHours=3.7167692184448238
+LOG  : Lua          f:22173> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=POST_HANDOFF_SAMPLE | worldHours=3.6500625610351562 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=3.550161361694336 | vage=0.513891339302063 | vheat=1 | vfreezingTime=57.77385711669922 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=3.550161361694336 | aage=0.513891339302063 | aheat=1 | afreezingTime=57.77385711669922 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=3.550161361694336 | uage=0.5555594563484192 | uheat=1 | ufreezingTime=0 | ufrozen=false | ufreezing=false | uthawing=false | status=WAITING_FOR_EXPLICIT_UPDATE | completedUpdates=2 | nextUpdateWorldHours=3.7167692184448238
+LOG  : Lua          f:22397> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=POST_HANDOFF_SAMPLE | worldHours=3.6667251586914062 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=3.550161361694336 | vage=0.513891339302063 | vheat=1 | vfreezingTime=57.77385711669922 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=3.550161361694336 | aage=0.513891339302063 | aheat=1 | afreezingTime=57.77385711669922 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=3.550161361694336 | uage=0.5555594563484192 | uheat=1 | ufreezingTime=0 | ufrozen=false | ufreezing=false | uthawing=false | status=WAITING_FOR_EXPLICIT_UPDATE | completedUpdates=2 | nextUpdateWorldHours=3.7167692184448238
+LOG  : Lua          f:22621> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=POST_HANDOFF_SAMPLE | worldHours=3.6833877563476562 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=3.550161361694336 | vage=0.513891339302063 | vheat=1 | vfreezingTime=57.77385711669922 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=3.550161361694336 | aage=0.513891339302063 | aheat=1 | afreezingTime=57.77385711669922 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=3.550161361694336 | uage=0.5555594563484192 | uheat=1 | ufreezingTime=0 | ufrozen=false | ufreezing=false | uthawing=false | status=WAITING_FOR_EXPLICIT_UPDATE | completedUpdates=2 | nextUpdateWorldHours=3.7167692184448238
+LOG  : Lua          f:22845> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=POST_HANDOFF_SAMPLE | worldHours=3.7000503540039062 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=3.550161361694336 | vage=0.513891339302063 | vheat=1 | vfreezingTime=57.77385711669922 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=3.550161361694336 | aage=0.513891339302063 | aheat=1 | afreezingTime=57.77385711669922 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=3.550161361694336 | uage=0.5555594563484192 | uheat=1 | ufreezingTime=0 | ufrozen=false | ufreezing=false | uthawing=false | status=WAITING_FOR_EXPLICIT_UPDATE | completedUpdates=2 | nextUpdateWorldHours=3.7167692184448238
+LOG  : Lua          f:23069> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=POST_HANDOFF_SAMPLE | worldHours=3.71671199798584 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=3.550161361694336 | vage=0.513891339302063 | vheat=1 | vfreezingTime=57.77385711669922 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=3.550161361694336 | aage=0.513891339302063 | aheat=1 | afreezingTime=57.77385711669922 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=3.550161361694336 | uage=0.5555594563484192 | uheat=1 | ufreezingTime=0 | ufrozen=false | ufreezing=false | uthawing=false | status=WAITING_FOR_EXPLICIT_UPDATE | completedUpdates=2 | nextUpdateWorldHours=3.7167692184448238
+LOG  : Lua          f:23070> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=UPDATE_3 | worldHours=3.7167863845825195 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=3.7167863845825195 | vage=0.5208340287208557 | vheat=1 | vfreezingTime=46.66551971435547 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=3.7167863845825195 | aage=0.5208340287208557 | aheat=1 | afreezingTime=46.66551971435547 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=3.7167863845825195 | uage=0.5625021457672119 | uheat=1 | ufreezingTime=0 | ufrozen=false | ufreezing=false | uthawing=false | status=OBSERVED | explicitUpdateAgeCalls=V_A_U | scheduledWorldHours=3.7167692184448238 | actualWorldHours=3.7167863845825195 | scheduleDelta=1.716613769575659E-5 | callbackSpread=0 | callsPassed=true | failures=NONE
+LOG  : Lua          f:23070> [FCTH-FC006] | harnessVersion=0.5.2-dev | setupVersion=14 | evidenceEligible=true | mode=EXPERIMENT | phase=END | worldHours=3.7167863845825195 | build=42.20.4 b0bbce05d5 | DayLength=4 | FoodRotSpeed=3 | FridgeFactor=3 | productionModEnabled=false | harnessModEnabled=true | activatedMods=FunctionalCoolersTestHarness | unexpectedModCount=0 | guardID=984846483 | testID=1012071938 | primaryID=984846483 | secondaryID=1012071938 | selectedID=984846483 | selectedType=Base.Cooler | inventoryVisible=true | inventoryCollapsed=false | inventoryPinned=true | contextsReady=true | contentsReady=true | handsReady=true | selectedReady=true | treatmentReady=true | guardCount=0 | testCount=3 | unexpectedTestItems=0 | vID=1462015840 | vlastAged=3.7167863845825195 | vage=0.5208340287208557 | vheat=1 | vfreezingTime=46.66551971435547 | vfrozen=false | vfreezing=false | vthawing=true | aID=875160373 | alastAged=3.7167863845825195 | aage=0.5208340287208557 | aheat=1 | afreezingTime=46.66551971435547 | afrozen=false | afreezing=false | athawing=true | uID=992537179 | ulastAged=3.7167863845825195 | uage=0.5625021457672119 | uheat=1 | ufreezingTime=0 | ufrozen=false | ufreezing=false | uthawing=false | status=COMPLETE | completionReason=three_scheduled_updates_complete

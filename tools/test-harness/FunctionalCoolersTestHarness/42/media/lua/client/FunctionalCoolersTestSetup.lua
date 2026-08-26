@@ -1,7 +1,7 @@
 ------------------------------------------------------------
 -- Functional Coolers Test Harness
--- FC-006 infrastructure v0.5.1-dev
--- Project Zomboid Build 42.20.3 test infrastructure only
+-- FC-006 infrastructure v0.5.2-dev
+-- Project Zomboid Build 42.20.4 test infrastructure only
 --
 -- Purpose:
 --   Create the deterministic FC006-GUARD / FC006-TEST setup.
@@ -16,10 +16,10 @@
 
 local FCTH = {}
 
-local SETUP_VERSION = 13
-local HARNESS_VERSION = "0.5.1-dev"
+local SETUP_VERSION = 14
+local HARNESS_VERSION = "0.5.2-dev"
 local HARNESS_MOD_ID = "FunctionalCoolersTestHarness"
-local EXPECTED_BUILD = "42.20.3"
+local EXPECTED_BUILD = "42.20.4"
 local PRODUCTION_MOD_ID = "FunctionalCoolers"
 
 local TEST_SPAWN_X = 10693

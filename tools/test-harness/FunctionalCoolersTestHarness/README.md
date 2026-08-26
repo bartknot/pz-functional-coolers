@@ -15,13 +15,13 @@ This is the development and test harness for Functional Coolers. It is test infr
 ## Version and State
 
 - Mod ID: `FunctionalCoolersTestHarness`
-- Mod version: `0.5.1`
-- Source version: `v0.5.1-dev`
-- Setup version: `13`
+- Mod version: `0.5.2`
+- Source version: `v0.5.2-dev`
+- Setup version: `14`
 
 This version implements the bounded FC-006 managed-to-vanilla Food handoff setup and infrastructure smoketest. It requires a fresh dedicated save; saves prepared with an older setup version are rejected rather than repaired.
 
-The production Functional Coolers mod must be disabled. Enable only the test harness among the Functional Coolers mods. The required sandbox values are `DayLength = 4`, `FoodRotSpeed = 3`, and `FridgeFactor = 3` on Project Zomboid Build 42.20.3.
+The production Functional Coolers mod must be disabled. Enable only the test harness among the Functional Coolers mods. The required sandbox values are `DayLength = 4`, `FoodRotSpeed = 3`, and `FridgeFactor = 3` on Project Zomboid Build 42.20.4.
 
 ## FC-006 Setup
 
