@@ -6,7 +6,8 @@
 - Branch at this snapshot: `main`
 - Canonical evidence and workflow inspected through HEAD: `3a626040d96cabaeacecde9f976499a79fb880e8`
 - Runtime baseline recorded by the active task: Project Zomboid Build 42.20.3
-- Active task: FC-005, status `COMPLETE`; no successor task is currently authorized.
+- Active task: FC-006, status `READY — RESEARCHER FEASIBILITY AUTHORIZED`.
+- Bart accepted FC-006 as a bounded evidence task for managed-to-vanilla Food handoff continuity. Only read-only Researcher feasibility/observability work and subsequent Test Analyst protocol design are currently authorized; infrastructure work, runtime experiments, production changes, and later evidence writes retain separate gates.
 - `docs/ARCHITECTURE.md` is the accepted canonical architecture baseline after the task-specific fresh Reviewer pass, material Architect revisions, focused closure review, and Bart's acceptance on 2026-08-26.
 - Production source identifies itself as `Prototype v0.3.0-dev`.
 - The elapsed-time simulation and FRIDGE/context diagnostics are committed.
@@ -100,6 +101,7 @@ This does not establish that selection is necessary for every possible catch-up,
 - The review added no handoff template, pre-flight checklist, conflict-resolution system, debt taxonomy, or new document hierarchy because current evidence did not justify them.
 - The final WF-004 task definition is preserved in `docs/tasks/WF-004.md`.
 - FC-005 completed one minimal architecture baseline with a task-specific fresh Reviewer gate. The Architect addressed all five findings materially; the closure review classified each as `RESOLVED`, found no material new issue, and Bart accepted the result as canonical architecture.
+- The final FC-005 task definition is preserved in `docs/tasks/FC-005.md`. FC-006 is accepted as the next bounded evidence dependency, with only its initial Researcher/Test Analyst design phases authorized.
 
 ## Known Limitations and Unresolved Questions
 
@@ -127,4 +129,4 @@ These inconsistencies are recorded here, not fixed by this status task.
 
 ## Current Development Position
 
-The project has moved beyond the superseded vanilla-delta approach to an elapsed-time managed prototype, completed both the FC-003 and FC-004 evidence chains, and accepted its first canonical architecture baseline through FC-005. No successor task or production implementation is currently authorized. The next bounded task proposal must follow the accepted architecture, choose one coherent slice, and route any required unresolved Project Zomboid behavior to Researcher/Test Lab rather than treating it as fact. Empirical follow-ups and Git/runtime provenance tooling remain separate backlog concerns and require their own accepted tasks before implementation.
+The project has moved beyond the superseded vanilla-delta approach to an elapsed-time managed prototype, completed both the FC-003 and FC-004 evidence chains, and accepted its first canonical architecture baseline through FC-005. FC-006 is accepted as one bounded Researcher/Test Lab evidence task for the managed-to-vanilla Food handoff that blocks complete handoff implementation. Its read-only feasibility assessment and protocol-design phase may proceed; infrastructure, substantive runs, evidence persistence, and production implementation remain separately gated. Other empirical follow-ups and Git/runtime provenance tooling remain separate backlog concerns and require their own accepted tasks before implementation.

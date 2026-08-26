@@ -2,168 +2,204 @@
 
 ## ID
 
-FC-005
+FC-006
 
 ## Status
 
-COMPLETE
+READY — RESEARCHER FEASIBILITY AUTHORIZED
 
-## Assigned Roles
+## Assigned Roles and Gates
 
-- Primary proposal owner: Software Architect
-- Required acceptance gate: Reviewer / Optimization Critic operating in a fresh Reviewer context after the proposal is produced
+- Primary empirical owner: Researcher / Runtime Diagnostics
+- Protocol and run-validity owner: Test Analyst
+- Test-infrastructure owner: Test Engineer, only if a later bounded implementation is explicitly authorized
+- Scope, sequencing, and canonical project-state owner: Planner
+- Final task, infrastructure, run, evidence-write, and completion authority: Bart
 
 ## Objective
 
-Produce one minimal canonical architecture proposal that establishes the system boundary, state ownership, simulation lifecycle, vanilla handoff, context abstraction, persistence model, and minimum module responsibilities needed to constrain the next Functional Coolers production task.
+Establish bounded runtime evidence for the managed-to-vanilla Food handoff required by the accepted architecture.
 
-The proposal must describe the current implementation separately from accepted constraints, proposed architecture, unresolved questions, and runtime assumptions requiring evidence. It must not change production behavior or convert observed vanilla refresh timing into an undocumented causal mechanism.
+The task asks whether a controlled Functional Coolers projection of managed Food state back to vanilla can be followed by vanilla processing without repeating or omitting the managed elapsed interval. It must identify either:
 
-Because this is the project's first canonical architecture baseline, the proposal must receive one fresh, procedurally independent Reviewer pass before Bart considers accepting it. This is a task-specific FC-005 risk-control experiment, not a universal workflow rule.
+- a verified API sequence that produces that outcome within a precisely described tested scope; or
+- a verified limitation, ambiguity, or unavailable control point that prevents the required outcome from being established and must be returned to Architect/Planner.
 
-Bart accepted FC-005, the Architect produced the bounded proposal, and the required fresh Reviewer pass identified five findings. The Architect materially revised the proposal, the focused closure review classified all five findings as `RESOLVED` with no material new finding, and Bart explicitly accepted `docs/ARCHITECTURE.md` as canonical architecture on 2026-08-26.
+FC-006 is an evidence task, not a production implementation task. Bart accepted FC-006 on 2026-08-26. This acceptance authorizes only Phase A read-only Researcher feasibility/observability work and the subsequent Phase B Test Analyst protocol design; it does not authorize changing the harness, executing a substantive run, or modifying production code.
+
+## Central Research Question
+
+Within one controlled Build 42.20.3 scenario, what observable age/freezing/timing transition occurs when Food leaves simulated Functional Coolers management, receives the candidate final managed projection, and is next processed by vanilla?
+
+The experiment must be capable of detecting, within its tested resolution:
+
+- duplicate vanilla processing of elapsed time already represented by the managed state;
+- omission of elapsed time that should be represented after handoff;
+- delayed or hidden changes following `setAge`, `setHeat`, or `setFreezingTime`;
+- the relationship between the projection, the observed `lastAged` value, and the first verified post-handoff vanilla update opportunity.
+
+The task does not assume that Functional Coolers can set or otherwise control vanilla's internal timing cursor. Candidate control points must first be established through verified API/runtime evidence.
 
 ## Why Now
 
-Functional Coolers has an elapsed-time managed prototype and two completed empirical evidence chains, but no canonical architecture baseline. Further production changes would otherwise risk preserving prototype accidents, assigning state inconsistently, or coupling the mod to vanilla update opportunities whose internal mechanism remains unresolved.
+`docs/ARCHITECTURE.md` is accepted canonical architecture. It requires the managed-to-vanilla handoff to leave vanilla ready to continue without repeating or omitting the managed interval, but explicitly records the safe API sequence as unresolved and blocks complete production handoff implementation until Researcher evidence resolves it or establishes a verified limitation.
 
-The Project Charter already establishes the Cooler as the thermodynamic system and its location as a changing boundary condition. The next justified step is to translate that accepted product principle, the present implementation, and verified runtime constraints into the smallest architecture proposal capable of guiding a later implementation task.
+This is a higher-value dependency than starting a production refactor that would have to embed an unverified handoff assumption. It is narrower than investigating every unresolved lifecycle, transfer, save/load, context, or multiplayer question.
 
 ## Canonical Inputs
 
-The Architect must use:
+- `AGENTS.md`
+- `AI_WORKFLOW.md`
+- `CURRENT_TASK.md`
+- `ai/RESEARCHER.md`
+- `ai/test-lab/TEST_ANALYST.md`
+- `ai/test-lab/TEST_ENGINEER.md` if infrastructure becomes necessary
+- `docs/PROJECT_CHARTER.md`
+- `docs/STATUS.md`
+- `docs/TODO.md`
+- `docs/ARCHITECTURE.md`, especially P-4, the next-task constraints, and unresolved runtime questions 1–3
+- `docs/research/FC-003-2026-08-22.md`
+- `docs/research/FC-004-2026-08-25.md`
+- Canonical FC-003/FC-004 run records only where their run-level timing or validity constraints are directly relevant
+- Current production source only as evidence of the prototype's existing getter/setter use, not as accepted handoff behavior
+- Current test harness only as evidence of available observability, not as authorization to reuse or modify FC-004 behavior
 
-- AGENTS.md
-- AI_WORKFLOW.md
-- CURRENT_TASK.md
-- ai/ARCHITECT.md
-- docs/PROJECT_CHARTER.md
-- docs/STATUS.md
-- relevant architecture and technical items in docs/TODO.md
-- 42/media/lua/server/FunctionalCoolers.lua as evidence of current implementation, not accepted architecture
-- docs/research/FC-003-2026-08-22.md
-- docs/research/FC-004-2026-08-25.md
-- referenced canonical Test Analyst records only when run-level detail is necessary
+Raw prior artifacts need not be reanalyzed unless a material ambiguity cannot be resolved from canonical records.
 
-Raw runtime artifacts need not be reanalyzed unless a material ambiguity cannot be resolved from the canonical Researcher and Test Analyst records. The Architect must not replace their empirical interpretation.
+## Evidence and Scope Boundaries
 
-The Reviewer must read the proposed `docs/ARCHITECTURE.md`, this task, the Architect and Reviewer role files, and the canonical inputs necessary to test the proposal against accepted scope and evidence. The Reviewer must not substitute a new architecture of its own.
+The roles must distinguish:
 
-## Current Constraints
+- direct runtime observations;
+- Bart-supplied execution metadata;
+- Test Analyst run-level validity and interpretation;
+- Researcher inference;
+- broader conclusions accepted only within the tested scope.
 
-- The Cooler is the intended thermodynamic system; location supplies a changing boundary condition.
-- Thermal state must persist across supported context changes rather than reset on transfer.
-- The current prototype stores Cooler, cold-pack, and managed Food fields in item modData, advances a stepped model from elapsed worldHours, and writes managed state through available Food APIs.
-- The current single-file prototype combines context discovery, state initialization, simulation, vanilla Food handoff, freezer recharge, diagnostics, and test support. That organization is current implementation, not an accepted module design.
-- FC-003 establishes that brief equip or inspection was not necessary for the specific observed carried/CONTROL catch-ups.
-- FC-004 establishes that the sustained selected/active UI treatment package determined continuous observable refresh in one valid counterbalanced pair.
-- Neither evidence chain identifies the internal vanilla scheduler, proves selection is the only update opportunity, or determines whether stale unselected Food receives no processing versus deferred catch-up.
-- Save/load, long unattended catch-up, transfers, nested and vehicle contexts, and multiplayer authority remain incompletely validated.
-- Multiplayer is a future accepted direction, but detailed networking design is not required for this minimum baseline.
-- Calibration constants and current diagnostic structures are provisional and must not become architectural requirements merely because they exist.
+Temporal proximity between projection and a later vanilla update does not by itself establish causality. A sequence is not “safe” merely because no obvious discontinuity appears in one sampled field.
 
-## Architecture Questions to Resolve
+`lastAged` is an observed vanilla timing field, not automatically an authorized or sufficient control surface. Food age, heat, freezing time, frozen state, world time, context, and the exact observed update opportunity must be interpreted together where practical.
 
-The proposal must make the minimum coherent decisions needed for later implementation planning:
+A single valid run may establish feasibility or expose a failure in its exact setup. It does not establish all Food types, contexts, durations, save/load cases, or Project Zomboid builds.
 
-1. **System boundary:** What belongs to the Cooler thermodynamic system, and what remains an external Project Zomboid boundary condition?
-2. **State ownership:** Which durable state belongs to the Cooler, cold packs, and Food; which values are derived, cached, diagnostic, or legacy; and which component is authoritative for each state while Food is managed?
-3. **Simulation lifecycle:** How are initialization, elapsed-time advancement, bounded catch-up, ordinary update opportunities, context transitions, and reactivation ordered without duplicate or negative simulation?
-4. **Vanilla handoff:** When does Functional Coolers take ownership of Food temperature, age, and freezing state, and how is state reconciled when Food enters, leaves, or becomes unmanaged without relying on a presumed vanilla refresh cause?
-5. **Context abstraction:** What minimum boundary interface represents carried, ground, nested-container, powered cold-storage, and future vehicle contexts while preserving one thermodynamic state model?
-6. **Persistence:** What must survive save/load and context transfer, where is it stored, and what initialization or migration rules are required conceptually?
-7. **Module responsibilities:** What is the smallest useful separation between simulation, persistent state, context/vanilla adapters, orchestration, and diagnostics? The proposal must not predesign a large module hierarchy.
-8. **Future authority boundary:** What minimum constraint keeps the design compatible with later server-authoritative multiplayer without designing the complete network protocol now?
+## Required Task Sequence
 
-If any answer depends materially on unverified Project Zomboid behavior, classify it as unresolved and formulate the specific Researcher question instead of inventing an API or runtime fact.
+### Phase A — Researcher Feasibility and Observability
 
-## Required Output
+The Researcher must:
 
-Under the accepted FC-005 task, the Architect may create exactly one architecture document:
+1. identify which relevant getters, setters, events, and timing fields are actually observable or callable in the target runtime;
+2. separate verified capability from candidate or undocumented API assumptions;
+3. define the minimum contrast needed to detect duplicate versus omitted elapsed processing;
+4. hand the bounded empirical question and observability limits to Test Analyst.
 
-- docs/ARCHITECTURE.md
+If no protocol can distinguish the required outcomes with available observability, stop and report that limitation before infrastructure work.
 
-The document must be explicitly marked PROPOSED — BART ACCEPTANCE REQUIRED until Bart accepts it. It must use ordinary Markdown and contain only the structure needed to distinguish:
+### Phase B — Test Analyst Protocol and Validity Design
 
-- scope and status;
-- current implementation;
-- accepted product and evidence constraints;
-- proposed architecture decisions with rationale;
-- unresolved runtime questions and assumptions requiring evidence;
-- constraints for the next implementation task;
-- deliberately deferred design.
+The Test Analyst must produce a practically executable protocol that:
 
-No ADR directory, architecture index, diagram set, roadmap, or parallel status document is authorized.
+- isolates one managed-to-vanilla transition question;
+- includes an appropriate vanilla or otherwise justified baseline/control;
+- defines the managed interval and transition time;
+- records state immediately before projection, immediately after projection, and across the first verified post-handoff vanilla processing opportunity;
+- specifies how that processing opportunity is observed without assuming selection, inspection, or equip is its internal cause;
+- defines READY, BEGIN, HANDOFF, post-handoff observation, END, invalidation, and completion conditions;
+- states which conclusions are supported by VALID, INVALID, or INCONCLUSIVE outcomes.
 
-## Required Acceptance Sequence
+The Test Analyst must not implement the protocol or decide that an unverified API is safe.
 
-1. Bart has accepted FC-005; the Architect creates the proposed `docs/ARCHITECTURE.md` within the existing scope.
-2. After the proposal is ready for review, a fresh Reviewer context performs the required acceptance-gate review without modifying files.
-3. The Reviewer challenges incorrect assumptions, hidden coupling, state-ownership problems, persistence and lifecycle risks, premature abstraction, unsupported runtime assumptions, conflicts with accepted evidence, and plausible simpler alternatives.
-4. Reviewer findings use the existing project classifications and distinguish blocking or material corrections from optional improvements and questions.
-5. The Reviewer does not own architecture decisions, directly rewrite the document, or replace the proposal with the Reviewer's preferred design.
-6. The Architect remains responsible for responding to material findings and revising the proposal where justified. Rejected findings must receive an explicit rationale rather than being silently ignored.
-7. If material architectural revisions result, Bart must be shown the revised proposal, the material findings, the Architect's responses, and a clear revision summary or diff before acceptance.
-8. Bart remains the only authority who may accept `docs/ARCHITECTURE.md` as canonical architecture.
+### Phase C — Infrastructure Authorization Gate
 
-The Reviewer pass and Architect response may occur through explicit role handoffs; no separate review-document hierarchy is created by FC-005.
+Only after Phases A and B may Test Engineer identify the minimum instrumentation or deterministic setup required.
 
-## Allowed Changes
+Any harness modification, new test path, deployment, or infrastructure smoketest requires a later explicit Bart authorization naming the permitted files and actions. Production source under `42/` is not an eligible test-infrastructure path.
 
-- FC-005 is complete and authorizes no further architecture, review, research, implementation, test, production, or harness change.
-- Bart's acceptance and Planner handoff authorize only the canonical acceptance-state reconciliation in `docs/ARCHITECTURE.md`, `CURRENT_TASK.md`, `docs/STATUS.md`, and `docs/TODO.md`.
-- No production source under `42/` may be changed.
-- Git staging, commit, push, branch, worktree, tag, and release operations require separate explicit authorization.
+### Phase D — Experiment Authorization Gate
+
+A substantive run requires:
+
+- an accepted executable protocol;
+- any required infrastructure to have passed its own smoketest;
+- Test Analyst confirmation that the evidence stream can distinguish the planned outcomes;
+- separate explicit Bart authorization for the run.
+
+Infrastructure-smoketest output is not empirical FC-006 evidence.
+
+### Phase E — Evidence Chain and Project Consequence
+
+If a substantive run is authorized and completed:
+
+1. raw runtime evidence is preserved under a task/date-specific artifact path;
+2. Test Analyst creates the canonical run record and classifies it;
+3. Researcher creates a canonical FC-006 synthesis only when the evidence supports a durable task-level conclusion;
+4. Planner records any accepted project-state, sequencing, backlog, or architecture-handoff consequence.
+
+A verified limitation that blocks the accepted handoff outcome must be routed back to Architect. Runtime evidence does not silently rewrite `docs/ARCHITECTURE.md`.
+
+## Current Allowed Changes
+
+For the accepted planning transition, Planner may modify only:
+
+- `CURRENT_TASK.md`
+- `docs/STATUS.md`
+- `docs/TODO.md`
+- `docs/tasks/FC-005.md`
+
+Under the accepted initial specialist phase:
+
+- Researcher may perform the read-only feasibility and observability assessment defined by Phase A;
+- Test Analyst may subsequently design the executable protocol and validity criteria defined by Phase B;
+- no test infrastructure may be changed or deployed;
+- no experiment may be executed;
+- no artifact, run record, or Researcher synthesis may be created;
+- no architecture, governance, role instruction, production source, release, or packaging file may be changed;
+- no Git staging, commit, push, branch, worktree, tag, or release operation is authorized.
+
+Every repository write beyond this accepted Planner transition, infrastructure change, deployment, smoketest, substantive run, and evidence-persistence action still requires the later explicit gate described above.
 
 ## Acceptance Criteria
 
-- Exactly one architecture document is created and no existing file is modified by the Architect.
-- Current implementation, accepted architecture, proposed architecture, unresolved questions, and runtime assumptions requiring evidence are clearly distinguished.
-- Every proposed decision is traceable to accepted Charter direction, verified evidence, a stated engineering rationale, or an explicitly identified constraint.
-- FC-003 and FC-004 constrain the proposal without being reinterpreted as proof of an undocumented vanilla mechanism.
-- State ownership and the vanilla handoff are explicit enough to prevent two simultaneous authorities from silently advancing the same Food state.
-- The lifecycle covers initialization, elapsed-time advancement, reactivation, context transfer, and save/load at the architectural level without inventing unverified APIs.
-- Context abstraction preserves one thermodynamic system across supported locations while deferring detailed vehicle behavior.
-- The minimum module responsibilities are clear enough for Planner to derive a later bounded implementation task.
-- Future multiplayer compatibility is protected by a minimal authority/persistence constraint without designing a complete multiplayer subsystem.
-- Calibration, UI, release work, deployment tooling, detailed experimental protocols, and implementation sequencing remain outside the architecture proposal.
-- The document states what remains unresolved and gives a precise handoff to Researcher or Planner as appropriate.
-- A fresh Reviewer pass occurs only after the complete architecture proposal is ready for review.
-- The Reviewer explicitly assesses every challenge category required by this task and reports material findings without taking ownership of the architecture.
-- The Architect responds to all material findings and makes justified revisions visible rather than silently absorbing them.
-- Bart receives the reviewed proposal, material findings, Architect responses, and any material revision summary or diff before deciding acceptance.
-- The resulting architecture remains a proposal until Bart explicitly accepts it.
+- The task tests one handoff-continuity uncertainty rather than general vanilla refresh behavior.
+- Researcher identifies verified observable/callable surfaces before Test Analyst relies on them.
+- The protocol can distinguish duplicate processing, omitted processing, a bounded continuous result, and insufficient observability.
+- Baseline/control logic and the first verified post-handoff vanilla processing opportunity are explicit.
+- Required fields and timestamps are recorded at enough transition points to support the planned comparison.
+- Selection, inspection, equip, or other UI action is recorded as an intervention/update opportunity and not declared the internal vanilla cause.
+- Test Analyst can classify each run as VALID, INVALID, or INCONCLUSIVE without relaxing criteria after seeing the result.
+- No production code is changed.
+- No harness behavior or experiment execution occurs before its explicit gate.
+- Any claimed safe sequence is bounded to the exact verified build, Food type, context, setters, timing, and observation conditions.
+- A negative or inconclusive feasibility result may complete FC-006 if it precisely establishes the unresolved limitation and routes the consequence correctly.
+- The accepted architecture is preserved unless Bart later accepts an Architect revision based on verified evidence.
 
 ## Out of Scope
 
-- Modifying or refactoring production code
-- Changing the Functional Coolers Test Harness
-- Running or reclassifying experiments
-- Drawing new empirical conclusions
-- Selecting final calibration constants or balance values
-- Detailed UI or tooltip design
-- Detailed vehicle thermal behavior
-- Complete multiplayer networking, synchronization, or protocol design
-- Deployment, Git-to-runtime provenance, artifact collection, packaging, version cleanup, tags, or releases
-- Creating an ADR hierarchy or comprehensive future architecture in advance
-- Creating a universal Reviewer gate or changing project-wide workflow governance
-- Creating a separate review-document hierarchy for this task
-- Allowing the Reviewer to author a replacement architecture or directly edit the proposal
-- Defining the next implementation task before the architecture proposal is reviewed
-- Committing or pushing without separate authorization
+- Implementing the production ownership epoch or managed-to-vanilla handoff
+- Refactoring the single-file production prototype
+- General schema migration or persistent-state implementation
+- Transfer-event coverage, nested containers, save/load, chunk unload, or long unattended catch-up
+- Coldpack lifecycle or recharge behavior
+- Calibration, thermal formulas, UI/UX, deployment tooling, packaging, or version cleanup
+- Identifying the entire internal vanilla Food scheduler
+- Proving behavior across multiple Project Zomboid builds, Food classes, contexts, or arbitrary durations
+- Independent replication beyond the minimum first bounded result
+- Repeating FC-003 or FC-004 without direct relevance to the handoff contrast
+- Modifying `docs/ARCHITECTURE.md` without a later Architect task and Bart acceptance
+- Git writes without separate explicit authorization
 
 ## Known Risks
 
-- Treating the current prototype structure or modData fields as accepted architecture merely because they already exist.
-- Treating selected/active UI state as the desired simulation trigger or as a known vanilla causal mechanism.
-- Hiding unresolved runtime dependencies inside architectural language.
-- Designing every future context or multiplayer detail before the next implementation needs it.
-- Producing a document too abstract to constrain state authority and vanilla handoff.
-- Producing a document so detailed that it preimplements the system on paper.
-- Letting the Reviewer expand architecture coverage beyond the accepted FC-005 baseline.
-- Treating procedural review independence as proof of cognitive independence.
-- Hiding material post-review revisions from Bart before architecture acceptance.
+- Vanilla may expose `lastAged` for observation without exposing a safe supported way to align it.
+- Setter calls may have delayed side effects that are visible only at a later vanilla update opportunity.
+- Lazy or UI-associated vanilla refresh can confound handoff timing unless the protocol records the exact intervention and suitable controls.
+- Age and freezing state may update on different schedules or with different hidden state.
+- Sampling may be too sparse to distinguish one vanilla interval from a duplicate or omitted interval.
+- Direct test manipulation of Food state can invalidate the comparison unless it is deterministic, logged, identical where required, and confined to the planned handoff intervention.
+- Existing Functional Coolers behavior could contaminate a harness-only experiment unless enabled mods and state ownership are explicitly controlled.
+- A superficially smooth first update could hide a later discontinuity.
+- Expanding the task to every setter, Food type, context, or lifecycle transition would defeat the bounded purpose.
 
 ## Planner Handoff
 
-FC-005 is complete. `docs/ARCHITECTURE.md` is the accepted canonical architecture baseline. No successor task or implementation is currently authorized. Planner should next derive a bounded successor proposal from the accepted architecture, preserving its unresolved runtime-evidence blockers and one-coherent-slice constraint, for Bart's separate acceptance. All Git writes remain a separate decision.
+FC-006 is accepted. Hand off first to Researcher for the read-only API/runtime feasibility and observability assessment, then to Test Analyst for the executable protocol and validity criteria. No Test Engineer implementation or runtime experiment is authorized until the later explicit gates are satisfied.

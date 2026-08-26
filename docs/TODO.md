@@ -4,13 +4,14 @@
 
 ## Active Follow-Up
 
-`FC-005` is complete and its reviewed result is the accepted canonical `docs/ARCHITECTURE.md`. No successor task is currently authorized by this backlog.
+`FC-006` is accepted as one bounded evidence task for managed-to-vanilla Food handoff continuity. `CURRENT_TASK.md` authorizes only the initial Researcher feasibility/observability and Test Analyst protocol-design phases; this backlog adds no authority.
 
-- [ ] Have Planner/Bart accept, revise, defer, or reject one bounded successor task derived from the accepted architecture and its unresolved runtime-evidence blockers.
+- [ ] Complete the FC-006 Researcher feasibility/observability assessment and route its bounded handoff to Test Analyst.
 
 
 ## Near Term
 
+- [ ] Establish a verified managed-to-vanilla Food handoff sequence, or a verified limitation requiring explicit architecture reconsideration, before complete handoff implementation.
 - [ ] Characterize lazy vanilla Food refresh sufficiently for production decisions.
 - [ ] Add an environment/calibration guard for `DayLength = 4`, `FoodRotSpeed = 3`, and `FridgeFactor = 3` through a separately authorized implementation task.
 - [ ] Evaluate legacy identity/tracking fields such as `FC_coolerID` after clone and context evidence is available.
